@@ -7,15 +7,13 @@ let screen = "video";
 // Pulsante
 let buttonX, buttonY, buttonW, buttonH;
 
-// Musica
+// Musica con Audio HTML5
 let song1, song2;
 let currentSong = 1;
 
 function preload() {
-  gameImage = loadImage('verra.png');
+  gameImage = loadImage('itis.png');
   logoImage = loadImage('logo.png');
-  song1 = loadSound('Down_under.mp3');
-  song2 = loadSound('wind.mp3');
 }
 
 function setup() {
@@ -25,22 +23,31 @@ function setup() {
   video.hide();
   video.volume(0);
   video.attribute('playsinline', '');
-  video.elt.muted = true; // NECESSARIO PER I BROWSER
+  video.elt.muted = true;
+
+  // Carica audio con HTML5 Audio
+  song1 = new Audio('Down_under.mp3');
+  song2 = new Audio('wind.mp3');
 
   buttonW = 200;
   buttonH = 60;
   buttonX = width / 2 - buttonW / 2;
   buttonY = height / 2 + 100;
 
-  song1.onended(() => {
-    song2.play();
-    currentSong = 2;
-  });
+  // Callback per la fine delle canzoni
+  song1.onended = () => {
+    if (screen === "video") {
+      song2.play();
+      currentSong = 2;
+    }
+  };
 
-  song2.onended(() => {
-    song1.play();
-    currentSong = 1;
-  });
+  song2.onended = () => {
+    if (screen === "video") {
+      song1.play();
+      currentSong = 1;
+    }
+  };
 }
 
 function draw() {
@@ -48,8 +55,13 @@ function draw() {
 
   if (screen === "video") {
     if (started) {
-      let w = 1920;
-      let h = 1080;
+      // Proporzioni adattive per il video
+      let videoW = video.width;
+      let videoH = video.height;
+      let scaleRatio = min(width / videoW, height / videoH);
+      let w = videoW * scaleRatio;
+      let h = videoH * scaleRatio;
+      
       image(video, (width - w) / 2, (height - h) / 2, w, h);
 
       drawLogo();
@@ -58,20 +70,25 @@ function draw() {
       fill(255);
       textAlign(CENTER, CENTER);
       textSize(26);
+      noStroke();
       text("Clicca per avviare il gioco", width / 2, height / 2);
     }
   }
 
   if (screen === "game") {
     imageMode(CENTER);
-    image(gameImage, width / 2, height / 2);
+    let scaleRatio = min(width / gameImage.width, height / gameImage.height);
+    image(gameImage, width / 2, height / 2, 
+          gameImage.width * scaleRatio, gameImage.height * scaleRatio);
     imageMode(CORNER);
   }
 }
 
 function drawLogo() {
   imageMode(CENTER);
-  image(logoImage, width / 2, height / 2 - 150, 600, 450);
+  let logoW = min(600, width * 0.8);
+  let logoH = logoW * 0.75;
+  image(logoImage, width / 2, height / 2 - 150, logoW, logoH);
   imageMode(CORNER);
 }
 
@@ -95,24 +112,25 @@ function drawButton() {
   rect(buttonX, buttonY, buttonW, buttonH, 20);
 
   drawingContext.shadowBlur = 0;
+  noStroke();
   fill(255);
   textAlign(CENTER, CENTER);
   textSize(26);
   textStyle(BOLD);
   text("GIOCA", buttonX + buttonW / 2, buttonY + buttonH / 2);
+  textStyle(NORMAL);
 }
 
 function mousePressed() {
   // PRIMO CLICK → sblocca tutto
   if (!started) {
-    userStartAudio(); // SBLOCCA AUDIO
     video.loop();
     started = true;
 
-    if (!song1.isPlaying() && !song2.isPlaying()) {
-      song1.play();
-      currentSong = 1;
-    }
+    // Avvia la prima canzone
+    song1.play().catch(e => console.log("Errore audio:", e));
+    currentSong = 1;
+    
     return;
   }
 
@@ -123,8 +141,10 @@ function mousePressed() {
   ) {
     screen = "game";
     video.stop();
-    song1.stop();
-    song2.stop();
+    song1.pause();
+    song2.pause();
+    song1.currentTime = 0;
+    song2.currentTime = 0;
   }
 }
 
