@@ -25,7 +25,7 @@ function setup() {
   video.attribute('playsinline', '');
   video.elt.muted = true;
 
-  // Carica audio con HTML5 Audio
+  // Audio HTML5
   song1 = new Audio('Down_under.mp3');
   song2 = new Audio('wind.mp3');
 
@@ -34,19 +34,15 @@ function setup() {
   buttonX = width / 2 - buttonW / 2;
   buttonY = height / 2 + 100;
 
-  // Callback per la fine delle canzoni
+  // Loop musicale continuo (menu + gioco)
   song1.onended = () => {
-    if (screen === "video") {
-      song2.play();
-      currentSong = 2;
-    }
+    song2.play();
+    currentSong = 2;
   };
 
   song2.onended = () => {
-    if (screen === "video") {
-      song1.play();
-      currentSong = 1;
-    }
+    song1.play();
+    currentSong = 1;
   };
 }
 
@@ -55,13 +51,12 @@ function draw() {
 
   if (screen === "video") {
     if (started) {
-      // Proporzioni adattive per il video
       let videoW = video.width;
       let videoH = video.height;
       let scaleRatio = min(width / videoW, height / videoH);
       let w = videoW * scaleRatio;
       let h = videoH * scaleRatio;
-      
+
       image(video, (width - w) / 2, (height - h) / 2, w, h);
 
       drawLogo();
@@ -78,8 +73,13 @@ function draw() {
   if (screen === "game") {
     imageMode(CENTER);
     let scaleRatio = min(width / gameImage.width, height / gameImage.height);
-    image(gameImage, width / 2, height / 2, 
-          gameImage.width * scaleRatio, gameImage.height * scaleRatio);
+    image(
+      gameImage,
+      width / 2,
+      height / 2,
+      gameImage.width * scaleRatio,
+      gameImage.height * scaleRatio
+    );
     imageMode(CORNER);
   }
 }
@@ -122,29 +122,24 @@ function drawButton() {
 }
 
 function mousePressed() {
-  // PRIMO CLICK → sblocca tutto
+  // PRIMO CLICK → sblocca audio e video
   if (!started) {
     video.loop();
     started = true;
 
-    // Avvia la prima canzone
     song1.play().catch(e => console.log("Errore audio:", e));
     currentSong = 1;
-    
     return;
   }
 
-  // CLICK SUL PULSANTE
+  // CLICK SUL PULSANTE GIOCA
   if (
     mouseX > buttonX && mouseX < buttonX + buttonW &&
     mouseY > buttonY && mouseY < buttonY + buttonH
   ) {
     screen = "game";
-    video.stop();
-    song1.pause();
-    song2.pause();
-    song1.currentTime = 0;
-    song2.currentTime = 0;
+    video.stop(); // solo il video si ferma
+    // 🎵 la musica CONTINUA
   }
 }
 
