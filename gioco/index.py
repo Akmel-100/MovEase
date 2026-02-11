@@ -35,15 +35,15 @@ def load_assets():
     global game_image, logo_image, song1, song2, video_cap
     
     # Carica immagini
-    game_image = pygame.image.load('itis.png')
-    logo_image = pygame.image.load('logo.png')
+    game_image = pygame.image.load('gioco/itis.png')
+    logo_image = pygame.image.load('gioco/logo.png')
     
     # Carica video
-    video_cap = cv2.VideoCapture('video_menu.mp4')
+    video_cap = cv2.VideoCapture('gioco/video_menu.mp4')
     
     # Carica musica
-    song1 = 'Down_under.mp3'
-    song2 = 'wind.mp3'
+    song1 = 'gioco/Down_under.mp3'
+    song2 = 'gioco/wind.mp3'
 
 def setup():
     global screen, width, height, button_x, button_y
