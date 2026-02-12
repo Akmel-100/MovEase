@@ -15,17 +15,20 @@ large_font = pygame.font.SysFont("Segoe UI", 64, bold=True)
 clock = pygame.time.Clock()
 
 # -------------------------------
+# CARICA IMMAGINE BERSAGLIO
+# -------------------------------
+target_image_original = pygame.image.load("bersaglio.png").convert_alpha()
+
+# -------------------------------
 # COLORI
 # -------------------------------
 WHITE = (255, 255, 255)
-BLUE = (80, 140, 255)
-LIGHT_BLUE = (180, 220, 255)
 RED = (255, 80, 80)
 GREEN = (80, 200, 120)
 DARK_TEXT = (40, 40, 40)
 
 # -------------------------------
-# FUNZIONE SFONDO GRADIENTE
+# SFONDO GRADIENTE
 # -------------------------------
 def draw_gradient(surface, top_color, bottom_color):
     for y in range(HEIGHT):
@@ -53,21 +56,21 @@ running = True
 game_over = False
 
 # -------------------------------
-# SCHERMATA ISTRUZIONI
+# ISTRUZIONI
 # -------------------------------
 show_instructions = True
 
 while show_instructions:
     draw_gradient(screen, (240, 245, 255), (200, 220, 255))
 
-    title = large_font.render("Istruzioni", True, BLUE)
+    title = large_font.render("Istruzioni", True, (80, 140, 255))
     screen.blit(title, (WIDTH//2 - title.get_width()//2, 60))
 
     instructions = [
-        "Clicca il bersaglio blu il più velocemente possibile.",
+        "Clicca l'immagine il più velocemente possibile.",
         "Ogni centro aumenta il punteggio.",
         "Se sbagli clic aumenta il numero di errori.",
-        "Il bersaglio diventa più piccolo col tempo.",
+        "L'immagine diventa più piccola col tempo.",
         "",
         "Durata: 30 secondi.",
         "",
@@ -135,27 +138,25 @@ while running:
 
     if not game_over:
 
-        # ---------------- Bersaglio animato ----------------
+        # Animazione pulse
         pulse = 4 * math.sin(pygame.time.get_ticks() * 0.005)
         animated_radius = int(radius + pulse)
 
-        # Glow
-        pygame.draw.circle(screen, LIGHT_BLUE,
-                           (target_x, target_y), animated_radius + 12)
+        # Ridimensiona immagine dinamicamente
+        target_size = animated_radius * 2
+        target_image = pygame.transform.smoothscale(
+            target_image_original,
+            (target_size, target_size)
+        )
 
-        # Cerchio principale
-        pygame.draw.circle(screen, BLUE,
-                           (target_x, target_y), animated_radius)
-
-        # Bordo bianco
-        pygame.draw.circle(screen, WHITE,
-                           (target_x, target_y), animated_radius, 3)
+        rect = target_image.get_rect(center=(target_x, target_y))
+        screen.blit(target_image, rect)
 
         # Effetto colpo riuscito
         if hit_effect_timer > 0:
             pygame.draw.circle(screen, GREEN,
                                (target_x, target_y),
-                               animated_radius + 20, 4)
+                               animated_radius + 15, 4)
             hit_effect_timer -= 1
 
         # ---------------- HUD ----------------
@@ -176,7 +177,7 @@ while running:
         progress = remaining_time / game_duration
         pygame.draw.rect(screen, (220, 220, 220),
                          (30, 135, bar_width, 10))
-        pygame.draw.rect(screen, GREEN,
+        pygame.draw.rect(screen, (80, 200, 120),
                          (30, 135, bar_width * progress, 10))
 
         # Flash errore
