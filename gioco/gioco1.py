@@ -3,62 +3,108 @@ import random
 import time
 import math
 
-# Inizializzazione
 pygame.init()
 
 WIDTH, HEIGHT = 800, 600
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Gioco Riabilitativo - Sclerosi Multipla")
 
-font = pygame.font.SysFont("Arial", 30)
-large_font = pygame.font.SysFont("Arial", 60)
-
-# Colori
-WHITE = (255, 255, 255)
-BLUE = (100, 150, 255)
-GREEN = (100, 255, 150)
-RED = (255, 100, 100)
-GRAY = (230, 230, 230)
+font = pygame.font.SysFont("Segoe UI", 26)
+large_font = pygame.font.SysFont("Segoe UI", 64, bold=True)
 
 clock = pygame.time.Clock()
 
-# Variabili di gioco
+# -------------------------------
+# COLORI
+# -------------------------------
+WHITE = (255, 255, 255)
+BLUE = (80, 140, 255)
+LIGHT_BLUE = (180, 220, 255)
+RED = (255, 80, 80)
+GREEN = (80, 200, 120)
+DARK_TEXT = (40, 40, 40)
+
+# -------------------------------
+# FUNZIONE SFONDO GRADIENTE
+# -------------------------------
+def draw_gradient(surface, top_color, bottom_color):
+    for y in range(HEIGHT):
+        ratio = y / HEIGHT
+        r = int(top_color[0] * (1 - ratio) + bottom_color[0] * ratio)
+        g = int(top_color[1] * (1 - ratio) + bottom_color[1] * ratio)
+        b = int(top_color[2] * (1 - ratio) + bottom_color[2] * ratio)
+        pygame.draw.line(surface, (r, g, b), (0, y), (WIDTH, y))
+
+# -------------------------------
+# VARIABILI DI GIOCO
+# -------------------------------
 score = 0
 misses = 0
 radius = 40
-spawn_time = 1500  # millisecondi
-game_duration = 60  # secondi
+game_duration = 30
 
 target_x = random.randint(radius, WIDTH - radius)
 target_y = random.randint(radius, HEIGHT - radius)
+
+flash_timer = 0
+hit_effect_timer = 0
 
 running = True
 game_over = False
 
 # -------------------------------
-# CONTO ALLA ROVESCIA INIZIALE
+# SCHERMATA ISTRUZIONI
 # -------------------------------
-countdown = 3
-for i in range(countdown, 0, -1):
-    screen.fill(GRAY)
-    countdown_text = large_font.render(str(i), True, RED)
-    screen.blit(countdown_text, (WIDTH//2 - countdown_text.get_width()//2, HEIGHT//2 - countdown_text.get_height()//2))
+show_instructions = True
+
+while show_instructions:
+    draw_gradient(screen, (240, 245, 255), (200, 220, 255))
+
+    title = large_font.render("Istruzioni", True, BLUE)
+    screen.blit(title, (WIDTH//2 - title.get_width()//2, 60))
+
+    instructions = [
+        "Clicca il bersaglio blu il più velocemente possibile.",
+        "Ogni centro aumenta il punteggio.",
+        "Se sbagli clic aumenta il numero di errori.",
+        "Il bersaglio diventa più piccolo col tempo.",
+        "",
+        "Durata: 30 secondi.",
+        "",
+        "Premi un tasto per iniziare."
+    ]
+
+    for i, line in enumerate(instructions):
+        text = font.render(line, True, DARK_TEXT)
+        screen.blit(text, (WIDTH//2 - text.get_width()//2, 180 + i * 35))
+
     pygame.display.flip()
-    time.sleep(1)  # 1 secondo per ogni numero
 
-screen.fill(GRAY)
-go_text = large_font.render("Via!", True, GREEN)
-screen.blit(go_text, (WIDTH//2 - go_text.get_width()//2, HEIGHT//2 - go_text.get_height()//2))
-pygame.display.flip()
-time.sleep(1)
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            exit()
+        if event.type == pygame.KEYDOWN:
+            show_instructions = False
 
-start_time = time.time()  # avvio timer gioco
+# -------------------------------
+# COUNTDOWN
+# -------------------------------
+for i in range(3, 0, -1):
+    draw_gradient(screen, (240, 245, 255), (200, 220, 255))
+    txt = large_font.render(str(i), True, RED)
+    screen.blit(txt, (WIDTH//2 - txt.get_width()//2,
+                      HEIGHT//2 - txt.get_height()//2))
+    pygame.display.flip()
+    pygame.time.delay(1000)
+
+start_time = time.time()
 
 # -------------------------------
 # CICLO PRINCIPALE
 # -------------------------------
 while running:
-    screen.fill(GRAY)
+    draw_gradient(screen, (240, 245, 255), (200, 220, 255))
 
     current_time = time.time()
     elapsed_time = current_time - start_time
@@ -74,12 +120,12 @@ while running:
 
             if distance <= radius:
                 score += 1
-                if spawn_time > 600:
-                    spawn_time -= 50
+                hit_effect_timer = 8
                 if radius > 20:
                     radius -= 1
             else:
                 misses += 1
+                flash_timer = 8
 
             target_x = random.randint(radius, WIDTH - radius)
             target_y = random.randint(radius, HEIGHT - radius)
@@ -88,31 +134,84 @@ while running:
         game_over = True
 
     if not game_over:
-        # Disegno bersaglio
-        pygame.draw.circle(screen, BLUE, (target_x, target_y), radius)
 
-        # Testi
-        score_text = font.render(f"Punteggio: {score}", True, (0, 0, 0))
-        miss_text = font.render(f"Errori: {misses}", True, (0, 0, 0))
-        time_text = font.render(f"Tempo: {remaining_time}", True, (0, 0, 0))
+        # ---------------- Bersaglio animato ----------------
+        pulse = 4 * math.sin(pygame.time.get_ticks() * 0.005)
+        animated_radius = int(radius + pulse)
 
-        screen.blit(score_text, (20, 20))
-        screen.blit(miss_text, (20, 60))
-        screen.blit(time_text, (20, 100))
+        # Glow
+        pygame.draw.circle(screen, LIGHT_BLUE,
+                           (target_x, target_y), animated_radius + 12)
+
+        # Cerchio principale
+        pygame.draw.circle(screen, BLUE,
+                           (target_x, target_y), animated_radius)
+
+        # Bordo bianco
+        pygame.draw.circle(screen, WHITE,
+                           (target_x, target_y), animated_radius, 3)
+
+        # Effetto colpo riuscito
+        if hit_effect_timer > 0:
+            pygame.draw.circle(screen, GREEN,
+                               (target_x, target_y),
+                               animated_radius + 20, 4)
+            hit_effect_timer -= 1
+
+        # ---------------- HUD ----------------
+        hud = pygame.Surface((240, 140), pygame.SRCALPHA)
+        hud.fill((255, 255, 255, 190))
+        screen.blit(hud, (15, 15))
+
+        score_text = font.render(f"Punteggio: {score}", True, DARK_TEXT)
+        miss_text = font.render(f"Errori: {misses}", True, DARK_TEXT)
+        time_text = font.render(f"Tempo: {remaining_time}", True, DARK_TEXT)
+
+        screen.blit(score_text, (30, 30))
+        screen.blit(miss_text, (30, 65))
+        screen.blit(time_text, (30, 100))
+
+        # Barra tempo
+        bar_width = 200
+        progress = remaining_time / game_duration
+        pygame.draw.rect(screen, (220, 220, 220),
+                         (30, 135, bar_width, 10))
+        pygame.draw.rect(screen, GREEN,
+                         (30, 135, bar_width * progress, 10))
+
+        # Flash errore
+        if flash_timer > 0:
+            overlay = pygame.Surface((WIDTH, HEIGHT))
+            overlay.set_alpha(70)
+            overlay.fill(RED)
+            screen.blit(overlay, (0, 0))
+            flash_timer -= 1
+
     else:
-        # Schermata fine gioco
-        screen.fill(GRAY)
-        game_over_text = large_font.render("Fine della sessione", True, RED)
-        score_text = font.render(f"Punteggio totale: {score}", True, (0, 0, 0))
-        miss_text = font.render(f"Totale errori: {misses}", True, (0, 0, 0))
+        draw_gradient(screen, (230, 240, 255), (200, 220, 255))
 
-        screen.blit(game_over_text, (WIDTH//2 - game_over_text.get_width()//2, HEIGHT//2 - 100))
-        screen.blit(score_text, (WIDTH//2 - score_text.get_width()//2, HEIGHT//2))
-        screen.blit(miss_text, (WIDTH//2 - miss_text.get_width()//2, HEIGHT//2 + 50))
+        panel = pygame.Surface((500, 300), pygame.SRCALPHA)
+        panel.fill((255, 255, 255, 220))
+        screen.blit(panel, (WIDTH//2 - 250, HEIGHT//2 - 150))
+
+        total_clicks = score + misses
+        accuracy = int((score / total_clicks) * 100) if total_clicks > 0 else 0
+
+        title = large_font.render("Stop", True, RED)
+        score_text = font.render(f"Punteggio totale: {score}", True, DARK_TEXT)
+        miss_text = font.render(f"Errori totali: {misses}", True, DARK_TEXT)
+        acc_text = font.render(f"Precisione: {accuracy}%", True, DARK_TEXT)
+
+        screen.blit(title, (WIDTH//2 - title.get_width()//2,
+                            HEIGHT//2 - 120))
+        screen.blit(score_text, (WIDTH//2 - score_text.get_width()//2,
+                                 HEIGHT//2 - 20))
+        screen.blit(miss_text, (WIDTH//2 - miss_text.get_width()//2,
+                                HEIGHT//2 + 20))
+        screen.blit(acc_text, (WIDTH//2 - acc_text.get_width()//2,
+                               HEIGHT//2 + 60))
 
     pygame.display.flip()
     clock.tick(60)
 
-# Attendi 5 secondi sulla schermata finale prima di chiudere
-time.sleep(1)
 pygame.quit()
