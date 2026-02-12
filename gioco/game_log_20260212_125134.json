@@ -1,0 +1,1616 @@
+{
+    "session_start": "2026-02-12 12:50:28",
+    "targets_hit": [
+        {
+            "target_number": 1,
+            "timestamp": "2026-02-12 12:50:38.740",
+            "hand_label": "Right",
+            "hand_closure_percentage": 50,
+            "target_position": {
+                "x": 556,
+                "y": 111
+            },
+            "radius": 40,
+            "hand_closure_before_hit": [
+                {
+                    "timestamp": "12:51:33.635",
+                    "hand": "Right",
+                    "closure": 54,
+                    "position": [
+                        745,
+                        257
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.635",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        201,
+                        397
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.968",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        733,
+                        259
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.968",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        200,
+                        397
+                    ]
+                },
+                {
+                    "timestamp": "12:51:34.302",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        683,
+                        378
+                    ]
+                },
+                {
+                    "timestamp": "12:51:34.303",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        200,
+                        395
+                    ]
+                }
+            ]
+        },
+        {
+            "target_number": 2,
+            "timestamp": "2026-02-12 12:50:41.153",
+            "hand_label": "Right",
+            "hand_closure_percentage": 52,
+            "target_position": {
+                "x": 703,
+                "y": 215
+            },
+            "radius": 39,
+            "hand_closure_before_hit": [
+                {
+                    "timestamp": "12:51:33.635",
+                    "hand": "Right",
+                    "closure": 54,
+                    "position": [
+                        745,
+                        257
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.635",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        201,
+                        397
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.968",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        733,
+                        259
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.968",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        200,
+                        397
+                    ]
+                },
+                {
+                    "timestamp": "12:51:34.302",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        683,
+                        378
+                    ]
+                },
+                {
+                    "timestamp": "12:51:34.303",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        200,
+                        395
+                    ]
+                }
+            ]
+        },
+        {
+            "target_number": 3,
+            "timestamp": "2026-02-12 12:50:42.733",
+            "hand_label": "Left",
+            "hand_closure_percentage": 46,
+            "target_position": {
+                "x": 222,
+                "y": 381
+            },
+            "radius": 38,
+            "hand_closure_before_hit": [
+                {
+                    "timestamp": "12:51:33.635",
+                    "hand": "Right",
+                    "closure": 54,
+                    "position": [
+                        745,
+                        257
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.635",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        201,
+                        397
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.968",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        733,
+                        259
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.968",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        200,
+                        397
+                    ]
+                },
+                {
+                    "timestamp": "12:51:34.302",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        683,
+                        378
+                    ]
+                },
+                {
+                    "timestamp": "12:51:34.303",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        200,
+                        395
+                    ]
+                }
+            ]
+        },
+        {
+            "target_number": 4,
+            "timestamp": "2026-02-12 12:50:45.110",
+            "hand_label": "Left",
+            "hand_closure_percentage": 34,
+            "target_position": {
+                "x": 431,
+                "y": 110
+            },
+            "radius": 37,
+            "hand_closure_before_hit": [
+                {
+                    "timestamp": "12:51:33.635",
+                    "hand": "Right",
+                    "closure": 54,
+                    "position": [
+                        745,
+                        257
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.635",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        201,
+                        397
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.968",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        733,
+                        259
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.968",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        200,
+                        397
+                    ]
+                },
+                {
+                    "timestamp": "12:51:34.302",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        683,
+                        378
+                    ]
+                },
+                {
+                    "timestamp": "12:51:34.303",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        200,
+                        395
+                    ]
+                }
+            ]
+        },
+        {
+            "target_number": 5,
+            "timestamp": "2026-02-12 12:50:46.942",
+            "hand_label": "Left",
+            "hand_closure_percentage": 71,
+            "target_position": {
+                "x": 233,
+                "y": 468
+            },
+            "radius": 36,
+            "hand_closure_before_hit": [
+                {
+                    "timestamp": "12:51:33.635",
+                    "hand": "Right",
+                    "closure": 54,
+                    "position": [
+                        745,
+                        257
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.635",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        201,
+                        397
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.968",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        733,
+                        259
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.968",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        200,
+                        397
+                    ]
+                },
+                {
+                    "timestamp": "12:51:34.302",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        683,
+                        378
+                    ]
+                },
+                {
+                    "timestamp": "12:51:34.303",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        200,
+                        395
+                    ]
+                }
+            ]
+        },
+        {
+            "target_number": 6,
+            "timestamp": "2026-02-12 12:50:49.312",
+            "hand_label": "Right",
+            "hand_closure_percentage": 37,
+            "target_position": {
+                "x": 451,
+                "y": 420
+            },
+            "radius": 35,
+            "hand_closure_before_hit": [
+                {
+                    "timestamp": "12:51:33.635",
+                    "hand": "Right",
+                    "closure": 54,
+                    "position": [
+                        745,
+                        257
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.635",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        201,
+                        397
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.968",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        733,
+                        259
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.968",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        200,
+                        397
+                    ]
+                },
+                {
+                    "timestamp": "12:51:34.302",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        683,
+                        378
+                    ]
+                },
+                {
+                    "timestamp": "12:51:34.303",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        200,
+                        395
+                    ]
+                }
+            ]
+        },
+        {
+            "target_number": 7,
+            "timestamp": "2026-02-12 12:50:51.844",
+            "hand_label": "Left",
+            "hand_closure_percentage": 44,
+            "target_position": {
+                "x": 223,
+                "y": 175
+            },
+            "radius": 34,
+            "hand_closure_before_hit": [
+                {
+                    "timestamp": "12:51:33.635",
+                    "hand": "Right",
+                    "closure": 54,
+                    "position": [
+                        745,
+                        257
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.635",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        201,
+                        397
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.968",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        733,
+                        259
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.968",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        200,
+                        397
+                    ]
+                },
+                {
+                    "timestamp": "12:51:34.302",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        683,
+                        378
+                    ]
+                },
+                {
+                    "timestamp": "12:51:34.303",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        200,
+                        395
+                    ]
+                }
+            ]
+        },
+        {
+            "target_number": 8,
+            "timestamp": "2026-02-12 12:50:53.879",
+            "hand_label": "Left",
+            "hand_closure_percentage": 62,
+            "target_position": {
+                "x": 112,
+                "y": 537
+            },
+            "radius": 33,
+            "hand_closure_before_hit": [
+                {
+                    "timestamp": "12:51:33.635",
+                    "hand": "Right",
+                    "closure": 54,
+                    "position": [
+                        745,
+                        257
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.635",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        201,
+                        397
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.968",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        733,
+                        259
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.968",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        200,
+                        397
+                    ]
+                },
+                {
+                    "timestamp": "12:51:34.302",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        683,
+                        378
+                    ]
+                },
+                {
+                    "timestamp": "12:51:34.303",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        200,
+                        395
+                    ]
+                }
+            ]
+        },
+        {
+            "target_number": 9,
+            "timestamp": "2026-02-12 12:50:56.337",
+            "hand_label": "Right",
+            "hand_closure_percentage": 45,
+            "target_position": {
+                "x": 518,
+                "y": 318
+            },
+            "radius": 32,
+            "hand_closure_before_hit": [
+                {
+                    "timestamp": "12:51:33.635",
+                    "hand": "Right",
+                    "closure": 54,
+                    "position": [
+                        745,
+                        257
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.635",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        201,
+                        397
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.968",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        733,
+                        259
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.968",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        200,
+                        397
+                    ]
+                },
+                {
+                    "timestamp": "12:51:34.302",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        683,
+                        378
+                    ]
+                },
+                {
+                    "timestamp": "12:51:34.303",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        200,
+                        395
+                    ]
+                }
+            ]
+        },
+        {
+            "target_number": 10,
+            "timestamp": "2026-02-12 12:50:58.924",
+            "hand_label": "Right",
+            "hand_closure_percentage": 44,
+            "target_position": {
+                "x": 731,
+                "y": 129
+            },
+            "radius": 31,
+            "hand_closure_before_hit": [
+                {
+                    "timestamp": "12:51:33.635",
+                    "hand": "Right",
+                    "closure": 54,
+                    "position": [
+                        745,
+                        257
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.635",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        201,
+                        397
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.968",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        733,
+                        259
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.968",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        200,
+                        397
+                    ]
+                },
+                {
+                    "timestamp": "12:51:34.302",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        683,
+                        378
+                    ]
+                },
+                {
+                    "timestamp": "12:51:34.303",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        200,
+                        395
+                    ]
+                }
+            ]
+        },
+        {
+            "target_number": 11,
+            "timestamp": "2026-02-12 12:51:00.758",
+            "hand_label": "Left",
+            "hand_closure_percentage": 52,
+            "target_position": {
+                "x": 308,
+                "y": 275
+            },
+            "radius": 30,
+            "hand_closure_before_hit": [
+                {
+                    "timestamp": "12:51:33.635",
+                    "hand": "Right",
+                    "closure": 54,
+                    "position": [
+                        745,
+                        257
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.635",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        201,
+                        397
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.968",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        733,
+                        259
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.968",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        200,
+                        397
+                    ]
+                },
+                {
+                    "timestamp": "12:51:34.302",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        683,
+                        378
+                    ]
+                },
+                {
+                    "timestamp": "12:51:34.303",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        200,
+                        395
+                    ]
+                }
+            ]
+        },
+        {
+            "target_number": 12,
+            "timestamp": "2026-02-12 12:51:02.598",
+            "hand_label": "Left",
+            "hand_closure_percentage": 34,
+            "target_position": {
+                "x": 300,
+                "y": 337
+            },
+            "radius": 29,
+            "hand_closure_before_hit": [
+                {
+                    "timestamp": "12:51:33.635",
+                    "hand": "Right",
+                    "closure": 54,
+                    "position": [
+                        745,
+                        257
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.635",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        201,
+                        397
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.968",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        733,
+                        259
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.968",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        200,
+                        397
+                    ]
+                },
+                {
+                    "timestamp": "12:51:34.302",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        683,
+                        378
+                    ]
+                },
+                {
+                    "timestamp": "12:51:34.303",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        200,
+                        395
+                    ]
+                }
+            ]
+        },
+        {
+            "target_number": 13,
+            "timestamp": "2026-02-12 12:51:05.340",
+            "hand_label": "Right",
+            "hand_closure_percentage": 57,
+            "target_position": {
+                "x": 221,
+                "y": 405
+            },
+            "radius": 28,
+            "hand_closure_before_hit": [
+                {
+                    "timestamp": "12:51:33.635",
+                    "hand": "Right",
+                    "closure": 54,
+                    "position": [
+                        745,
+                        257
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.635",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        201,
+                        397
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.968",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        733,
+                        259
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.968",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        200,
+                        397
+                    ]
+                },
+                {
+                    "timestamp": "12:51:34.302",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        683,
+                        378
+                    ]
+                },
+                {
+                    "timestamp": "12:51:34.303",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        200,
+                        395
+                    ]
+                }
+            ]
+        },
+        {
+            "target_number": 14,
+            "timestamp": "2026-02-12 12:51:07.666",
+            "hand_label": "Right",
+            "hand_closure_percentage": 42,
+            "target_position": {
+                "x": 580,
+                "y": 267
+            },
+            "radius": 27,
+            "hand_closure_before_hit": [
+                {
+                    "timestamp": "12:51:33.635",
+                    "hand": "Right",
+                    "closure": 54,
+                    "position": [
+                        745,
+                        257
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.635",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        201,
+                        397
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.968",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        733,
+                        259
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.968",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        200,
+                        397
+                    ]
+                },
+                {
+                    "timestamp": "12:51:34.302",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        683,
+                        378
+                    ]
+                },
+                {
+                    "timestamp": "12:51:34.303",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        200,
+                        395
+                    ]
+                }
+            ]
+        },
+        {
+            "target_number": 15,
+            "timestamp": "2026-02-12 12:51:09.650",
+            "hand_label": "Right",
+            "hand_closure_percentage": 54,
+            "target_position": {
+                "x": 482,
+                "y": 135
+            },
+            "radius": 26,
+            "hand_closure_before_hit": [
+                {
+                    "timestamp": "12:51:33.635",
+                    "hand": "Right",
+                    "closure": 54,
+                    "position": [
+                        745,
+                        257
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.635",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        201,
+                        397
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.968",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        733,
+                        259
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.968",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        200,
+                        397
+                    ]
+                },
+                {
+                    "timestamp": "12:51:34.302",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        683,
+                        378
+                    ]
+                },
+                {
+                    "timestamp": "12:51:34.303",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        200,
+                        395
+                    ]
+                }
+            ]
+        },
+        {
+            "target_number": 16,
+            "timestamp": "2026-02-12 12:51:11.694",
+            "hand_label": "Left",
+            "hand_closure_percentage": 52,
+            "target_position": {
+                "x": 165,
+                "y": 66
+            },
+            "radius": 25,
+            "hand_closure_before_hit": [
+                {
+                    "timestamp": "12:51:33.635",
+                    "hand": "Right",
+                    "closure": 54,
+                    "position": [
+                        745,
+                        257
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.635",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        201,
+                        397
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.968",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        733,
+                        259
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.968",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        200,
+                        397
+                    ]
+                },
+                {
+                    "timestamp": "12:51:34.302",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        683,
+                        378
+                    ]
+                },
+                {
+                    "timestamp": "12:51:34.303",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        200,
+                        395
+                    ]
+                }
+            ]
+        },
+        {
+            "target_number": 17,
+            "timestamp": "2026-02-12 12:51:14.989",
+            "hand_label": "Right",
+            "hand_closure_percentage": 63,
+            "target_position": {
+                "x": 771,
+                "y": 345
+            },
+            "radius": 24,
+            "hand_closure_before_hit": [
+                {
+                    "timestamp": "12:51:33.635",
+                    "hand": "Right",
+                    "closure": 54,
+                    "position": [
+                        745,
+                        257
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.635",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        201,
+                        397
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.968",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        733,
+                        259
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.968",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        200,
+                        397
+                    ]
+                },
+                {
+                    "timestamp": "12:51:34.302",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        683,
+                        378
+                    ]
+                },
+                {
+                    "timestamp": "12:51:34.303",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        200,
+                        395
+                    ]
+                }
+            ]
+        },
+        {
+            "target_number": 18,
+            "timestamp": "2026-02-12 12:51:17.013",
+            "hand_label": "Left",
+            "hand_closure_percentage": 58,
+            "target_position": {
+                "x": 86,
+                "y": 268
+            },
+            "radius": 23,
+            "hand_closure_before_hit": [
+                {
+                    "timestamp": "12:51:33.635",
+                    "hand": "Right",
+                    "closure": 54,
+                    "position": [
+                        745,
+                        257
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.635",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        201,
+                        397
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.968",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        733,
+                        259
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.968",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        200,
+                        397
+                    ]
+                },
+                {
+                    "timestamp": "12:51:34.302",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        683,
+                        378
+                    ]
+                },
+                {
+                    "timestamp": "12:51:34.303",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        200,
+                        395
+                    ]
+                }
+            ]
+        },
+        {
+            "target_number": 19,
+            "timestamp": "2026-02-12 12:51:19.472",
+            "hand_label": "Left",
+            "hand_closure_percentage": 41,
+            "target_position": {
+                "x": 194,
+                "y": 112
+            },
+            "radius": 22,
+            "hand_closure_before_hit": [
+                {
+                    "timestamp": "12:51:33.635",
+                    "hand": "Right",
+                    "closure": 54,
+                    "position": [
+                        745,
+                        257
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.635",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        201,
+                        397
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.968",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        733,
+                        259
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.968",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        200,
+                        397
+                    ]
+                },
+                {
+                    "timestamp": "12:51:34.302",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        683,
+                        378
+                    ]
+                },
+                {
+                    "timestamp": "12:51:34.303",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        200,
+                        395
+                    ]
+                }
+            ]
+        },
+        {
+            "target_number": 20,
+            "timestamp": "2026-02-12 12:51:22.355",
+            "hand_label": "Right",
+            "hand_closure_percentage": 57,
+            "target_position": {
+                "x": 567,
+                "y": 442
+            },
+            "radius": 21,
+            "hand_closure_before_hit": [
+                {
+                    "timestamp": "12:51:33.635",
+                    "hand": "Right",
+                    "closure": 54,
+                    "position": [
+                        745,
+                        257
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.635",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        201,
+                        397
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.968",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        733,
+                        259
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.968",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        200,
+                        397
+                    ]
+                },
+                {
+                    "timestamp": "12:51:34.302",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        683,
+                        378
+                    ]
+                },
+                {
+                    "timestamp": "12:51:34.303",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        200,
+                        395
+                    ]
+                }
+            ]
+        },
+        {
+            "target_number": 21,
+            "timestamp": "2026-02-12 12:51:25.331",
+            "hand_label": "Right",
+            "hand_closure_percentage": 65,
+            "target_position": {
+                "x": 618,
+                "y": 485
+            },
+            "radius": 20,
+            "hand_closure_before_hit": [
+                {
+                    "timestamp": "12:51:33.635",
+                    "hand": "Right",
+                    "closure": 54,
+                    "position": [
+                        745,
+                        257
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.635",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        201,
+                        397
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.968",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        733,
+                        259
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.968",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        200,
+                        397
+                    ]
+                },
+                {
+                    "timestamp": "12:51:34.302",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        683,
+                        378
+                    ]
+                },
+                {
+                    "timestamp": "12:51:34.303",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        200,
+                        395
+                    ]
+                }
+            ]
+        },
+        {
+            "target_number": 22,
+            "timestamp": "2026-02-12 12:51:27.641",
+            "hand_label": "Left",
+            "hand_closure_percentage": 57,
+            "target_position": {
+                "x": 282,
+                "y": 90
+            },
+            "radius": 20,
+            "hand_closure_before_hit": [
+                {
+                    "timestamp": "12:51:33.635",
+                    "hand": "Right",
+                    "closure": 54,
+                    "position": [
+                        745,
+                        257
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.635",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        201,
+                        397
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.968",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        733,
+                        259
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.968",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        200,
+                        397
+                    ]
+                },
+                {
+                    "timestamp": "12:51:34.302",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        683,
+                        378
+                    ]
+                },
+                {
+                    "timestamp": "12:51:34.303",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        200,
+                        395
+                    ]
+                }
+            ]
+        },
+        {
+            "target_number": 23,
+            "timestamp": "2026-02-12 12:51:29.713",
+            "hand_label": "Left",
+            "hand_closure_percentage": 55,
+            "target_position": {
+                "x": 283,
+                "y": 389
+            },
+            "radius": 20,
+            "hand_closure_before_hit": [
+                {
+                    "timestamp": "12:51:33.635",
+                    "hand": "Right",
+                    "closure": 54,
+                    "position": [
+                        745,
+                        257
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.635",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        201,
+                        397
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.968",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        733,
+                        259
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.968",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        200,
+                        397
+                    ]
+                },
+                {
+                    "timestamp": "12:51:34.302",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        683,
+                        378
+                    ]
+                },
+                {
+                    "timestamp": "12:51:34.303",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        200,
+                        395
+                    ]
+                }
+            ]
+        },
+        {
+            "target_number": 24,
+            "timestamp": "2026-02-12 12:51:33.563",
+            "hand_label": "Right",
+            "hand_closure_percentage": 45,
+            "target_position": {
+                "x": 728,
+                "y": 251
+            },
+            "radius": 20,
+            "hand_closure_before_hit": [
+                {
+                    "timestamp": "12:51:33.635",
+                    "hand": "Right",
+                    "closure": 54,
+                    "position": [
+                        745,
+                        257
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.635",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        201,
+                        397
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.968",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        733,
+                        259
+                    ]
+                },
+                {
+                    "timestamp": "12:51:33.968",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        200,
+                        397
+                    ]
+                },
+                {
+                    "timestamp": "12:51:34.302",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        683,
+                        378
+                    ]
+                },
+                {
+                    "timestamp": "12:51:34.303",
+                    "hand": "Left",
+                    "closure": 0,
+                    "position": [
+                        200,
+                        395
+                    ]
+                }
+            ]
+        }
+    ],
+    "hand_closure_history": [],
+    "session_end": "2026-02-12 12:51:34",
+    "total_targets_hit": 24
+}

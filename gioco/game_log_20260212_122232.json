@@ -1,0 +1,340 @@
+{
+    "session_start": "2026-02-12 12:21:26",
+    "targets_hit": [
+        {
+            "target_number": 1,
+            "timestamp": "2026-02-12 12:21:40.753",
+            "hand_closure_percentage": 42,
+            "target_position": {
+                "x": 288,
+                "y": 363
+            },
+            "radius": 40,
+            "hand_closure_before_hit": [
+                {
+                    "timestamp": "12:22:30.778",
+                    "closure": 50
+                },
+                {
+                    "timestamp": "12:22:31.121",
+                    "closure": 39
+                },
+                {
+                    "timestamp": "12:22:31.121",
+                    "closure": 13
+                },
+                {
+                    "timestamp": "12:22:31.526",
+                    "closure": 30
+                },
+                {
+                    "timestamp": "12:22:31.889",
+                    "closure": 16
+                },
+                {
+                    "timestamp": "12:22:32.231",
+                    "closure": 0
+                },
+                {
+                    "timestamp": "12:22:32.655",
+                    "closure": 61
+                }
+            ]
+        },
+        {
+            "target_number": 2,
+            "timestamp": "2026-02-12 12:22:19.638",
+            "hand_closure_percentage": 52,
+            "target_position": {
+                "x": 126,
+                "y": 512
+            },
+            "radius": 39,
+            "hand_closure_before_hit": [
+                {
+                    "timestamp": "12:22:09.376",
+                    "closure": 0
+                },
+                {
+                    "timestamp": "12:22:09.709",
+                    "closure": 80
+                },
+                {
+                    "timestamp": "12:22:10.043",
+                    "closure": 86
+                },
+                {
+                    "timestamp": "12:22:10.378",
+                    "closure": 59
+                },
+                {
+                    "timestamp": "12:22:10.713",
+                    "closure": 0
+                },
+                {
+                    "timestamp": "12:22:11.050",
+                    "closure": 0
+                },
+                {
+                    "timestamp": "12:22:11.383",
+                    "closure": 0
+                },
+                {
+                    "timestamp": "12:22:11.738",
+                    "closure": 0
+                },
+                {
+                    "timestamp": "12:22:12.080",
+                    "closure": 0
+                },
+                {
+                    "timestamp": "12:22:12.423",
+                    "closure": 56
+                },
+                {
+                    "timestamp": "12:22:12.757",
+                    "closure": 62
+                },
+                {
+                    "timestamp": "12:22:13.091",
+                    "closure": 61
+                },
+                {
+                    "timestamp": "12:22:13.439",
+                    "closure": 64
+                },
+                {
+                    "timestamp": "12:22:13.789",
+                    "closure": 65
+                },
+                {
+                    "timestamp": "12:22:14.129",
+                    "closure": 83
+                },
+                {
+                    "timestamp": "12:22:14.466",
+                    "closure": 97
+                },
+                {
+                    "timestamp": "12:22:14.799",
+                    "closure": 100
+                },
+                {
+                    "timestamp": "12:22:15.167",
+                    "closure": 100
+                },
+                {
+                    "timestamp": "12:22:15.513",
+                    "closure": 100
+                },
+                {
+                    "timestamp": "12:22:15.850",
+                    "closure": 97
+                },
+                {
+                    "timestamp": "12:22:16.209",
+                    "closure": 61
+                },
+                {
+                    "timestamp": "12:22:16.561",
+                    "closure": 62
+                },
+                {
+                    "timestamp": "12:22:16.905",
+                    "closure": 100
+                },
+                {
+                    "timestamp": "12:22:17.242",
+                    "closure": 100
+                },
+                {
+                    "timestamp": "12:22:17.572",
+                    "closure": 65
+                },
+                {
+                    "timestamp": "12:22:17.921",
+                    "closure": 59
+                },
+                {
+                    "timestamp": "12:22:18.327",
+                    "closure": 0
+                },
+                {
+                    "timestamp": "12:22:18.680",
+                    "closure": 0
+                },
+                {
+                    "timestamp": "12:22:19.016",
+                    "closure": 0
+                },
+                {
+                    "timestamp": "12:22:19.362",
+                    "closure": 0
+                }
+            ]
+        },
+        {
+            "target_number": 3,
+            "timestamp": "2026-02-12 12:22:22.687",
+            "hand_closure_percentage": 52,
+            "target_position": {
+                "x": 224,
+                "y": 198
+            },
+            "radius": 38,
+            "hand_closure_before_hit": [
+                {
+                    "timestamp": "12:22:30.778",
+                    "closure": 50
+                },
+                {
+                    "timestamp": "12:22:31.121",
+                    "closure": 39
+                },
+                {
+                    "timestamp": "12:22:31.121",
+                    "closure": 13
+                },
+                {
+                    "timestamp": "12:22:31.526",
+                    "closure": 30
+                },
+                {
+                    "timestamp": "12:22:31.889",
+                    "closure": 16
+                },
+                {
+                    "timestamp": "12:22:32.231",
+                    "closure": 0
+                },
+                {
+                    "timestamp": "12:22:32.655",
+                    "closure": 61
+                }
+            ]
+        },
+        {
+            "target_number": 4,
+            "timestamp": "2026-02-12 12:22:25.237",
+            "hand_closure_percentage": 62,
+            "target_position": {
+                "x": 138,
+                "y": 231
+            },
+            "radius": 37,
+            "hand_closure_before_hit": [
+                {
+                    "timestamp": "12:22:30.778",
+                    "closure": 50
+                },
+                {
+                    "timestamp": "12:22:31.121",
+                    "closure": 39
+                },
+                {
+                    "timestamp": "12:22:31.121",
+                    "closure": 13
+                },
+                {
+                    "timestamp": "12:22:31.526",
+                    "closure": 30
+                },
+                {
+                    "timestamp": "12:22:31.889",
+                    "closure": 16
+                },
+                {
+                    "timestamp": "12:22:32.231",
+                    "closure": 0
+                },
+                {
+                    "timestamp": "12:22:32.655",
+                    "closure": 61
+                }
+            ]
+        },
+        {
+            "target_number": 5,
+            "timestamp": "2026-02-12 12:22:27.992",
+            "hand_closure_percentage": 52,
+            "target_position": {
+                "x": 518,
+                "y": 372
+            },
+            "radius": 36,
+            "hand_closure_before_hit": [
+                {
+                    "timestamp": "12:22:30.778",
+                    "closure": 50
+                },
+                {
+                    "timestamp": "12:22:31.121",
+                    "closure": 39
+                },
+                {
+                    "timestamp": "12:22:31.121",
+                    "closure": 13
+                },
+                {
+                    "timestamp": "12:22:31.526",
+                    "closure": 30
+                },
+                {
+                    "timestamp": "12:22:31.889",
+                    "closure": 16
+                },
+                {
+                    "timestamp": "12:22:32.231",
+                    "closure": 0
+                },
+                {
+                    "timestamp": "12:22:32.655",
+                    "closure": 61
+                }
+            ]
+        },
+        {
+            "target_number": 6,
+            "timestamp": "2026-02-12 12:22:30.608",
+            "hand_closure_percentage": 43,
+            "target_position": {
+                "x": 276,
+                "y": 171
+            },
+            "radius": 35,
+            "hand_closure_before_hit": [
+                {
+                    "timestamp": "12:22:30.778",
+                    "closure": 50
+                },
+                {
+                    "timestamp": "12:22:31.121",
+                    "closure": 39
+                },
+                {
+                    "timestamp": "12:22:31.121",
+                    "closure": 13
+                },
+                {
+                    "timestamp": "12:22:31.526",
+                    "closure": 30
+                },
+                {
+                    "timestamp": "12:22:31.889",
+                    "closure": 16
+                },
+                {
+                    "timestamp": "12:22:32.231",
+                    "closure": 0
+                },
+                {
+                    "timestamp": "12:22:32.655",
+                    "closure": 61
+                }
+            ]
+        }
+    ],
+    "hand_closure_history": [],
+    "session_end": "2026-02-12 12:22:32",
+    "total_targets_hit": 6
+}

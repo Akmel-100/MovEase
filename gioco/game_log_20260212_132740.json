@@ -1,0 +1,6028 @@
+{
+    "session_start": "2026-02-12 13:26:32",
+    "targets_hit": [
+        {
+            "target_number": 1,
+            "timestamp": "2026-02-12 13:26:43.100",
+            "hand_label": "Right",
+            "hand_closure_percentage": 56,
+            "target_position": {
+                "x": 1089,
+                "y": 509
+            },
+            "radius": 40,
+            "hand_closure_before_hit": [
+                {
+                    "timestamp": "13:27:34.486",
+                    "hand": "Left",
+                    "closure": 72,
+                    "position": [
+                        693,
+                        448
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.486",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1205,
+                        426
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.866",
+                    "hand": "Left",
+                    "closure": 68,
+                    "position": [
+                        725,
+                        436
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.866",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1221,
+                        432
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.246",
+                    "hand": "Left",
+                    "closure": 33,
+                    "position": [
+                        598,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.246",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1189,
+                        432
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.628",
+                    "hand": "Left",
+                    "closure": 35,
+                    "position": [
+                        606,
+                        428
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.628",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1176,
+                        435
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.010",
+                    "hand": "Left",
+                    "closure": 37,
+                    "position": [
+                        606,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.010",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1178,
+                        430
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.454",
+                    "hand": "Right",
+                    "closure": 39,
+                    "position": [
+                        1236,
+                        243
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.454",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1300,
+                        478
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.843",
+                    "hand": "Right",
+                    "closure": 33,
+                    "position": [
+                        1422,
+                        271
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.843",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1570,
+                        460
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.226",
+                    "hand": "Left",
+                    "closure": 2,
+                    "position": [
+                        1305,
+                        218
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.226",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1491,
+                        383
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.620",
+                    "hand": "Left",
+                    "closure": 53,
+                    "position": [
+                        1282,
+                        257
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.620",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1479,
+                        382
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.034",
+                    "hand": "Left",
+                    "closure": 48,
+                    "position": [
+                        1403,
+                        245
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.035",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1547,
+                        414
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.432",
+                    "hand": "Left",
+                    "closure": 50,
+                    "position": [
+                        1396,
+                        231
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.432",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1565,
+                        428
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.808",
+                    "hand": "Left",
+                    "closure": 40,
+                    "position": [
+                        1345,
+                        219
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.808",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1519,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.201",
+                    "hand": "Left",
+                    "closure": 36,
+                    "position": [
+                        1321,
+                        233
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.202",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1470,
+                        425
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.589",
+                    "hand": "Left",
+                    "closure": 42,
+                    "position": [
+                        1320,
+                        234
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.589",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1457,
+                        425
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.994",
+                    "hand": "Right",
+                    "closure": 34,
+                    "position": [
+                        1380,
+                        263
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.994",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1482,
+                        446
+                    ]
+                },
+                {
+                    "timestamp": "13:27:40.376",
+                    "hand": "Left",
+                    "closure": 30,
+                    "position": [
+                        1432,
+                        250
+                    ]
+                },
+                {
+                    "timestamp": "13:27:40.376",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1527,
+                        470
+                    ]
+                }
+            ]
+        },
+        {
+            "target_number": 2,
+            "timestamp": "2026-02-12 13:26:45.960",
+            "hand_label": "Left",
+            "hand_closure_percentage": 56,
+            "target_position": {
+                "x": 1054,
+                "y": 494
+            },
+            "radius": 39,
+            "hand_closure_before_hit": [
+                {
+                    "timestamp": "13:27:34.486",
+                    "hand": "Left",
+                    "closure": 72,
+                    "position": [
+                        693,
+                        448
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.486",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1205,
+                        426
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.866",
+                    "hand": "Left",
+                    "closure": 68,
+                    "position": [
+                        725,
+                        436
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.866",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1221,
+                        432
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.246",
+                    "hand": "Left",
+                    "closure": 33,
+                    "position": [
+                        598,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.246",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1189,
+                        432
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.628",
+                    "hand": "Left",
+                    "closure": 35,
+                    "position": [
+                        606,
+                        428
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.628",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1176,
+                        435
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.010",
+                    "hand": "Left",
+                    "closure": 37,
+                    "position": [
+                        606,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.010",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1178,
+                        430
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.454",
+                    "hand": "Right",
+                    "closure": 39,
+                    "position": [
+                        1236,
+                        243
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.454",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1300,
+                        478
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.843",
+                    "hand": "Right",
+                    "closure": 33,
+                    "position": [
+                        1422,
+                        271
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.843",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1570,
+                        460
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.226",
+                    "hand": "Left",
+                    "closure": 2,
+                    "position": [
+                        1305,
+                        218
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.226",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1491,
+                        383
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.620",
+                    "hand": "Left",
+                    "closure": 53,
+                    "position": [
+                        1282,
+                        257
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.620",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1479,
+                        382
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.034",
+                    "hand": "Left",
+                    "closure": 48,
+                    "position": [
+                        1403,
+                        245
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.035",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1547,
+                        414
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.432",
+                    "hand": "Left",
+                    "closure": 50,
+                    "position": [
+                        1396,
+                        231
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.432",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1565,
+                        428
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.808",
+                    "hand": "Left",
+                    "closure": 40,
+                    "position": [
+                        1345,
+                        219
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.808",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1519,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.201",
+                    "hand": "Left",
+                    "closure": 36,
+                    "position": [
+                        1321,
+                        233
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.202",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1470,
+                        425
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.589",
+                    "hand": "Left",
+                    "closure": 42,
+                    "position": [
+                        1320,
+                        234
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.589",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1457,
+                        425
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.994",
+                    "hand": "Right",
+                    "closure": 34,
+                    "position": [
+                        1380,
+                        263
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.994",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1482,
+                        446
+                    ]
+                },
+                {
+                    "timestamp": "13:27:40.376",
+                    "hand": "Left",
+                    "closure": 30,
+                    "position": [
+                        1432,
+                        250
+                    ]
+                },
+                {
+                    "timestamp": "13:27:40.376",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1527,
+                        470
+                    ]
+                }
+            ]
+        },
+        {
+            "target_number": 3,
+            "timestamp": "2026-02-12 13:26:48.514",
+            "hand_label": "Right",
+            "hand_closure_percentage": 57,
+            "target_position": {
+                "x": 898,
+                "y": 277
+            },
+            "radius": 38,
+            "hand_closure_before_hit": [
+                {
+                    "timestamp": "13:27:34.486",
+                    "hand": "Left",
+                    "closure": 72,
+                    "position": [
+                        693,
+                        448
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.486",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1205,
+                        426
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.866",
+                    "hand": "Left",
+                    "closure": 68,
+                    "position": [
+                        725,
+                        436
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.866",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1221,
+                        432
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.246",
+                    "hand": "Left",
+                    "closure": 33,
+                    "position": [
+                        598,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.246",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1189,
+                        432
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.628",
+                    "hand": "Left",
+                    "closure": 35,
+                    "position": [
+                        606,
+                        428
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.628",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1176,
+                        435
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.010",
+                    "hand": "Left",
+                    "closure": 37,
+                    "position": [
+                        606,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.010",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1178,
+                        430
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.454",
+                    "hand": "Right",
+                    "closure": 39,
+                    "position": [
+                        1236,
+                        243
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.454",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1300,
+                        478
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.843",
+                    "hand": "Right",
+                    "closure": 33,
+                    "position": [
+                        1422,
+                        271
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.843",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1570,
+                        460
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.226",
+                    "hand": "Left",
+                    "closure": 2,
+                    "position": [
+                        1305,
+                        218
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.226",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1491,
+                        383
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.620",
+                    "hand": "Left",
+                    "closure": 53,
+                    "position": [
+                        1282,
+                        257
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.620",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1479,
+                        382
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.034",
+                    "hand": "Left",
+                    "closure": 48,
+                    "position": [
+                        1403,
+                        245
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.035",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1547,
+                        414
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.432",
+                    "hand": "Left",
+                    "closure": 50,
+                    "position": [
+                        1396,
+                        231
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.432",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1565,
+                        428
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.808",
+                    "hand": "Left",
+                    "closure": 40,
+                    "position": [
+                        1345,
+                        219
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.808",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1519,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.201",
+                    "hand": "Left",
+                    "closure": 36,
+                    "position": [
+                        1321,
+                        233
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.202",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1470,
+                        425
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.589",
+                    "hand": "Left",
+                    "closure": 42,
+                    "position": [
+                        1320,
+                        234
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.589",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1457,
+                        425
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.994",
+                    "hand": "Right",
+                    "closure": 34,
+                    "position": [
+                        1380,
+                        263
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.994",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1482,
+                        446
+                    ]
+                },
+                {
+                    "timestamp": "13:27:40.376",
+                    "hand": "Left",
+                    "closure": 30,
+                    "position": [
+                        1432,
+                        250
+                    ]
+                },
+                {
+                    "timestamp": "13:27:40.376",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1527,
+                        470
+                    ]
+                }
+            ]
+        },
+        {
+            "target_number": 4,
+            "timestamp": "2026-02-12 13:26:51.225",
+            "hand_label": "Right",
+            "hand_closure_percentage": 41,
+            "target_position": {
+                "x": 1598,
+                "y": 209
+            },
+            "radius": 37,
+            "hand_closure_before_hit": [
+                {
+                    "timestamp": "13:27:34.486",
+                    "hand": "Left",
+                    "closure": 72,
+                    "position": [
+                        693,
+                        448
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.486",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1205,
+                        426
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.866",
+                    "hand": "Left",
+                    "closure": 68,
+                    "position": [
+                        725,
+                        436
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.866",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1221,
+                        432
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.246",
+                    "hand": "Left",
+                    "closure": 33,
+                    "position": [
+                        598,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.246",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1189,
+                        432
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.628",
+                    "hand": "Left",
+                    "closure": 35,
+                    "position": [
+                        606,
+                        428
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.628",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1176,
+                        435
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.010",
+                    "hand": "Left",
+                    "closure": 37,
+                    "position": [
+                        606,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.010",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1178,
+                        430
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.454",
+                    "hand": "Right",
+                    "closure": 39,
+                    "position": [
+                        1236,
+                        243
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.454",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1300,
+                        478
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.843",
+                    "hand": "Right",
+                    "closure": 33,
+                    "position": [
+                        1422,
+                        271
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.843",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1570,
+                        460
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.226",
+                    "hand": "Left",
+                    "closure": 2,
+                    "position": [
+                        1305,
+                        218
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.226",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1491,
+                        383
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.620",
+                    "hand": "Left",
+                    "closure": 53,
+                    "position": [
+                        1282,
+                        257
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.620",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1479,
+                        382
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.034",
+                    "hand": "Left",
+                    "closure": 48,
+                    "position": [
+                        1403,
+                        245
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.035",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1547,
+                        414
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.432",
+                    "hand": "Left",
+                    "closure": 50,
+                    "position": [
+                        1396,
+                        231
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.432",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1565,
+                        428
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.808",
+                    "hand": "Left",
+                    "closure": 40,
+                    "position": [
+                        1345,
+                        219
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.808",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1519,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.201",
+                    "hand": "Left",
+                    "closure": 36,
+                    "position": [
+                        1321,
+                        233
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.202",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1470,
+                        425
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.589",
+                    "hand": "Left",
+                    "closure": 42,
+                    "position": [
+                        1320,
+                        234
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.589",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1457,
+                        425
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.994",
+                    "hand": "Right",
+                    "closure": 34,
+                    "position": [
+                        1380,
+                        263
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.994",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1482,
+                        446
+                    ]
+                },
+                {
+                    "timestamp": "13:27:40.376",
+                    "hand": "Left",
+                    "closure": 30,
+                    "position": [
+                        1432,
+                        250
+                    ]
+                },
+                {
+                    "timestamp": "13:27:40.376",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1527,
+                        470
+                    ]
+                }
+            ]
+        },
+        {
+            "target_number": 5,
+            "timestamp": "2026-02-12 13:26:53.223",
+            "hand_label": "Right",
+            "hand_closure_percentage": 40,
+            "target_position": {
+                "x": 846,
+                "y": 216
+            },
+            "radius": 36,
+            "hand_closure_before_hit": [
+                {
+                    "timestamp": "13:27:34.486",
+                    "hand": "Left",
+                    "closure": 72,
+                    "position": [
+                        693,
+                        448
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.486",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1205,
+                        426
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.866",
+                    "hand": "Left",
+                    "closure": 68,
+                    "position": [
+                        725,
+                        436
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.866",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1221,
+                        432
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.246",
+                    "hand": "Left",
+                    "closure": 33,
+                    "position": [
+                        598,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.246",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1189,
+                        432
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.628",
+                    "hand": "Left",
+                    "closure": 35,
+                    "position": [
+                        606,
+                        428
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.628",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1176,
+                        435
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.010",
+                    "hand": "Left",
+                    "closure": 37,
+                    "position": [
+                        606,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.010",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1178,
+                        430
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.454",
+                    "hand": "Right",
+                    "closure": 39,
+                    "position": [
+                        1236,
+                        243
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.454",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1300,
+                        478
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.843",
+                    "hand": "Right",
+                    "closure": 33,
+                    "position": [
+                        1422,
+                        271
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.843",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1570,
+                        460
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.226",
+                    "hand": "Left",
+                    "closure": 2,
+                    "position": [
+                        1305,
+                        218
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.226",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1491,
+                        383
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.620",
+                    "hand": "Left",
+                    "closure": 53,
+                    "position": [
+                        1282,
+                        257
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.620",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1479,
+                        382
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.034",
+                    "hand": "Left",
+                    "closure": 48,
+                    "position": [
+                        1403,
+                        245
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.035",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1547,
+                        414
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.432",
+                    "hand": "Left",
+                    "closure": 50,
+                    "position": [
+                        1396,
+                        231
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.432",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1565,
+                        428
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.808",
+                    "hand": "Left",
+                    "closure": 40,
+                    "position": [
+                        1345,
+                        219
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.808",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1519,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.201",
+                    "hand": "Left",
+                    "closure": 36,
+                    "position": [
+                        1321,
+                        233
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.202",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1470,
+                        425
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.589",
+                    "hand": "Left",
+                    "closure": 42,
+                    "position": [
+                        1320,
+                        234
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.589",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1457,
+                        425
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.994",
+                    "hand": "Right",
+                    "closure": 34,
+                    "position": [
+                        1380,
+                        263
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.994",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1482,
+                        446
+                    ]
+                },
+                {
+                    "timestamp": "13:27:40.376",
+                    "hand": "Left",
+                    "closure": 30,
+                    "position": [
+                        1432,
+                        250
+                    ]
+                },
+                {
+                    "timestamp": "13:27:40.376",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1527,
+                        470
+                    ]
+                }
+            ]
+        },
+        {
+            "target_number": 6,
+            "timestamp": "2026-02-12 13:26:54.965",
+            "hand_label": "Right",
+            "hand_closure_percentage": 32,
+            "target_position": {
+                "x": 977,
+                "y": 499
+            },
+            "radius": 35,
+            "hand_closure_before_hit": [
+                {
+                    "timestamp": "13:27:34.486",
+                    "hand": "Left",
+                    "closure": 72,
+                    "position": [
+                        693,
+                        448
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.486",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1205,
+                        426
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.866",
+                    "hand": "Left",
+                    "closure": 68,
+                    "position": [
+                        725,
+                        436
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.866",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1221,
+                        432
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.246",
+                    "hand": "Left",
+                    "closure": 33,
+                    "position": [
+                        598,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.246",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1189,
+                        432
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.628",
+                    "hand": "Left",
+                    "closure": 35,
+                    "position": [
+                        606,
+                        428
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.628",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1176,
+                        435
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.010",
+                    "hand": "Left",
+                    "closure": 37,
+                    "position": [
+                        606,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.010",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1178,
+                        430
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.454",
+                    "hand": "Right",
+                    "closure": 39,
+                    "position": [
+                        1236,
+                        243
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.454",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1300,
+                        478
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.843",
+                    "hand": "Right",
+                    "closure": 33,
+                    "position": [
+                        1422,
+                        271
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.843",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1570,
+                        460
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.226",
+                    "hand": "Left",
+                    "closure": 2,
+                    "position": [
+                        1305,
+                        218
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.226",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1491,
+                        383
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.620",
+                    "hand": "Left",
+                    "closure": 53,
+                    "position": [
+                        1282,
+                        257
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.620",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1479,
+                        382
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.034",
+                    "hand": "Left",
+                    "closure": 48,
+                    "position": [
+                        1403,
+                        245
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.035",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1547,
+                        414
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.432",
+                    "hand": "Left",
+                    "closure": 50,
+                    "position": [
+                        1396,
+                        231
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.432",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1565,
+                        428
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.808",
+                    "hand": "Left",
+                    "closure": 40,
+                    "position": [
+                        1345,
+                        219
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.808",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1519,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.201",
+                    "hand": "Left",
+                    "closure": 36,
+                    "position": [
+                        1321,
+                        233
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.202",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1470,
+                        425
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.589",
+                    "hand": "Left",
+                    "closure": 42,
+                    "position": [
+                        1320,
+                        234
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.589",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1457,
+                        425
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.994",
+                    "hand": "Right",
+                    "closure": 34,
+                    "position": [
+                        1380,
+                        263
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.994",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1482,
+                        446
+                    ]
+                },
+                {
+                    "timestamp": "13:27:40.376",
+                    "hand": "Left",
+                    "closure": 30,
+                    "position": [
+                        1432,
+                        250
+                    ]
+                },
+                {
+                    "timestamp": "13:27:40.376",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1527,
+                        470
+                    ]
+                }
+            ]
+        },
+        {
+            "target_number": 7,
+            "timestamp": "2026-02-12 13:26:57.286",
+            "hand_label": "Right",
+            "hand_closure_percentage": 86,
+            "target_position": {
+                "x": 1000,
+                "y": 847
+            },
+            "radius": 34,
+            "hand_closure_before_hit": [
+                {
+                    "timestamp": "13:27:34.486",
+                    "hand": "Left",
+                    "closure": 72,
+                    "position": [
+                        693,
+                        448
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.486",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1205,
+                        426
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.866",
+                    "hand": "Left",
+                    "closure": 68,
+                    "position": [
+                        725,
+                        436
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.866",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1221,
+                        432
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.246",
+                    "hand": "Left",
+                    "closure": 33,
+                    "position": [
+                        598,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.246",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1189,
+                        432
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.628",
+                    "hand": "Left",
+                    "closure": 35,
+                    "position": [
+                        606,
+                        428
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.628",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1176,
+                        435
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.010",
+                    "hand": "Left",
+                    "closure": 37,
+                    "position": [
+                        606,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.010",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1178,
+                        430
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.454",
+                    "hand": "Right",
+                    "closure": 39,
+                    "position": [
+                        1236,
+                        243
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.454",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1300,
+                        478
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.843",
+                    "hand": "Right",
+                    "closure": 33,
+                    "position": [
+                        1422,
+                        271
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.843",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1570,
+                        460
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.226",
+                    "hand": "Left",
+                    "closure": 2,
+                    "position": [
+                        1305,
+                        218
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.226",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1491,
+                        383
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.620",
+                    "hand": "Left",
+                    "closure": 53,
+                    "position": [
+                        1282,
+                        257
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.620",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1479,
+                        382
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.034",
+                    "hand": "Left",
+                    "closure": 48,
+                    "position": [
+                        1403,
+                        245
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.035",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1547,
+                        414
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.432",
+                    "hand": "Left",
+                    "closure": 50,
+                    "position": [
+                        1396,
+                        231
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.432",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1565,
+                        428
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.808",
+                    "hand": "Left",
+                    "closure": 40,
+                    "position": [
+                        1345,
+                        219
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.808",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1519,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.201",
+                    "hand": "Left",
+                    "closure": 36,
+                    "position": [
+                        1321,
+                        233
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.202",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1470,
+                        425
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.589",
+                    "hand": "Left",
+                    "closure": 42,
+                    "position": [
+                        1320,
+                        234
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.589",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1457,
+                        425
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.994",
+                    "hand": "Right",
+                    "closure": 34,
+                    "position": [
+                        1380,
+                        263
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.994",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1482,
+                        446
+                    ]
+                },
+                {
+                    "timestamp": "13:27:40.376",
+                    "hand": "Left",
+                    "closure": 30,
+                    "position": [
+                        1432,
+                        250
+                    ]
+                },
+                {
+                    "timestamp": "13:27:40.376",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1527,
+                        470
+                    ]
+                }
+            ]
+        },
+        {
+            "target_number": 8,
+            "timestamp": "2026-02-12 13:26:59.995",
+            "hand_label": "Right",
+            "hand_closure_percentage": 88,
+            "target_position": {
+                "x": 253,
+                "y": 867
+            },
+            "radius": 33,
+            "hand_closure_before_hit": [
+                {
+                    "timestamp": "13:27:34.486",
+                    "hand": "Left",
+                    "closure": 72,
+                    "position": [
+                        693,
+                        448
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.486",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1205,
+                        426
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.866",
+                    "hand": "Left",
+                    "closure": 68,
+                    "position": [
+                        725,
+                        436
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.866",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1221,
+                        432
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.246",
+                    "hand": "Left",
+                    "closure": 33,
+                    "position": [
+                        598,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.246",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1189,
+                        432
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.628",
+                    "hand": "Left",
+                    "closure": 35,
+                    "position": [
+                        606,
+                        428
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.628",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1176,
+                        435
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.010",
+                    "hand": "Left",
+                    "closure": 37,
+                    "position": [
+                        606,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.010",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1178,
+                        430
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.454",
+                    "hand": "Right",
+                    "closure": 39,
+                    "position": [
+                        1236,
+                        243
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.454",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1300,
+                        478
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.843",
+                    "hand": "Right",
+                    "closure": 33,
+                    "position": [
+                        1422,
+                        271
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.843",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1570,
+                        460
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.226",
+                    "hand": "Left",
+                    "closure": 2,
+                    "position": [
+                        1305,
+                        218
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.226",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1491,
+                        383
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.620",
+                    "hand": "Left",
+                    "closure": 53,
+                    "position": [
+                        1282,
+                        257
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.620",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1479,
+                        382
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.034",
+                    "hand": "Left",
+                    "closure": 48,
+                    "position": [
+                        1403,
+                        245
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.035",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1547,
+                        414
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.432",
+                    "hand": "Left",
+                    "closure": 50,
+                    "position": [
+                        1396,
+                        231
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.432",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1565,
+                        428
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.808",
+                    "hand": "Left",
+                    "closure": 40,
+                    "position": [
+                        1345,
+                        219
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.808",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1519,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.201",
+                    "hand": "Left",
+                    "closure": 36,
+                    "position": [
+                        1321,
+                        233
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.202",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1470,
+                        425
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.589",
+                    "hand": "Left",
+                    "closure": 42,
+                    "position": [
+                        1320,
+                        234
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.589",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1457,
+                        425
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.994",
+                    "hand": "Right",
+                    "closure": 34,
+                    "position": [
+                        1380,
+                        263
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.994",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1482,
+                        446
+                    ]
+                },
+                {
+                    "timestamp": "13:27:40.376",
+                    "hand": "Left",
+                    "closure": 30,
+                    "position": [
+                        1432,
+                        250
+                    ]
+                },
+                {
+                    "timestamp": "13:27:40.376",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1527,
+                        470
+                    ]
+                }
+            ]
+        },
+        {
+            "target_number": 9,
+            "timestamp": "2026-02-12 13:27:02.072",
+            "hand_label": "Right",
+            "hand_closure_percentage": 38,
+            "target_position": {
+                "x": 1251,
+                "y": 343
+            },
+            "radius": 32,
+            "hand_closure_before_hit": [
+                {
+                    "timestamp": "13:27:34.486",
+                    "hand": "Left",
+                    "closure": 72,
+                    "position": [
+                        693,
+                        448
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.486",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1205,
+                        426
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.866",
+                    "hand": "Left",
+                    "closure": 68,
+                    "position": [
+                        725,
+                        436
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.866",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1221,
+                        432
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.246",
+                    "hand": "Left",
+                    "closure": 33,
+                    "position": [
+                        598,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.246",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1189,
+                        432
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.628",
+                    "hand": "Left",
+                    "closure": 35,
+                    "position": [
+                        606,
+                        428
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.628",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1176,
+                        435
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.010",
+                    "hand": "Left",
+                    "closure": 37,
+                    "position": [
+                        606,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.010",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1178,
+                        430
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.454",
+                    "hand": "Right",
+                    "closure": 39,
+                    "position": [
+                        1236,
+                        243
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.454",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1300,
+                        478
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.843",
+                    "hand": "Right",
+                    "closure": 33,
+                    "position": [
+                        1422,
+                        271
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.843",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1570,
+                        460
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.226",
+                    "hand": "Left",
+                    "closure": 2,
+                    "position": [
+                        1305,
+                        218
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.226",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1491,
+                        383
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.620",
+                    "hand": "Left",
+                    "closure": 53,
+                    "position": [
+                        1282,
+                        257
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.620",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1479,
+                        382
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.034",
+                    "hand": "Left",
+                    "closure": 48,
+                    "position": [
+                        1403,
+                        245
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.035",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1547,
+                        414
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.432",
+                    "hand": "Left",
+                    "closure": 50,
+                    "position": [
+                        1396,
+                        231
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.432",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1565,
+                        428
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.808",
+                    "hand": "Left",
+                    "closure": 40,
+                    "position": [
+                        1345,
+                        219
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.808",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1519,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.201",
+                    "hand": "Left",
+                    "closure": 36,
+                    "position": [
+                        1321,
+                        233
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.202",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1470,
+                        425
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.589",
+                    "hand": "Left",
+                    "closure": 42,
+                    "position": [
+                        1320,
+                        234
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.589",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1457,
+                        425
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.994",
+                    "hand": "Right",
+                    "closure": 34,
+                    "position": [
+                        1380,
+                        263
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.994",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1482,
+                        446
+                    ]
+                },
+                {
+                    "timestamp": "13:27:40.376",
+                    "hand": "Left",
+                    "closure": 30,
+                    "position": [
+                        1432,
+                        250
+                    ]
+                },
+                {
+                    "timestamp": "13:27:40.376",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1527,
+                        470
+                    ]
+                }
+            ]
+        },
+        {
+            "target_number": 10,
+            "timestamp": "2026-02-12 13:27:05.239",
+            "hand_label": "Right",
+            "hand_closure_percentage": 48,
+            "target_position": {
+                "x": 185,
+                "y": 63
+            },
+            "radius": 31,
+            "hand_closure_before_hit": [
+                {
+                    "timestamp": "13:27:34.486",
+                    "hand": "Left",
+                    "closure": 72,
+                    "position": [
+                        693,
+                        448
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.486",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1205,
+                        426
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.866",
+                    "hand": "Left",
+                    "closure": 68,
+                    "position": [
+                        725,
+                        436
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.866",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1221,
+                        432
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.246",
+                    "hand": "Left",
+                    "closure": 33,
+                    "position": [
+                        598,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.246",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1189,
+                        432
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.628",
+                    "hand": "Left",
+                    "closure": 35,
+                    "position": [
+                        606,
+                        428
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.628",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1176,
+                        435
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.010",
+                    "hand": "Left",
+                    "closure": 37,
+                    "position": [
+                        606,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.010",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1178,
+                        430
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.454",
+                    "hand": "Right",
+                    "closure": 39,
+                    "position": [
+                        1236,
+                        243
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.454",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1300,
+                        478
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.843",
+                    "hand": "Right",
+                    "closure": 33,
+                    "position": [
+                        1422,
+                        271
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.843",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1570,
+                        460
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.226",
+                    "hand": "Left",
+                    "closure": 2,
+                    "position": [
+                        1305,
+                        218
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.226",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1491,
+                        383
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.620",
+                    "hand": "Left",
+                    "closure": 53,
+                    "position": [
+                        1282,
+                        257
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.620",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1479,
+                        382
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.034",
+                    "hand": "Left",
+                    "closure": 48,
+                    "position": [
+                        1403,
+                        245
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.035",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1547,
+                        414
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.432",
+                    "hand": "Left",
+                    "closure": 50,
+                    "position": [
+                        1396,
+                        231
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.432",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1565,
+                        428
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.808",
+                    "hand": "Left",
+                    "closure": 40,
+                    "position": [
+                        1345,
+                        219
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.808",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1519,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.201",
+                    "hand": "Left",
+                    "closure": 36,
+                    "position": [
+                        1321,
+                        233
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.202",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1470,
+                        425
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.589",
+                    "hand": "Left",
+                    "closure": 42,
+                    "position": [
+                        1320,
+                        234
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.589",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1457,
+                        425
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.994",
+                    "hand": "Right",
+                    "closure": 34,
+                    "position": [
+                        1380,
+                        263
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.994",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1482,
+                        446
+                    ]
+                },
+                {
+                    "timestamp": "13:27:40.376",
+                    "hand": "Left",
+                    "closure": 30,
+                    "position": [
+                        1432,
+                        250
+                    ]
+                },
+                {
+                    "timestamp": "13:27:40.376",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1527,
+                        470
+                    ]
+                }
+            ]
+        },
+        {
+            "target_number": 11,
+            "timestamp": "2026-02-12 13:27:07.113",
+            "hand_label": "Right",
+            "hand_closure_percentage": 38,
+            "target_position": {
+                "x": 1118,
+                "y": 459
+            },
+            "radius": 30,
+            "hand_closure_before_hit": [
+                {
+                    "timestamp": "13:27:34.486",
+                    "hand": "Left",
+                    "closure": 72,
+                    "position": [
+                        693,
+                        448
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.486",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1205,
+                        426
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.866",
+                    "hand": "Left",
+                    "closure": 68,
+                    "position": [
+                        725,
+                        436
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.866",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1221,
+                        432
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.246",
+                    "hand": "Left",
+                    "closure": 33,
+                    "position": [
+                        598,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.246",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1189,
+                        432
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.628",
+                    "hand": "Left",
+                    "closure": 35,
+                    "position": [
+                        606,
+                        428
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.628",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1176,
+                        435
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.010",
+                    "hand": "Left",
+                    "closure": 37,
+                    "position": [
+                        606,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.010",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1178,
+                        430
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.454",
+                    "hand": "Right",
+                    "closure": 39,
+                    "position": [
+                        1236,
+                        243
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.454",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1300,
+                        478
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.843",
+                    "hand": "Right",
+                    "closure": 33,
+                    "position": [
+                        1422,
+                        271
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.843",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1570,
+                        460
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.226",
+                    "hand": "Left",
+                    "closure": 2,
+                    "position": [
+                        1305,
+                        218
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.226",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1491,
+                        383
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.620",
+                    "hand": "Left",
+                    "closure": 53,
+                    "position": [
+                        1282,
+                        257
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.620",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1479,
+                        382
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.034",
+                    "hand": "Left",
+                    "closure": 48,
+                    "position": [
+                        1403,
+                        245
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.035",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1547,
+                        414
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.432",
+                    "hand": "Left",
+                    "closure": 50,
+                    "position": [
+                        1396,
+                        231
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.432",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1565,
+                        428
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.808",
+                    "hand": "Left",
+                    "closure": 40,
+                    "position": [
+                        1345,
+                        219
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.808",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1519,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.201",
+                    "hand": "Left",
+                    "closure": 36,
+                    "position": [
+                        1321,
+                        233
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.202",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1470,
+                        425
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.589",
+                    "hand": "Left",
+                    "closure": 42,
+                    "position": [
+                        1320,
+                        234
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.589",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1457,
+                        425
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.994",
+                    "hand": "Right",
+                    "closure": 34,
+                    "position": [
+                        1380,
+                        263
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.994",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1482,
+                        446
+                    ]
+                },
+                {
+                    "timestamp": "13:27:40.376",
+                    "hand": "Left",
+                    "closure": 30,
+                    "position": [
+                        1432,
+                        250
+                    ]
+                },
+                {
+                    "timestamp": "13:27:40.376",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1527,
+                        470
+                    ]
+                }
+            ]
+        },
+        {
+            "target_number": 12,
+            "timestamp": "2026-02-12 13:27:10.401",
+            "hand_label": "Left",
+            "hand_closure_percentage": 94,
+            "target_position": {
+                "x": 442,
+                "y": 845
+            },
+            "radius": 29,
+            "hand_closure_before_hit": [
+                {
+                    "timestamp": "13:27:34.486",
+                    "hand": "Left",
+                    "closure": 72,
+                    "position": [
+                        693,
+                        448
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.486",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1205,
+                        426
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.866",
+                    "hand": "Left",
+                    "closure": 68,
+                    "position": [
+                        725,
+                        436
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.866",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1221,
+                        432
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.246",
+                    "hand": "Left",
+                    "closure": 33,
+                    "position": [
+                        598,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.246",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1189,
+                        432
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.628",
+                    "hand": "Left",
+                    "closure": 35,
+                    "position": [
+                        606,
+                        428
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.628",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1176,
+                        435
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.010",
+                    "hand": "Left",
+                    "closure": 37,
+                    "position": [
+                        606,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.010",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1178,
+                        430
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.454",
+                    "hand": "Right",
+                    "closure": 39,
+                    "position": [
+                        1236,
+                        243
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.454",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1300,
+                        478
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.843",
+                    "hand": "Right",
+                    "closure": 33,
+                    "position": [
+                        1422,
+                        271
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.843",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1570,
+                        460
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.226",
+                    "hand": "Left",
+                    "closure": 2,
+                    "position": [
+                        1305,
+                        218
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.226",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1491,
+                        383
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.620",
+                    "hand": "Left",
+                    "closure": 53,
+                    "position": [
+                        1282,
+                        257
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.620",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1479,
+                        382
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.034",
+                    "hand": "Left",
+                    "closure": 48,
+                    "position": [
+                        1403,
+                        245
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.035",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1547,
+                        414
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.432",
+                    "hand": "Left",
+                    "closure": 50,
+                    "position": [
+                        1396,
+                        231
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.432",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1565,
+                        428
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.808",
+                    "hand": "Left",
+                    "closure": 40,
+                    "position": [
+                        1345,
+                        219
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.808",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1519,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.201",
+                    "hand": "Left",
+                    "closure": 36,
+                    "position": [
+                        1321,
+                        233
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.202",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1470,
+                        425
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.589",
+                    "hand": "Left",
+                    "closure": 42,
+                    "position": [
+                        1320,
+                        234
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.589",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1457,
+                        425
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.994",
+                    "hand": "Right",
+                    "closure": 34,
+                    "position": [
+                        1380,
+                        263
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.994",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1482,
+                        446
+                    ]
+                },
+                {
+                    "timestamp": "13:27:40.376",
+                    "hand": "Left",
+                    "closure": 30,
+                    "position": [
+                        1432,
+                        250
+                    ]
+                },
+                {
+                    "timestamp": "13:27:40.376",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1527,
+                        470
+                    ]
+                }
+            ]
+        },
+        {
+            "target_number": 13,
+            "timestamp": "2026-02-12 13:27:13.069",
+            "hand_label": "Right",
+            "hand_closure_percentage": 51,
+            "target_position": {
+                "x": 722,
+                "y": 254
+            },
+            "radius": 28,
+            "hand_closure_before_hit": [
+                {
+                    "timestamp": "13:27:34.486",
+                    "hand": "Left",
+                    "closure": 72,
+                    "position": [
+                        693,
+                        448
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.486",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1205,
+                        426
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.866",
+                    "hand": "Left",
+                    "closure": 68,
+                    "position": [
+                        725,
+                        436
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.866",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1221,
+                        432
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.246",
+                    "hand": "Left",
+                    "closure": 33,
+                    "position": [
+                        598,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.246",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1189,
+                        432
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.628",
+                    "hand": "Left",
+                    "closure": 35,
+                    "position": [
+                        606,
+                        428
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.628",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1176,
+                        435
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.010",
+                    "hand": "Left",
+                    "closure": 37,
+                    "position": [
+                        606,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.010",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1178,
+                        430
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.454",
+                    "hand": "Right",
+                    "closure": 39,
+                    "position": [
+                        1236,
+                        243
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.454",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1300,
+                        478
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.843",
+                    "hand": "Right",
+                    "closure": 33,
+                    "position": [
+                        1422,
+                        271
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.843",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1570,
+                        460
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.226",
+                    "hand": "Left",
+                    "closure": 2,
+                    "position": [
+                        1305,
+                        218
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.226",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1491,
+                        383
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.620",
+                    "hand": "Left",
+                    "closure": 53,
+                    "position": [
+                        1282,
+                        257
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.620",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1479,
+                        382
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.034",
+                    "hand": "Left",
+                    "closure": 48,
+                    "position": [
+                        1403,
+                        245
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.035",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1547,
+                        414
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.432",
+                    "hand": "Left",
+                    "closure": 50,
+                    "position": [
+                        1396,
+                        231
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.432",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1565,
+                        428
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.808",
+                    "hand": "Left",
+                    "closure": 40,
+                    "position": [
+                        1345,
+                        219
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.808",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1519,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.201",
+                    "hand": "Left",
+                    "closure": 36,
+                    "position": [
+                        1321,
+                        233
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.202",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1470,
+                        425
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.589",
+                    "hand": "Left",
+                    "closure": 42,
+                    "position": [
+                        1320,
+                        234
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.589",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1457,
+                        425
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.994",
+                    "hand": "Right",
+                    "closure": 34,
+                    "position": [
+                        1380,
+                        263
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.994",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1482,
+                        446
+                    ]
+                },
+                {
+                    "timestamp": "13:27:40.376",
+                    "hand": "Left",
+                    "closure": 30,
+                    "position": [
+                        1432,
+                        250
+                    ]
+                },
+                {
+                    "timestamp": "13:27:40.376",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1527,
+                        470
+                    ]
+                }
+            ]
+        },
+        {
+            "target_number": 14,
+            "timestamp": "2026-02-12 13:27:16.786",
+            "hand_label": "Left",
+            "hand_closure_percentage": 91,
+            "target_position": {
+                "x": 1076,
+                "y": 749
+            },
+            "radius": 27,
+            "hand_closure_before_hit": [
+                {
+                    "timestamp": "13:27:34.486",
+                    "hand": "Left",
+                    "closure": 72,
+                    "position": [
+                        693,
+                        448
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.486",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1205,
+                        426
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.866",
+                    "hand": "Left",
+                    "closure": 68,
+                    "position": [
+                        725,
+                        436
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.866",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1221,
+                        432
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.246",
+                    "hand": "Left",
+                    "closure": 33,
+                    "position": [
+                        598,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.246",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1189,
+                        432
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.628",
+                    "hand": "Left",
+                    "closure": 35,
+                    "position": [
+                        606,
+                        428
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.628",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1176,
+                        435
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.010",
+                    "hand": "Left",
+                    "closure": 37,
+                    "position": [
+                        606,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.010",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1178,
+                        430
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.454",
+                    "hand": "Right",
+                    "closure": 39,
+                    "position": [
+                        1236,
+                        243
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.454",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1300,
+                        478
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.843",
+                    "hand": "Right",
+                    "closure": 33,
+                    "position": [
+                        1422,
+                        271
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.843",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1570,
+                        460
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.226",
+                    "hand": "Left",
+                    "closure": 2,
+                    "position": [
+                        1305,
+                        218
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.226",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1491,
+                        383
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.620",
+                    "hand": "Left",
+                    "closure": 53,
+                    "position": [
+                        1282,
+                        257
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.620",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1479,
+                        382
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.034",
+                    "hand": "Left",
+                    "closure": 48,
+                    "position": [
+                        1403,
+                        245
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.035",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1547,
+                        414
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.432",
+                    "hand": "Left",
+                    "closure": 50,
+                    "position": [
+                        1396,
+                        231
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.432",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1565,
+                        428
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.808",
+                    "hand": "Left",
+                    "closure": 40,
+                    "position": [
+                        1345,
+                        219
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.808",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1519,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.201",
+                    "hand": "Left",
+                    "closure": 36,
+                    "position": [
+                        1321,
+                        233
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.202",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1470,
+                        425
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.589",
+                    "hand": "Left",
+                    "closure": 42,
+                    "position": [
+                        1320,
+                        234
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.589",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1457,
+                        425
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.994",
+                    "hand": "Right",
+                    "closure": 34,
+                    "position": [
+                        1380,
+                        263
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.994",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1482,
+                        446
+                    ]
+                },
+                {
+                    "timestamp": "13:27:40.376",
+                    "hand": "Left",
+                    "closure": 30,
+                    "position": [
+                        1432,
+                        250
+                    ]
+                },
+                {
+                    "timestamp": "13:27:40.376",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1527,
+                        470
+                    ]
+                }
+            ]
+        },
+        {
+            "target_number": 15,
+            "timestamp": "2026-02-12 13:27:20.196",
+            "hand_label": "Left",
+            "hand_closure_percentage": 47,
+            "target_position": {
+                "x": 942,
+                "y": 267
+            },
+            "radius": 26,
+            "hand_closure_before_hit": [
+                {
+                    "timestamp": "13:27:34.486",
+                    "hand": "Left",
+                    "closure": 72,
+                    "position": [
+                        693,
+                        448
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.486",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1205,
+                        426
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.866",
+                    "hand": "Left",
+                    "closure": 68,
+                    "position": [
+                        725,
+                        436
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.866",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1221,
+                        432
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.246",
+                    "hand": "Left",
+                    "closure": 33,
+                    "position": [
+                        598,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.246",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1189,
+                        432
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.628",
+                    "hand": "Left",
+                    "closure": 35,
+                    "position": [
+                        606,
+                        428
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.628",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1176,
+                        435
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.010",
+                    "hand": "Left",
+                    "closure": 37,
+                    "position": [
+                        606,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.010",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1178,
+                        430
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.454",
+                    "hand": "Right",
+                    "closure": 39,
+                    "position": [
+                        1236,
+                        243
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.454",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1300,
+                        478
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.843",
+                    "hand": "Right",
+                    "closure": 33,
+                    "position": [
+                        1422,
+                        271
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.843",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1570,
+                        460
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.226",
+                    "hand": "Left",
+                    "closure": 2,
+                    "position": [
+                        1305,
+                        218
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.226",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1491,
+                        383
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.620",
+                    "hand": "Left",
+                    "closure": 53,
+                    "position": [
+                        1282,
+                        257
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.620",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1479,
+                        382
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.034",
+                    "hand": "Left",
+                    "closure": 48,
+                    "position": [
+                        1403,
+                        245
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.035",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1547,
+                        414
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.432",
+                    "hand": "Left",
+                    "closure": 50,
+                    "position": [
+                        1396,
+                        231
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.432",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1565,
+                        428
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.808",
+                    "hand": "Left",
+                    "closure": 40,
+                    "position": [
+                        1345,
+                        219
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.808",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1519,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.201",
+                    "hand": "Left",
+                    "closure": 36,
+                    "position": [
+                        1321,
+                        233
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.202",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1470,
+                        425
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.589",
+                    "hand": "Left",
+                    "closure": 42,
+                    "position": [
+                        1320,
+                        234
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.589",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1457,
+                        425
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.994",
+                    "hand": "Right",
+                    "closure": 34,
+                    "position": [
+                        1380,
+                        263
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.994",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1482,
+                        446
+                    ]
+                },
+                {
+                    "timestamp": "13:27:40.376",
+                    "hand": "Left",
+                    "closure": 30,
+                    "position": [
+                        1432,
+                        250
+                    ]
+                },
+                {
+                    "timestamp": "13:27:40.376",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1527,
+                        470
+                    ]
+                }
+            ]
+        },
+        {
+            "target_number": 16,
+            "timestamp": "2026-02-12 13:27:22.353",
+            "hand_label": "Left",
+            "hand_closure_percentage": 40,
+            "target_position": {
+                "x": 1141,
+                "y": 568
+            },
+            "radius": 25,
+            "hand_closure_before_hit": [
+                {
+                    "timestamp": "13:27:34.486",
+                    "hand": "Left",
+                    "closure": 72,
+                    "position": [
+                        693,
+                        448
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.486",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1205,
+                        426
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.866",
+                    "hand": "Left",
+                    "closure": 68,
+                    "position": [
+                        725,
+                        436
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.866",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1221,
+                        432
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.246",
+                    "hand": "Left",
+                    "closure": 33,
+                    "position": [
+                        598,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.246",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1189,
+                        432
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.628",
+                    "hand": "Left",
+                    "closure": 35,
+                    "position": [
+                        606,
+                        428
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.628",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1176,
+                        435
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.010",
+                    "hand": "Left",
+                    "closure": 37,
+                    "position": [
+                        606,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.010",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1178,
+                        430
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.454",
+                    "hand": "Right",
+                    "closure": 39,
+                    "position": [
+                        1236,
+                        243
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.454",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1300,
+                        478
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.843",
+                    "hand": "Right",
+                    "closure": 33,
+                    "position": [
+                        1422,
+                        271
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.843",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1570,
+                        460
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.226",
+                    "hand": "Left",
+                    "closure": 2,
+                    "position": [
+                        1305,
+                        218
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.226",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1491,
+                        383
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.620",
+                    "hand": "Left",
+                    "closure": 53,
+                    "position": [
+                        1282,
+                        257
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.620",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1479,
+                        382
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.034",
+                    "hand": "Left",
+                    "closure": 48,
+                    "position": [
+                        1403,
+                        245
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.035",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1547,
+                        414
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.432",
+                    "hand": "Left",
+                    "closure": 50,
+                    "position": [
+                        1396,
+                        231
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.432",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1565,
+                        428
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.808",
+                    "hand": "Left",
+                    "closure": 40,
+                    "position": [
+                        1345,
+                        219
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.808",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1519,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.201",
+                    "hand": "Left",
+                    "closure": 36,
+                    "position": [
+                        1321,
+                        233
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.202",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1470,
+                        425
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.589",
+                    "hand": "Left",
+                    "closure": 42,
+                    "position": [
+                        1320,
+                        234
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.589",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1457,
+                        425
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.994",
+                    "hand": "Right",
+                    "closure": 34,
+                    "position": [
+                        1380,
+                        263
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.994",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1482,
+                        446
+                    ]
+                },
+                {
+                    "timestamp": "13:27:40.376",
+                    "hand": "Left",
+                    "closure": 30,
+                    "position": [
+                        1432,
+                        250
+                    ]
+                },
+                {
+                    "timestamp": "13:27:40.376",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1527,
+                        470
+                    ]
+                }
+            ]
+        },
+        {
+            "target_number": 17,
+            "timestamp": "2026-02-12 13:27:24.611",
+            "hand_label": "Left",
+            "hand_closure_percentage": 55,
+            "target_position": {
+                "x": 1259,
+                "y": 620
+            },
+            "radius": 24,
+            "hand_closure_before_hit": [
+                {
+                    "timestamp": "13:27:34.486",
+                    "hand": "Left",
+                    "closure": 72,
+                    "position": [
+                        693,
+                        448
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.486",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1205,
+                        426
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.866",
+                    "hand": "Left",
+                    "closure": 68,
+                    "position": [
+                        725,
+                        436
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.866",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1221,
+                        432
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.246",
+                    "hand": "Left",
+                    "closure": 33,
+                    "position": [
+                        598,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.246",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1189,
+                        432
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.628",
+                    "hand": "Left",
+                    "closure": 35,
+                    "position": [
+                        606,
+                        428
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.628",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1176,
+                        435
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.010",
+                    "hand": "Left",
+                    "closure": 37,
+                    "position": [
+                        606,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.010",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1178,
+                        430
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.454",
+                    "hand": "Right",
+                    "closure": 39,
+                    "position": [
+                        1236,
+                        243
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.454",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1300,
+                        478
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.843",
+                    "hand": "Right",
+                    "closure": 33,
+                    "position": [
+                        1422,
+                        271
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.843",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1570,
+                        460
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.226",
+                    "hand": "Left",
+                    "closure": 2,
+                    "position": [
+                        1305,
+                        218
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.226",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1491,
+                        383
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.620",
+                    "hand": "Left",
+                    "closure": 53,
+                    "position": [
+                        1282,
+                        257
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.620",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1479,
+                        382
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.034",
+                    "hand": "Left",
+                    "closure": 48,
+                    "position": [
+                        1403,
+                        245
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.035",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1547,
+                        414
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.432",
+                    "hand": "Left",
+                    "closure": 50,
+                    "position": [
+                        1396,
+                        231
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.432",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1565,
+                        428
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.808",
+                    "hand": "Left",
+                    "closure": 40,
+                    "position": [
+                        1345,
+                        219
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.808",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1519,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.201",
+                    "hand": "Left",
+                    "closure": 36,
+                    "position": [
+                        1321,
+                        233
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.202",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1470,
+                        425
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.589",
+                    "hand": "Left",
+                    "closure": 42,
+                    "position": [
+                        1320,
+                        234
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.589",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1457,
+                        425
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.994",
+                    "hand": "Right",
+                    "closure": 34,
+                    "position": [
+                        1380,
+                        263
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.994",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1482,
+                        446
+                    ]
+                },
+                {
+                    "timestamp": "13:27:40.376",
+                    "hand": "Left",
+                    "closure": 30,
+                    "position": [
+                        1432,
+                        250
+                    ]
+                },
+                {
+                    "timestamp": "13:27:40.376",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1527,
+                        470
+                    ]
+                }
+            ]
+        },
+        {
+            "target_number": 18,
+            "timestamp": "2026-02-12 13:27:28.914",
+            "hand_label": "Left",
+            "hand_closure_percentage": 51,
+            "target_position": {
+                "x": 1467,
+                "y": 266
+            },
+            "radius": 23,
+            "hand_closure_before_hit": [
+                {
+                    "timestamp": "13:27:34.486",
+                    "hand": "Left",
+                    "closure": 72,
+                    "position": [
+                        693,
+                        448
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.486",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1205,
+                        426
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.866",
+                    "hand": "Left",
+                    "closure": 68,
+                    "position": [
+                        725,
+                        436
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.866",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1221,
+                        432
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.246",
+                    "hand": "Left",
+                    "closure": 33,
+                    "position": [
+                        598,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.246",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1189,
+                        432
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.628",
+                    "hand": "Left",
+                    "closure": 35,
+                    "position": [
+                        606,
+                        428
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.628",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1176,
+                        435
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.010",
+                    "hand": "Left",
+                    "closure": 37,
+                    "position": [
+                        606,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.010",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1178,
+                        430
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.454",
+                    "hand": "Right",
+                    "closure": 39,
+                    "position": [
+                        1236,
+                        243
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.454",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1300,
+                        478
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.843",
+                    "hand": "Right",
+                    "closure": 33,
+                    "position": [
+                        1422,
+                        271
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.843",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1570,
+                        460
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.226",
+                    "hand": "Left",
+                    "closure": 2,
+                    "position": [
+                        1305,
+                        218
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.226",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1491,
+                        383
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.620",
+                    "hand": "Left",
+                    "closure": 53,
+                    "position": [
+                        1282,
+                        257
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.620",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1479,
+                        382
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.034",
+                    "hand": "Left",
+                    "closure": 48,
+                    "position": [
+                        1403,
+                        245
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.035",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1547,
+                        414
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.432",
+                    "hand": "Left",
+                    "closure": 50,
+                    "position": [
+                        1396,
+                        231
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.432",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1565,
+                        428
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.808",
+                    "hand": "Left",
+                    "closure": 40,
+                    "position": [
+                        1345,
+                        219
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.808",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1519,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.201",
+                    "hand": "Left",
+                    "closure": 36,
+                    "position": [
+                        1321,
+                        233
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.202",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1470,
+                        425
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.589",
+                    "hand": "Left",
+                    "closure": 42,
+                    "position": [
+                        1320,
+                        234
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.589",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1457,
+                        425
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.994",
+                    "hand": "Right",
+                    "closure": 34,
+                    "position": [
+                        1380,
+                        263
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.994",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1482,
+                        446
+                    ]
+                },
+                {
+                    "timestamp": "13:27:40.376",
+                    "hand": "Left",
+                    "closure": 30,
+                    "position": [
+                        1432,
+                        250
+                    ]
+                },
+                {
+                    "timestamp": "13:27:40.376",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1527,
+                        470
+                    ]
+                }
+            ]
+        },
+        {
+            "target_number": 19,
+            "timestamp": "2026-02-12 13:27:31.598",
+            "hand_label": "Left",
+            "hand_closure_percentage": 54,
+            "target_position": {
+                "x": 146,
+                "y": 795
+            },
+            "radius": 22,
+            "hand_closure_before_hit": [
+                {
+                    "timestamp": "13:27:34.486",
+                    "hand": "Left",
+                    "closure": 72,
+                    "position": [
+                        693,
+                        448
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.486",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1205,
+                        426
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.866",
+                    "hand": "Left",
+                    "closure": 68,
+                    "position": [
+                        725,
+                        436
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.866",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1221,
+                        432
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.246",
+                    "hand": "Left",
+                    "closure": 33,
+                    "position": [
+                        598,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.246",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1189,
+                        432
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.628",
+                    "hand": "Left",
+                    "closure": 35,
+                    "position": [
+                        606,
+                        428
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.628",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1176,
+                        435
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.010",
+                    "hand": "Left",
+                    "closure": 37,
+                    "position": [
+                        606,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.010",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1178,
+                        430
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.454",
+                    "hand": "Right",
+                    "closure": 39,
+                    "position": [
+                        1236,
+                        243
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.454",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1300,
+                        478
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.843",
+                    "hand": "Right",
+                    "closure": 33,
+                    "position": [
+                        1422,
+                        271
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.843",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1570,
+                        460
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.226",
+                    "hand": "Left",
+                    "closure": 2,
+                    "position": [
+                        1305,
+                        218
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.226",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1491,
+                        383
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.620",
+                    "hand": "Left",
+                    "closure": 53,
+                    "position": [
+                        1282,
+                        257
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.620",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1479,
+                        382
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.034",
+                    "hand": "Left",
+                    "closure": 48,
+                    "position": [
+                        1403,
+                        245
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.035",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1547,
+                        414
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.432",
+                    "hand": "Left",
+                    "closure": 50,
+                    "position": [
+                        1396,
+                        231
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.432",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1565,
+                        428
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.808",
+                    "hand": "Left",
+                    "closure": 40,
+                    "position": [
+                        1345,
+                        219
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.808",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1519,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.201",
+                    "hand": "Left",
+                    "closure": 36,
+                    "position": [
+                        1321,
+                        233
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.202",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1470,
+                        425
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.589",
+                    "hand": "Left",
+                    "closure": 42,
+                    "position": [
+                        1320,
+                        234
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.589",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1457,
+                        425
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.994",
+                    "hand": "Right",
+                    "closure": 34,
+                    "position": [
+                        1380,
+                        263
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.994",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1482,
+                        446
+                    ]
+                },
+                {
+                    "timestamp": "13:27:40.376",
+                    "hand": "Left",
+                    "closure": 30,
+                    "position": [
+                        1432,
+                        250
+                    ]
+                },
+                {
+                    "timestamp": "13:27:40.376",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1527,
+                        470
+                    ]
+                }
+            ]
+        },
+        {
+            "target_number": 20,
+            "timestamp": "2026-02-12 13:27:34.369",
+            "hand_label": "Left",
+            "hand_closure_percentage": 71,
+            "target_position": {
+                "x": 688,
+                "y": 449
+            },
+            "radius": 21,
+            "hand_closure_before_hit": [
+                {
+                    "timestamp": "13:27:34.486",
+                    "hand": "Left",
+                    "closure": 72,
+                    "position": [
+                        693,
+                        448
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.486",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1205,
+                        426
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.866",
+                    "hand": "Left",
+                    "closure": 68,
+                    "position": [
+                        725,
+                        436
+                    ]
+                },
+                {
+                    "timestamp": "13:27:34.866",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1221,
+                        432
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.246",
+                    "hand": "Left",
+                    "closure": 33,
+                    "position": [
+                        598,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.246",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1189,
+                        432
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.628",
+                    "hand": "Left",
+                    "closure": 35,
+                    "position": [
+                        606,
+                        428
+                    ]
+                },
+                {
+                    "timestamp": "13:27:35.628",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1176,
+                        435
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.010",
+                    "hand": "Left",
+                    "closure": 37,
+                    "position": [
+                        606,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.010",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1178,
+                        430
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.454",
+                    "hand": "Right",
+                    "closure": 39,
+                    "position": [
+                        1236,
+                        243
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.454",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1300,
+                        478
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.843",
+                    "hand": "Right",
+                    "closure": 33,
+                    "position": [
+                        1422,
+                        271
+                    ]
+                },
+                {
+                    "timestamp": "13:27:36.843",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1570,
+                        460
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.226",
+                    "hand": "Left",
+                    "closure": 2,
+                    "position": [
+                        1305,
+                        218
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.226",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1491,
+                        383
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.620",
+                    "hand": "Left",
+                    "closure": 53,
+                    "position": [
+                        1282,
+                        257
+                    ]
+                },
+                {
+                    "timestamp": "13:27:37.620",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1479,
+                        382
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.034",
+                    "hand": "Left",
+                    "closure": 48,
+                    "position": [
+                        1403,
+                        245
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.035",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1547,
+                        414
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.432",
+                    "hand": "Left",
+                    "closure": 50,
+                    "position": [
+                        1396,
+                        231
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.432",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1565,
+                        428
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.808",
+                    "hand": "Left",
+                    "closure": 40,
+                    "position": [
+                        1345,
+                        219
+                    ]
+                },
+                {
+                    "timestamp": "13:27:38.808",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1519,
+                        427
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.201",
+                    "hand": "Left",
+                    "closure": 36,
+                    "position": [
+                        1321,
+                        233
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.202",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1470,
+                        425
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.589",
+                    "hand": "Left",
+                    "closure": 42,
+                    "position": [
+                        1320,
+                        234
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.589",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1457,
+                        425
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.994",
+                    "hand": "Right",
+                    "closure": 34,
+                    "position": [
+                        1380,
+                        263
+                    ]
+                },
+                {
+                    "timestamp": "13:27:39.994",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1482,
+                        446
+                    ]
+                },
+                {
+                    "timestamp": "13:27:40.376",
+                    "hand": "Left",
+                    "closure": 30,
+                    "position": [
+                        1432,
+                        250
+                    ]
+                },
+                {
+                    "timestamp": "13:27:40.376",
+                    "hand": "Right",
+                    "closure": 0,
+                    "position": [
+                        1527,
+                        470
+                    ]
+                }
+            ]
+        }
+    ],
+    "hand_closure_history": [],
+    "session_end": "2026-02-12 13:27:40",
+    "total_targets_hit": 20
+}

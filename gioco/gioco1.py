@@ -4,13 +4,15 @@ import time
 import math
 import cv2
 import mediapipe as mp
+import json
+from datetime import datetime
 
 # -------------------------------
-# Inizializzazione Pygame
+# Inizializzazione Pygame (FULLSCREEN)
 # -------------------------------
 pygame.init()
-WIDTH, HEIGHT = 800, 600
-screen = pygame.display.set_mode((WIDTH, HEIGHT))
+screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
+WIDTH, HEIGHT = screen.get_size()
 pygame.display.set_caption("Gioco Riabilitativo - MediaPipe")
 font = pygame.font.SysFont("Segoe UI", 26)
 large_font = pygame.font.SysFont("Segoe UI", 64, bold=True)
@@ -29,6 +31,47 @@ CYAN = (0, 255, 200)
 DARK_TEXT = (40, 40, 40)
 
 # -------------------------------
+# Soglia chiusura mano
+# -------------------------------
+HAND_CLOSURE_THRESHOLD = 20  # Percentuale minima per considerare la mano chiusa
+
+# -------------------------------
+# Sistema di Logging
+# -------------------------------
+game_log = {
+    "session_start": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+    "targets_hit": [],
+    "hand_closure_history": []
+}
+
+def log_target_hit(target_number, closure_value, position, hand_label):
+    hit_data = {
+        "target_number": target_number,
+        "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")[:-3],
+        "hand_label": hand_label,
+        "hand_closure_percentage": closure_value,
+        "target_position": {"x": position[0], "y": position[1]},
+        "radius": radius
+    }
+    game_log["targets_hit"].append(hit_data)
+    print(f"\n{'='*50}")
+    print(f"BERSAGLIO #{target_number} COLPITO!")
+    print(f"Mano: {hand_label}")
+    print(f"Chiusura mano: {closure_value}%")
+    print(f"Posizione: ({position[0]}, {position[1]})")
+    print(f"Timestamp: {hit_data['timestamp']}")
+    print(f"{'='*50}\n")
+
+def save_log_to_file():
+    game_log["session_end"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    game_log["total_targets_hit"] = len(game_log["targets_hit"])
+    filename = f"game_log_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+    with open(filename, 'w', encoding='utf-8') as f:
+        json.dump(game_log, f, indent=4, ensure_ascii=False)
+    print(f"\nLog salvato in: {filename}")
+    return filename
+
+# -------------------------------
 # Funzioni utility
 # -------------------------------
 def random_color():
@@ -45,42 +88,53 @@ def draw_gradient(surface, top_color, bottom_color):
 # -------------------------------
 # Funzioni Gesture MediaPipe
 # -------------------------------
-def is_hand_closed(landmarks):
-    # Usa i landmarks per determinare se la mano è chiusa
-    index_tip = landmarks[8]
-    index_mcp = landmarks[5]
-    middle_tip = landmarks[12]
-    middle_mcp = landmarks[9]
-    ring_tip = landmarks[16]
-    ring_mcp = landmarks[13]
-    pinky_tip = landmarks[20]
-    pinky_mcp = landmarks[17]
+def calculate_hand_closure(landmarks):
+    fingers_data = [
+        (8, 5, 6),   # indice
+        (12, 9, 10), # medio
+        (16, 13, 14),# anulare
+        (20, 17, 18) # mignolo
+    ]
+    total_closure = 0.0
+    for tip_idx, mcp_idx, pip_idx in fingers_data:
+        tip = landmarks[tip_idx]
+        mcp = landmarks[mcp_idx]
+        pip = landmarks[pip_idx]
+        vertical_distance = tip.y - mcp.y
+        if vertical_distance > -0.05:
+            closure_amount = min(1.0, (vertical_distance + 0.05) / 0.15)
+            total_closure += closure_amount
+    avg_closure = (total_closure / 4.0) * 100
+    if avg_closure < 30:
+        avg_closure = avg_closure * 1.5
+    return min(100, int(avg_closure))
 
-    # Se tutte le dita chiuse (tipy > mcp y), mano chiusa
-    closed = (index_tip.y > index_mcp.y and middle_tip.y > middle_mcp.y and
-              ring_tip.y > ring_mcp.y and pinky_tip.y > pinky_mcp.y)
-    return closed
+def is_hand_closed(landmarks, threshold=HAND_CLOSURE_THRESHOLD):
+    closure = calculate_hand_closure(landmarks)
+    return closure >= threshold
 
 # -------------------------------
 # Variabili di gioco
 # -------------------------------
 score = 0
+targets_hit_count = 0
 radius = 40
 game_duration = 60
 
 target_x = random.randint(radius, WIDTH - radius)
 target_y = random.randint(radius, HEIGHT - radius)
-target_color = random_color()
+target_hand = random.choice(["Left", "Right"])
+target_color = BLUE if target_hand == "Left" else RED
 hit_effect_timer = 0
 target_visible = True
 disappear_timer = 0
 running = True
 game_over = False
-hand_trail = []
-max_trail_length = 20
+hand_trails = {"Left": [], "Right": []}
+hand_closure_history_buffer = []
 
 # -------------------------------
-# MediaPipe HandLandmarker setup
+# MediaPipe setup
 # -------------------------------
 mp_hands = mp.solutions.hands
 hands = mp_hands.Hands(static_image_mode=False,
@@ -100,14 +154,15 @@ while show_instructions:
     screen.blit(title, (WIDTH // 2 - title.get_width() // 2, 60))
     instructions = [
         "Chiudi la mano sopra il bersaglio per colpirlo.",
-        "Il gioco traccia i movimenti della tua mano.",
-        "Ogni centro aumenta il punteggio.",
-        "Il bersaglio diventa più piccolo col tempo.",
-        "", "Durata: 60 secondi.", "", "Premi un tasto per iniziare."
+        "Ogni mano colpisce solo i suoi cerchi.",
+        "", "Durata: 60 secondi.", 
+        "I dati verranno salvati automaticamente,",
+        "Chiudi il pugno più forte che puoi.",
+        "", "Premi un tasto per iniziare."
     ]
     for i, line in enumerate(instructions):
         text = font.render(line, True, DARK_TEXT)
-        screen.blit(text, (WIDTH // 2 - text.get_width() // 2, 180 + i * 35))
+        screen.blit(text, (WIDTH // 2 - text.get_width() // 2, 170 + i * 35))
     pygame.display.flip()
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -126,6 +181,7 @@ for i in range(3, 0, -1):
     pygame.time.delay(1000)
 
 start_time = time.time()
+frame_count = 0
 
 # -------------------------------
 # Ciclo principale
@@ -134,6 +190,7 @@ while running:
     current_time = time.time()
     elapsed_time = current_time - start_time
     remaining_time = max(0, int(game_duration - elapsed_time))
+    frame_count += 1
 
     ret, frame = cap.read()
     if not ret:
@@ -148,65 +205,76 @@ while running:
     frame_surface = pygame.surfarray.make_surface(screen_frame.swapaxes(0, 1))
     screen.blit(frame_surface, (0, 0))
 
-    hand_center_pygame = None
+    hand_positions = {"Left": None, "Right": None}
+    hand_closed_status = {"Left": False, "Right": False}
 
-    if result.multi_hand_landmarks:
-        for hand_landmarks in result.multi_hand_landmarks:
-            # Calcola centro mano come media dei landmarks
+    if result.multi_hand_landmarks and result.multi_handedness:
+        for hand_landmarks, handedness in zip(result.multi_hand_landmarks, result.multi_handedness):
+            hand_label = handedness.classification[0].label
             x = sum([lm.x for lm in hand_landmarks.landmark]) / len(hand_landmarks.landmark)
             y = sum([lm.y for lm in hand_landmarks.landmark]) / len(hand_landmarks.landmark)
             hand_center_pygame = (int(x * WIDTH), int(y * HEIGHT))
+            hand_positions[hand_label] = hand_center_pygame
 
-            hand_trail.append(hand_center_pygame)
-            if len(hand_trail) > max_trail_length:
-                hand_trail.pop(0)
+            hand_trails.setdefault(hand_label, []).append(hand_center_pygame)
+            if len(hand_trails[hand_label]) > 20:
+                hand_trails[hand_label].pop(0)
 
-            # Disegna landmarks
+            closure_value = calculate_hand_closure(hand_landmarks.landmark)
+            hand_closed_status[hand_label] = is_hand_closed(hand_landmarks.landmark, HAND_CLOSURE_THRESHOLD)
+
+            if frame_count % 10 == 0:
+                hand_closure_history_buffer.append({
+                    "timestamp": datetime.now().strftime("%H:%M:%S.%f")[:-3],
+                    "hand": hand_label,
+                    "closure": closure_value,
+                    "position": hand_center_pygame
+                })
+
+            color = BLUE if hand_label == "Left" else RED
             for lm in hand_landmarks.landmark:
                 px, py = int(lm.x * WIDTH), int(lm.y * HEIGHT)
-                pygame.draw.circle(screen, CYAN, (px, py), 5)
+                pygame.draw.circle(screen, color, (px, py), 5)
 
-            # Determina se mano chiusa
-            is_closed = is_hand_closed(hand_landmarks.landmark)
-
-    else:
-        is_closed = False
+            # Controllo bersaglio mano-specifico
+            if hand_closed_status[hand_label] and target_visible and hand_label == target_hand:
+                distance = math.hypot(hand_center_pygame[0] - target_x, hand_center_pygame[1] - target_y)
+                if distance <= radius:
+                    score += 1
+                    targets_hit_count += 1
+                    log_target_hit(targets_hit_count, closure_value, hand_center_pygame, hand_label)
+                    recent_closure_data = hand_closure_history_buffer[-30:] if len(hand_closure_history_buffer) >= 30 else hand_closure_history_buffer
+                    game_log["targets_hit"][-1]["hand_closure_before_hit"] = recent_closure_data
+                    hit_effect_timer = 8
+                    target_visible = False
+                    disappear_timer = 30
+                    if radius > 20:
+                        radius -= 1
+                    hand_closure_history_buffer.clear()
 
     # Disegna scia mano
-    if len(hand_trail) > 1:
-        for i in range(len(hand_trail)-1):
-            start = hand_trail[i]
-            end = hand_trail[i+1]
-            alpha_ratio = i / len(hand_trail)
-            thickness = int(2 + 4 * alpha_ratio)
-            color_intensity = int(255 * alpha_ratio)
-            trail_color = (0, color_intensity, 255 - color_intensity)
-            pygame.draw.line(screen, trail_color, start, end, thickness)
+    for label, trail in hand_trails.items():
+        if len(trail) > 1:
+            for i in range(len(trail)-1):
+                start = trail[i]
+                end = trail[i+1]
+                thickness = int(2 + 4 * (i / len(trail)))
+                trail_color = BLUE if label == "Left" else RED
+                pygame.draw.line(screen, trail_color, start, end, thickness)
 
-    # Controlla mano chiusa sopra bersaglio
-    if is_closed and target_visible and hand_center_pygame:
-        distance = math.hypot(hand_center_pygame[0] - target_x, hand_center_pygame[1] - target_y)
-        if distance <= radius:
-            score += 1
-            hit_effect_timer = 8
-            target_visible = False
-            disappear_timer = 30
-            if radius > 20:
-                radius -= 1
-            hand_trail.clear()
-
-    # Gestisci riapparizione bersaglio
+    # Bersaglio riappare mano-specifico
     if not target_visible:
         disappear_timer -= 1
         if disappear_timer <= 0:
             target_visible = True
-            target_color = random_color()
+            target_hand = random.choice(["Left", "Right"])
+            target_color = BLUE if target_hand == "Left" else RED
             target_x = random.randint(radius, WIDTH - radius)
             target_y = random.randint(radius, HEIGHT - radius)
 
-    # Game over
     if remaining_time == 0 and not game_over:
         game_over = True
+        save_log_to_file()
 
     # Disegna bersaglio
     if target_visible and not game_over:
@@ -221,22 +289,34 @@ while running:
             hit_effect_timer -= 1
 
     # HUD
-    hud = pygame.Surface((240, 140), pygame.SRCALPHA)
+    hud = pygame.Surface((240, 180), pygame.SRCALPHA)
     hud.fill((255, 255, 255, 190))
     screen.blit(hud, (15, 15))
     screen.blit(font.render(f"Punteggio: {score}", True, DARK_TEXT), (30, 30))
-    screen.blit(font.render(f"Tempo: {remaining_time}", True, DARK_TEXT), (30, 100))
+    screen.blit(font.render(f"Tempo: {remaining_time}", True, DARK_TEXT), (30, 65))
 
-    if is_closed:
-        indicator = font.render("MANO CHIUSA", True, RED)
-        screen.blit(indicator, (WIDTH - 220, 30))
+    last_closure = hand_closure_history_buffer[-1] if hand_closure_history_buffer else None
+    if last_closure:
+        closure_text = small_font.render(f"{last_closure['hand']} {last_closure['closure']}%", True, DARK_TEXT)
+        screen.blit(closure_text, (30, 100))
 
+    # Game over
     if game_over:
-        panel = pygame.Surface((500, 300), pygame.SRCALPHA)
+        panel = pygame.Surface((500, 350), pygame.SRCALPHA)
         panel.fill((255, 255, 255, 220))
-        screen.blit(panel, (WIDTH // 2 - 250, HEIGHT // 2 - 150))
-        screen.blit(large_font.render(f"Score: {score}", True, GREEN), (WIDTH // 2 - 100, HEIGHT // 2 - 20))
-        screen.blit(large_font.render("Fine Gioco", True, RED), (WIDTH // 2 - 150, HEIGHT // 2 - 80))
+        screen.blit(panel, (WIDTH // 2 - 250, HEIGHT // 2 - 175))
+        screen.blit(large_font.render("Fine Gioco", True, RED), (WIDTH // 2 - 150, HEIGHT // 2 - 120))
+        screen.blit(large_font.render(f"Score: {score}", True, GREEN), (WIDTH // 2 - 100, HEIGHT // 2 - 40))
+        log_info = small_font.render(f"Log salvato: {targets_hit_count} bersagli", True, DARK_TEXT)
+        screen.blit(log_info, (WIDTH // 2 - log_info.get_width() // 2, HEIGHT // 2 + 40))
+        close_info = small_font.render("Premi ESC per chiudere", True, DARK_TEXT)
+        screen.blit(close_info, (WIDTH // 2 - close_info.get_width() // 2, HEIGHT // 2 + 80))
+
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+        if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE and game_over:
+            running = False
 
     pygame.display.flip()
     clock.tick(30)
