@@ -4,9 +4,16 @@ Progettato per persone con Sclerosi Multipla
 
 Caratteristiche:
 - Interfaccia semplice e chiara
-- Velocità personalizzabile
+- Musica di sottofondo rilassante
 - Focus sul ragionamento, non sulla velocità o precisione fisica
 - Feedback positivo e incoraggiante
+
+CONTROLLI:
+- Clicca per rispondere
+- ESC = Esci dal gioco
+- M = Metti in pausa/riprendi la musica
+- + = Aumenta volume
+- - = Diminuisci volume
 """
 
 import pygame
@@ -27,9 +34,72 @@ class Puzzle:
 # Inizializzazione Pygame (FULLSCREEN)
 # -------------------------------
 pygame.init()
+
+# Inizializza il mixer audio per la musica
+pygame.mixer.init()
+
 screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
 WIDTH, HEIGHT = screen.get_size()
 pygame.display.set_caption("Gioco di Ragionamento Logico")
+
+# ============================================================
+# 🎵 MUSICA DI SOTTOFONDO - ISTRUZIONI
+# ============================================================
+# 
+# DOVE METTERE IL FILE MUSICALE:
+# 1. Posiziona il tuo file audio nella STESSA CARTELLA di questo script Python
+# 2. Il file deve chiamarsi "background_music.mp3"
+# 3. Oppure cambia il nome del file nella riga 68 qui sotto
+#
+# FORMATI SUPPORTATI:
+# - .mp3 (consigliato)
+# - .ogg
+# - .wav
+#
+# ESEMPIO STRUTTURA CARTELLE:
+# 📁 La mia cartella/
+#    📄 gioco_ragionamento_sm.py  ← Questo script
+#    🎵 background_music.mp3      ← Il tuo file audio (METTI QUI!)
+#
+# ============================================================
+
+try:
+    # 🎵 CAMBIA IL NOME DEL FILE QUI SE NECESSARIO
+    nome_file_musica = "MI.mp3"
+    
+    # Carica la musica di sottofondo
+    pygame.mixer.music.load(nome_file_musica)
+    
+    # Imposta il volume iniziale (da 0.0 a 1.0)
+    # 0.3 = 30% del volume (moderato e non invadente)
+    pygame.mixer.music.set_volume(0.3)
+    
+    # Avvia la musica in loop infinito (-1 = loop continuo)
+    pygame.mixer.music.play(-1)
+    
+    print("=" * 60)
+    print("✓ MUSICA CARICATA CON SUCCESSO!")
+    print(f"  File: {nome_file_musica}")
+    print(f"  Volume iniziale: 30%")
+    print("=" * 60)
+    print("\nCONTROLLI MUSICA:")
+    print("  M = Pausa/Riprendi musica")
+    print("  + = Aumenta volume")
+    print("  - = Diminuisci volume")
+    print("=" * 60)
+    
+except pygame.error as e:
+    print("=" * 60)
+    print("⚠ ATTENZIONE: FILE MUSICALE NON TROVATO")
+    print("=" * 60)
+    print(f"Errore: {e}")
+    print("\nIL GIOCO CONTINUERÀ SENZA MUSICA")
+    print("\nPer aggiungere la musica:")
+    print("1. Trova un file audio (.mp3, .ogg, .wav)")
+    print("2. Rinominalo 'background_music.mp3'")
+    print("3. Mettilo nella stessa cartella di questo script")
+    print("4. Riavvia il gioco")
+    print("=" * 60)
 
 # Font
 font_titolo = pygame.font.SysFont("Segoe UI", 48, bold=True)
@@ -117,6 +187,9 @@ class GiocoRagionamento:
         self.timer_prossima = 0
         self.game_state = "menu"  # menu, gioco, risultato
         self.mouse_pos = (0, 0)
+        
+        # Controllo musica
+        self.musica_attiva = True
         
     def crea_puzzles(self) -> List[Puzzle]:
         """Crea una collezione di puzzle di ragionamento logico"""
@@ -246,6 +319,40 @@ class GiocoRagionamento:
             self.mostra_spiegazione = True
             self.timer_prossima = pygame.time.get_ticks() + 3000
     
+    def toggle_musica(self):
+        """Attiva/disattiva la musica di sottofondo (tasto M)"""
+        try:
+            if self.musica_attiva:
+                pygame.mixer.music.pause()
+                self.musica_attiva = False
+                print("🔇 Musica in pausa")
+            else:
+                pygame.mixer.music.unpause()
+                self.musica_attiva = True
+                print("🔊 Musica ripresa")
+        except:
+            print("⚠ Nessuna musica caricata")
+    
+    def cambia_volume(self, delta):
+        """Cambia il volume della musica (tasti + e -)"""
+        try:
+            volume_attuale = pygame.mixer.music.get_volume()
+            nuovo_volume = max(0.0, min(1.0, volume_attuale + delta))
+            pygame.mixer.music.set_volume(nuovo_volume)
+            percentuale = int(nuovo_volume * 100)
+            
+            # Icona volume basata sul livello
+            if nuovo_volume == 0:
+                icona = "🔇"
+            elif nuovo_volume < 0.3:
+                icona = "🔉"
+            else:
+                icona = "🔊"
+            
+            print(f"{icona} Volume: {percentuale}%")
+        except:
+            print("⚠ Nessuna musica caricata")
+    
     def draw_menu(self):
         """Disegna il menu iniziale"""
         draw_gradient(screen, LIGHT_BLUE, DARKER_BLUE)
@@ -283,9 +390,9 @@ class GiocoRagionamento:
                 text = font_punteggio.render(line, True, DARK_TEXT)
             screen.blit(text, (WIDTH // 2 - text.get_width() // 2, y_offset + i * 45))
         
-        # Info ESC
-        esc_info = small_font.render("Premi ESC per uscire in qualsiasi momento", True, DARK_TEXT)
-        screen.blit(esc_info, (WIDTH // 2 - esc_info.get_width() // 2, HEIGHT - 50))
+        # Info controlli
+        controls = small_font.render("M=Musica | +=Volume+ | -=Volume- | ESC=Esci", True, DARK_TEXT)
+        screen.blit(controls, (WIDTH // 2 - controls.get_width() // 2, HEIGHT - 50))
     
     def draw_gioco(self):
         """Disegna la schermata di gioco"""
@@ -301,6 +408,11 @@ class GiocoRagionamento:
         
         count_text = font_punteggio.render(f"Completati: {self.puzzle_completati}", True, DARK_TEXT)
         screen.blit(count_text, (40, 80))
+        
+        # Indicatore musica nell'angolo
+        music_icon = "🔊" if self.musica_attiva else "🔇"
+        music_text = small_font.render(f"{music_icon} M", True, DARK_TEXT)
+        screen.blit(music_text, (WIDTH - 80, 20))
         
         # Pannello domanda
         panel_width = min(1200, WIDTH - 100)
@@ -441,6 +553,10 @@ def main():
     gioco = GiocoRagionamento()
     running = True
     
+    print("\n" + "=" * 60)
+    print("GIOCO AVVIATO!")
+    print("=" * 60)
+    
     while running:
         gioco.mouse_pos = pygame.mouse.get_pos()
         
@@ -449,8 +565,21 @@ def main():
                 running = False
             
             if event.type == pygame.KEYDOWN:
+                # ESC = Esci
                 if event.key == pygame.K_ESCAPE:
                     running = False
+                
+                # M = Toggle musica
+                elif event.key == pygame.K_m:
+                    gioco.toggle_musica()
+                
+                # + o = = Aumenta volume
+                elif event.key == pygame.K_PLUS or event.key == pygame.K_EQUALS:
+                    gioco.cambia_volume(0.1)
+                
+                # - = Diminuisci volume
+                elif event.key == pygame.K_MINUS:
+                    gioco.cambia_volume(-0.1)
             
             if event.type == pygame.MOUSEBUTTONDOWN:
                 gioco.handle_click(event.pos)
@@ -469,7 +598,10 @@ def main():
         pygame.display.flip()
         clock.tick(30)
     
+    # Chiusura
+    pygame.mixer.music.stop()
     pygame.quit()
+    print("\nGioco chiuso. Grazie per aver giocato! 🎮")
 
 if __name__ == "__main__":
     main()
