@@ -4,8 +4,6 @@ import time
 import math
 import cv2
 import mediapipe as mp
-import json
-from datetime import datetime
 
 # -------------------------------
 # Inizializzazione Pygame (FULLSCREEN)
@@ -34,42 +32,6 @@ DARK_TEXT = (40, 40, 40)
 # Soglia chiusura mano
 # -------------------------------
 HAND_CLOSURE_THRESHOLD = 20  # Percentuale minima per considerare la mano chiusa
-
-# -------------------------------
-# Sistema di Logging
-# -------------------------------
-game_log = {
-    "session_start": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-    "targets_hit": [],
-    "hand_closure_history": []
-}
-
-def log_target_hit(target_number, closure_value, position, hand_label):
-    hit_data = {
-        "target_number": target_number,
-        "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")[:-3],
-        "hand_label": hand_label,
-        "hand_closure_percentage": closure_value,
-        "target_position": {"x": position[0], "y": position[1]},
-        "radius": radius
-    }
-    game_log["targets_hit"].append(hit_data)
-    print(f"\n{'='*50}")
-    print(f"BERSAGLIO #{target_number} COLPITO!")
-    print(f"Mano: {hand_label}")
-    print(f"Chiusura mano: {closure_value}%")
-    print(f"Posizione: ({position[0]}, {position[1]})")
-    print(f"Timestamp: {hit_data['timestamp']}")
-    print(f"{'='*50}\n")
-
-def save_log_to_file():
-    game_log["session_end"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    game_log["total_targets_hit"] = len(game_log["targets_hit"])
-    filename = f"game_log_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
-    with open(filename, 'w', encoding='utf-8') as f:
-        json.dump(game_log, f, indent=4, ensure_ascii=False)
-    print(f"\nLog salvato in: {filename}")
-    return filename
 
 # -------------------------------
 # Funzioni utility
@@ -131,7 +93,6 @@ disappear_timer = 0
 running = True
 game_over = False
 hand_trails = {"Left": [], "Right": []}
-hand_closure_history_buffer = []
 
 # -------------------------------
 # MediaPipe setup
@@ -142,7 +103,48 @@ hands = mp_hands.Hands(static_image_mode=False,
                        min_detection_confidence=0.5,
                        min_tracking_confidence=0.5)
 
+# -------------------------------
+# CONTROLLO WEBCAM CON DIAGNOSTICA
+# -------------------------------
+print("=" * 50)
+print("DIAGNOSTICA WEBCAM")
+print("=" * 50)
+
 cap = cv2.VideoCapture(0)
+
+# Verifica se la webcam si è aperta correttamente
+if not cap.isOpened():
+    print("ERRORE: Impossibile aprire la webcam!")
+    print("Possibili cause:")
+    print("- La webcam è usata da un altro programma")
+    print("- Driver della webcam non funzionanti")
+    print("- Permessi non concessi")
+    print("\nProvo con webcam indice 1...")
+    
+    cap = cv2.VideoCapture(1)
+    if not cap.isOpened():
+        print("ERRORE: Nessuna webcam disponibile!")
+        pygame.quit()
+        exit()
+
+# Mostra informazioni webcam
+print(f"✓ Webcam aperta correttamente")
+print(f"  Larghezza: {cap.get(cv2.CAP_PROP_FRAME_WIDTH)}")
+print(f"  Altezza: {cap.get(cv2.CAP_PROP_FRAME_HEIGHT)}")
+print(f"  FPS: {cap.get(cv2.CAP_PROP_FPS)}")
+
+# Test di lettura frame
+ret, test_frame = cap.read()
+if not ret:
+    print("ERRORE: Impossibile leggere dalla webcam!")
+    print("La webcam è aperta ma non risponde.")
+    cap.release()
+    pygame.quit()
+    exit()
+
+print(f"✓ Frame di test letto correttamente: {test_frame.shape}")
+print("=" * 50)
+print()
 
 # -------------------------------
 # Schermata istruzioni
@@ -156,7 +158,6 @@ while show_instructions:
         "Chiudi la mano sopra il bersaglio per colpirlo.",
         "Ogni mano colpisce solo i suoi cerchi.",
         "", "Durata: 60 secondi.", 
-        "I dati verranno salvati automaticamente,",
         "Chiudi il pugno più forte che puoi.",
         "", "Premi un tasto per iniziare."
     ]
@@ -166,7 +167,9 @@ while show_instructions:
     pygame.display.flip()
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            pygame.quit(); exit()
+            cap.release()
+            pygame.quit()
+            exit()
         if event.type == pygame.KEYDOWN:
             show_instructions = False
 
@@ -182,10 +185,12 @@ for i in range(3, 0, -1):
 
 start_time = time.time()
 frame_count = 0
+failed_frames = 0
 
 # -------------------------------
 # Ciclo principale
 # -------------------------------
+print("Inizio gioco...")
 while running:
     current_time = time.time()
     elapsed_time = current_time - start_time
@@ -194,7 +199,20 @@ while running:
 
     ret, frame = cap.read()
     if not ret:
+        failed_frames += 1
+        print(f"Frame non letto! (Totale errori: {failed_frames})")
+        
+        # Se troppi frame falliti consecutivi, mostra errore
+        if failed_frames > 30:
+            print("ERRORE CRITICO: Troppi frame persi!")
+            running = False
+            break
+        
+        pygame.time.wait(100)
         continue
+    
+    # Reset contatore se il frame è stato letto correttamente
+    failed_frames = 0
 
     frame = cv2.flip(frame, 1)
     rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
@@ -223,14 +241,6 @@ while running:
             closure_value = calculate_hand_closure(hand_landmarks.landmark)
             hand_closed_status[hand_label] = is_hand_closed(hand_landmarks.landmark, HAND_CLOSURE_THRESHOLD)
 
-            if frame_count % 10 == 0:
-                hand_closure_history_buffer.append({
-                    "timestamp": datetime.now().strftime("%H:%M:%S.%f")[:-3],
-                    "hand": hand_label,
-                    "closure": closure_value,
-                    "position": hand_center_pygame
-                })
-
             color = BLUE if hand_label == "Left" else RED
             for lm in hand_landmarks.landmark:
                 px, py = int(lm.x * WIDTH), int(lm.y * HEIGHT)
@@ -242,15 +252,11 @@ while running:
                 if distance <= radius:
                     score += 1
                     targets_hit_count += 1
-                    log_target_hit(targets_hit_count, closure_value, hand_center_pygame, hand_label)
-                    recent_closure_data = hand_closure_history_buffer[-30:] if len(hand_closure_history_buffer) >= 30 else hand_closure_history_buffer
-                    game_log["targets_hit"][-1]["hand_closure_before_hit"] = recent_closure_data
                     hit_effect_timer = 8
                     target_visible = False
                     disappear_timer = 30
                     if radius > 20:
                         radius -= 1
-                    hand_closure_history_buffer.clear()
 
     # Disegna scia mano
     for label, trail in hand_trails.items():
@@ -274,7 +280,7 @@ while running:
 
     if remaining_time == 0 and not game_over:
         game_over = True
-        save_log_to_file()
+        print(f"\nGioco terminato! Punteggio finale: {score}")
 
     # Disegna bersaglio
     if target_visible and not game_over:
@@ -295,11 +301,6 @@ while running:
     screen.blit(font.render(f"Punteggio: {score}", True, DARK_TEXT), (30, 30))
     screen.blit(font.render(f"Tempo: {remaining_time}", True, DARK_TEXT), (30, 65))
 
-    last_closure = hand_closure_history_buffer[-1] if hand_closure_history_buffer else None
-    if last_closure:
-        closure_text = small_font.render(f"{last_closure['hand']} {last_closure['closure']}%", True, DARK_TEXT)
-        screen.blit(closure_text, (30, 100))
-
     # Game over
     if game_over:
         panel = pygame.Surface((500, 350), pygame.SRCALPHA)
@@ -307,19 +308,19 @@ while running:
         screen.blit(panel, (WIDTH // 2 - 250, HEIGHT // 2 - 175))
         screen.blit(large_font.render("Fine Gioco", True, RED), (WIDTH // 2 - 150, HEIGHT // 2 - 120))
         screen.blit(large_font.render(f"Score: {score}", True, GREEN), (WIDTH // 2 - 100, HEIGHT // 2 - 40))
-        log_info = small_font.render(f"Log salvato: {targets_hit_count} bersagli", True, DARK_TEXT)
-        screen.blit(log_info, (WIDTH // 2 - log_info.get_width() // 2, HEIGHT // 2 + 40))
         close_info = small_font.render("Premi ESC per chiudere", True, DARK_TEXT)
         screen.blit(close_info, (WIDTH // 2 - close_info.get_width() // 2, HEIGHT // 2 + 80))
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
-        if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE and game_over:
+        if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
             running = False
 
     pygame.display.flip()
     clock.tick(30)
 
+print("\nChiusura programma...")
 cap.release()
 pygame.quit()
+print("Programma chiuso correttamente.")
