@@ -42,27 +42,6 @@ screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
 WIDTH, HEIGHT = screen.get_size()
 pygame.display.set_caption("Gioco di Ragionamento Logico")
 
-# ============================================================
-# 🎵 MUSICA DI SOTTOFONDO - ISTRUZIONI
-# ============================================================
-# 
-# DOVE METTERE IL FILE MUSICALE:
-# 1. Posiziona il tuo file audio nella STESSA CARTELLA di questo script Python
-# 2. Il file deve chiamarsi "background_music.mp3"
-# 3. Oppure cambia il nome del file nella riga 68 qui sotto
-#
-# FORMATI SUPPORTATI:
-# - .mp3 (consigliato)
-# - .ogg
-# - .wav
-#
-# ESEMPIO STRUTTURA CARTELLE:
-# 📁 La mia cartella/
-#    📄 gioco_ragionamento_sm.py  ← Questo script
-#    🎵 background_music.mp3      ← Il tuo file audio (METTI QUI!)
-#
-# ============================================================
-
 try:
     # 🎵 CAMBIA IL NOME DEL FILE QUI SE NECESSARIO
     nome_file_musica = "MI.mp3"
