@@ -29,9 +29,10 @@ CYAN = (0, 255, 200)
 DARK_TEXT = (40, 40, 40)
 
 # -------------------------------
-# Soglia chiusura mano
+# Soglia chiusura mano e punteggio minimo
 # -------------------------------
 HAND_CLOSURE_THRESHOLD = 20  # Percentuale minima per considerare la mano chiusa
+MIN_SCORE_TO_PASS = 10  # Punteggio minimo per superare la prova
 
 # -------------------------------
 # Funzioni utility
@@ -76,23 +77,33 @@ def is_hand_closed(landmarks, threshold=HAND_CLOSURE_THRESHOLD):
     return closure >= threshold
 
 # -------------------------------
+# Funzione per inizializzare il gioco
+# -------------------------------
+def init_game():
+    global score, targets_hit_count, radius, target_x, target_y, target_hand, target_color
+    global hit_effect_timer, target_visible, disappear_timer, game_over, hand_trails, start_time
+    
+    score = 0
+    targets_hit_count = 0
+    radius = 40
+    
+    target_x = random.randint(radius, WIDTH - radius)
+    target_y = random.randint(radius, HEIGHT - radius)
+    target_hand = random.choice(["Left", "Right"])
+    target_color = BLUE if target_hand == "Left" else RED
+    hit_effect_timer = 0
+    target_visible = True
+    disappear_timer = 0
+    game_over = False
+    hand_trails = {"Left": [], "Right": []}
+    start_time = time.time()
+
+# -------------------------------
 # Variabili di gioco
 # -------------------------------
-score = 0
-targets_hit_count = 0
-radius = 40
 game_duration = 60
-
-target_x = random.randint(radius, WIDTH - radius)
-target_y = random.randint(radius, HEIGHT - radius)
-target_hand = random.choice(["Left", "Right"])
-target_color = BLUE if target_hand == "Left" else RED
-hit_effect_timer = 0
-target_visible = True
-disappear_timer = 0
 running = True
-game_over = False
-hand_trails = {"Left": [], "Right": []}
+init_game()
 
 # -------------------------------
 # MediaPipe setup
@@ -157,9 +168,12 @@ while show_instructions:
     instructions = [
         "Chiudi la mano sopra il bersaglio per colpirlo.",
         "Ogni mano colpisce solo i suoi cerchi.",
-        "", "Durata: 60 secondi.", 
-        "Chiudi il pugno più forte che puoi.",
-        "", "Premi un tasto per iniziare."
+        "", 
+        "Durata: 60 secondi.", 
+        f"Punteggio minimo per superare: {MIN_SCORE_TO_PASS} punti",
+        "Se non raggiungi il punteggio minimo, riprovi!",
+        "",
+        "Premi un tasto per iniziare."
     ]
     for i, line in enumerate(instructions):
         text = font.render(line, True, DARK_TEXT)
@@ -174,24 +188,80 @@ while show_instructions:
             show_instructions = False
 
 # -------------------------------
-# Countdown
+# Variabili per gestire il restart
 # -------------------------------
-for i in range(3, 0, -1):
-    draw_gradient(screen, (240, 245, 255), (200, 220, 255))
-    txt = large_font.render(str(i), True, RED)
-    screen.blit(txt, (WIDTH // 2 - txt.get_width() // 2, HEIGHT // 2 - txt.get_height() // 2))
-    pygame.display.flip()
-    pygame.time.delay(1000)
+show_fail_screen = False
+fail_screen_timer = 0
 
-start_time = time.time()
+# -------------------------------
+# Ciclo principale del gioco
+# -------------------------------
 frame_count = 0
 failed_frames = 0
 
-# -------------------------------
-# Ciclo principale
-# -------------------------------
 print("Inizio gioco...")
 while running:
+    # -------------------------------
+    # Schermata di fallimento
+    # -------------------------------
+    if show_fail_screen:
+        draw_gradient(screen, (255, 200, 200), (255, 150, 150))
+        
+        # Pannello centrale
+        panel = pygame.Surface((700, 450), pygame.SRCALPHA)
+        panel.fill((255, 255, 255, 230))
+        screen.blit(panel, (WIDTH // 2 - 350, HEIGHT // 2 - 225))
+        
+        # Titolo PROVA FALLITA
+        fail_title = large_font.render("PROVA FALLITA!", True, RED)
+        screen.blit(fail_title, (WIDTH // 2 - fail_title.get_width() // 2, HEIGHT // 2 - 150))
+        
+        # Punteggio ottenuto
+        score_text = font.render(f"Punteggio ottenuto: {score}", True, DARK_TEXT)
+        screen.blit(score_text, (WIDTH // 2 - score_text.get_width() // 2, HEIGHT // 2 - 60))
+        
+        # Punteggio richiesto
+        required_text = font.render(f"Punteggio richiesto: {MIN_SCORE_TO_PASS}", True, DARK_TEXT)
+        screen.blit(required_text, (WIDTH // 2 - required_text.get_width() // 2, HEIGHT // 2 - 20))
+        
+        # Messaggio di riavvio
+        retry_text = large_font.render("RIPROVA!", True, YELLOW)
+        screen.blit(retry_text, (WIDTH // 2 - retry_text.get_width() // 2, HEIGHT // 2 + 50))
+        
+        # Info countdown
+        countdown_sec = max(0, 3 - (fail_screen_timer // 30))
+        countdown_text = small_font.render(f"Riavvio tra {countdown_sec} secondi...", True, DARK_TEXT)
+        screen.blit(countdown_text, (WIDTH // 2 - countdown_text.get_width() // 2, HEIGHT // 2 + 140))
+        
+        pygame.display.flip()
+        fail_screen_timer += 1
+        
+        # Dopo 3 secondi (90 frame a 30 fps), riavvia il gioco
+        if fail_screen_timer >= 90:
+            show_fail_screen = False
+            fail_screen_timer = 0
+            init_game()
+            
+            # Countdown prima di ripartire
+            for i in range(3, 0, -1):
+                draw_gradient(screen, (240, 245, 255), (200, 220, 255))
+                txt = large_font.render(str(i), True, RED)
+                screen.blit(txt, (WIDTH // 2 - txt.get_width() // 2, HEIGHT // 2 - txt.get_height() // 2))
+                pygame.display.flip()
+                pygame.time.delay(1000)
+        
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+            if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
+                running = False
+        
+        clock.tick(30)
+        continue
+    
+    # -------------------------------
+    # Gioco normale
+    # -------------------------------
     current_time = time.time()
     elapsed_time = current_time - start_time
     remaining_time = max(0, int(game_duration - elapsed_time))
@@ -278,9 +348,14 @@ while running:
             target_x = random.randint(radius, WIDTH - radius)
             target_y = random.randint(radius, HEIGHT - radius)
 
+    # Controllo fine tempo
     if remaining_time == 0 and not game_over:
         game_over = True
-        print(f"\nGioco terminato! Punteggio finale: {score}")
+        if score < MIN_SCORE_TO_PASS:
+            print(f"\nProva fallita! Punteggio: {score}/{MIN_SCORE_TO_PASS}")
+            show_fail_screen = True
+        else:
+            print(f"\nProva superata! Punteggio finale: {score}")
 
     # Disegna bersaglio
     if target_visible and not game_over:
@@ -298,18 +373,54 @@ while running:
     hud = pygame.Surface((240, 180), pygame.SRCALPHA)
     hud.fill((255, 255, 255, 190))
     screen.blit(hud, (15, 15))
-    screen.blit(font.render(f"Punteggio: {score}", True, DARK_TEXT), (30, 30))
+    
+    # Colore del punteggio: verde se >= soglia, giallo se vicino, rosso se lontano
+    if score >= MIN_SCORE_TO_PASS:
+        score_color = GREEN
+    elif score >= MIN_SCORE_TO_PASS - 3:
+        score_color = YELLOW
+    else:
+        score_color = RED
+    
+    screen.blit(font.render(f"Punteggio: {score}/{MIN_SCORE_TO_PASS}", True, score_color), (30, 30))
     screen.blit(font.render(f"Tempo: {remaining_time}", True, DARK_TEXT), (30, 65))
 
-    # Game over
-    if game_over:
-        panel = pygame.Surface((500, 350), pygame.SRCALPHA)
-        panel.fill((255, 255, 255, 220))
-        screen.blit(panel, (WIDTH // 2 - 250, HEIGHT // 2 - 175))
-        screen.blit(large_font.render("Fine Gioco", True, RED), (WIDTH // 2 - 150, HEIGHT // 2 - 120))
-        screen.blit(large_font.render(f"Score: {score}", True, GREEN), (WIDTH // 2 - 100, HEIGHT // 2 - 40))
+    # Game over - SOLO SE SUPERATO
+    if game_over and score >= MIN_SCORE_TO_PASS:
+        # Overlay scuro
+        overlay = pygame.Surface((WIDTH, HEIGHT), pygame.SRCALPHA)
+        overlay.fill((0, 0, 0, 150))
+        screen.blit(overlay, (0, 0))
+        
+        # Pannello più grande con bordi arrotondati
+        panel_width = 700
+        panel_height = 450
+        panel = pygame.Surface((panel_width, panel_height), pygame.SRCALPHA)
+        pygame.draw.rect(panel, (255, 255, 255, 240), (0, 0, panel_width, panel_height), border_radius=25)
+        pygame.draw.rect(panel, (80, 200, 120, 200), (0, 0, panel_width, panel_height), 5, border_radius=25)
+        screen.blit(panel, (WIDTH // 2 - panel_width // 2, HEIGHT // 2 - panel_height // 2))
+        
+        # Icona di successo
+        success_font = pygame.font.SysFont("Segoe UI", 100, bold=True)
+        checkmark = success_font.render("✓", True, GREEN)
+        screen.blit(checkmark, (WIDTH // 2 - checkmark.get_width() // 2, HEIGHT // 2 - 180))
+        
+        # Titolo PROVA SUPERATA
+        title_font = pygame.font.SysFont("Segoe UI", 60, bold=True)
+        success_title = title_font.render("PROVA SUPERATA!", True, GREEN)
+        screen.blit(success_title, (WIDTH // 2 - success_title.get_width() // 2, HEIGHT // 2 - 60))
+        
+        # Punteggio finale
+        score_font = pygame.font.SysFont("Segoe UI", 80, bold=True)
+        score_text = score_font.render(f"{score}", True, (50, 150, 80))
+        screen.blit(score_text, (WIDTH // 2 - score_text.get_width() // 2, HEIGHT // 2 + 30))
+        
+        points_label = font.render("PUNTI", True, (100, 100, 100))
+        screen.blit(points_label, (WIDTH // 2 - points_label.get_width() // 2, HEIGHT // 2 + 120))
+        
+        # Istruzioni chiusura
         close_info = small_font.render("Premi ESC per chiudere", True, DARK_TEXT)
-        screen.blit(close_info, (WIDTH // 2 - close_info.get_width() // 2, HEIGHT // 2 + 80))
+        screen.blit(close_info, (WIDTH // 2 - close_info.get_width() // 2, HEIGHT // 2 + 180))
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
