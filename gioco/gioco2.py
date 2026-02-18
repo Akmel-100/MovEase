@@ -207,10 +207,10 @@ class GiocoRagionamento:
                 "Se tutti i gatti hanno 4 zampe e Fuffi è un gatto, allora Fuffi ha 4 zampe."
             ),
             Puzzle(
-                "Se piove, porto l'ombrello. Oggi porto l'ombrello. Quindi:",
-                ["Piove sicuramente", "Potrebbe piovere", "Non piove", "È nevicato"],
-                0,
-                "Portare l'ombrello non significa necessariamente che piova - potrei portarlo per precauzione."
+                "Tutti i pesci vivono in acqua. Il salmone è un pesce. Dove vive il salmone?",
+                ["Sulla terra", "In acqua", "Sugli alberi", "Nel deserto"],
+                1,
+                "Se tutti i pesci vivono in acqua e il salmone è un pesce, allora il salmone vive in acqua."
             ),
             
             # Categorizzazione
