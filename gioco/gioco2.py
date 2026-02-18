@@ -313,13 +313,13 @@ class GiocoRagionamento:
             
             print(f"{icona} Volume: {percentuale}%")
         except:
-            print("⚠ Nessuna musica caricata")
+            print("Nessuna musica caricata")
     
     def draw_menu(self):
         """Disegna il menu iniziale"""
         draw_gradient(screen, LIGHT_BLUE, DARKER_BLUE)             # Sfondo sfumato blu
         
-        title = font_titolo.render("🧠 Gioco di Ragionamento Logico", True, DARK_TEXT)          # Renderizza il titolo
+        title = font_titolo.render("Gioco di Ragionamento Logico", True, DARK_TEXT)          # Renderizza il titolo
         screen.blit(title, (WIDTH // 2 - title.get_width() // 2, 80))                          # Disegna il titolo centrato
         
         panel_width = 900
@@ -535,7 +535,7 @@ def main():
     
     pygame.mixer.music.stop()                                      # Ferma la musica
     pygame.quit()                                                  # Chiude pygame
-    print("\nGioco chiuso. Grazie per aver giocato! 🎮")
+    print("\nGioco chiuso. Grazie per aver giocato!")
 
 if __name__ == "__main__":                                         # Esegue main() solo se il file viene avviato direttamente
     main()
