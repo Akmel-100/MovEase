@@ -209,7 +209,7 @@ class GiocoRagionamento:
             Puzzle(
                 "Se piove, porto l'ombrello. Oggi porto l'ombrello. Quindi:",
                 ["Piove sicuramente", "Potrebbe piovere", "Non piove", "È nevicato"],
-                1,
+                0,
                 "Portare l'ombrello non significa necessariamente che piova - potrei portarlo per precauzione."
             ),
             
