@@ -1,18 +1,18 @@
-import pygame                          # Libreria per la grafica e la gestione degli eventi
-import cv2                             # Libreria per la gestione della webcam
+import pygame                          # Libreria per la grafica
+import cv2                             # Libreria per la webcam
 import numpy as np                     # Libreria per la manipolazione degli array (frame webcam)
 from pygame import mixer               # Modulo di pygame per la gestione dell'audio
 import sys                             # Libreria per uscire dal programma
 
 # Inizializzazione
-pygame.init()                          # Inizializza tutti i moduli di pygame
-mixer.init()                           # Inizializza il modulo audio
+pygame.init()                          # Moduli Pygame
+mixer.init()                           # Moduli audio
 
 # Variabili globali
-Logo_Immagine = None                   # Conterrà l'immagine del logo
-Immagine_sfondo = None                 # Conterrà l'immagine di sfondo
-started = False                        # Indica se il gioco è stato avviato con il primo click
-Stato_schermo = "menu"                 # Stato attuale dello schermo ("menu" o "game")
+Logo_Immagine = None                   # immagine del logo
+Immagine_sfondo = None                 # immagine di sfondo
+started = False                        # stato del gioco prima della partenza
+Stato_schermo = "menu"                 # Stato dello schermo ("menu" o "game")
 
 # Pulsante GIOCA
 button_x, button_y, button_w, button_h = 0, 0, 200, 60        # Posizione (x,y) e dimensioni (larghezza, altezza) del pulsante GIOCA
@@ -24,60 +24,60 @@ back_button_x, back_button_y, back_button_w, back_button_h = 0, 0, 250, 60    # 
 exit_button_x, exit_button_y, exit_button_w, exit_button_h = 0, 0, 150, 50   # Posizione e dimensioni del pulsante ESCI
 
 # Musica
-song1 = None                           # Percorso del primo file audio
-song2 = None                           # Percorso del secondo file audio
-current_song = 1                       # Tiene traccia di quale canzone è in riproduzione
+song1 = None                           # Primo file audio
+song2 = None                           # Secondo file audio
+current_song = 1                       # Traccia della canzone corrente
 
 # Webcam
-Attivazione_Camera = None              # Oggetto webcam di OpenCV (None se non attiva)
+Attivazione_Camera = None              # Attivazione della video camera
 
 # Schermo
-screen = None                          # Superficie principale di pygame (la finestra)
+schermo = None                          # Superficie principale di pygame (la finestra)
 width, height = 0, 0                   # Larghezza e altezza dello schermo
 
 
-def load_assets():
+def Carica_Elementi():
     global Logo_Immagine, Immagine_sfondo, song1, song2    # Dichiara le variabili globali da modificare
     
-    Logo_Immagine = pygame.image.load('gioco/logo.png')    # Carica l'immagine del logo dal file
-    Immagine_sfondo = pygame.image.load('gioco/itis.png')  # Carica l'immagine di sfondo dal file
+    Logo_Immagine = pygame.image.load('gioco/logo.png')    # Carica immagine logo
+    Immagine_sfondo = pygame.image.load('gioco/itis.png')  # Carica immagine sfondo
     
-    song1 = 'gioco/Down_under.mp3'                         # Imposta il percorso della prima canzone
-    song2 = 'gioco/wind.mp3'                               # Imposta il percorso della seconda canzone
+    song1 = 'gioco/Down_under.mp3'                         # canzone 1
+    song2 = 'gioco/wind.mp3'                               # canzone 2
 
 
 def setup():
-    global screen, width, height, button_x, button_y, back_button_x, back_button_y, exit_button_x, exit_button_y  # Dichiara le variabili globali da modificare
+    global schermo, width, height, button_x, button_y, back_button_x, back_button_y, exit_button_x, exit_button_y 
     
-    info = pygame.display.Info()                           # Ottiene le informazioni sul display del sistema
+    info = pygame.display.Info()                           # informazioni necessarie del display
     width, height = info.current_w, info.current_h        # Legge la risoluzione attuale dello schermo
-    screen = pygame.display.set_mode((width, height))     # Crea la finestra con le dimensioni dello schermo
+    schermo = pygame.display.set_mode((width, height))     # Creazione finestra con grandezza del display
     pygame.display.set_caption("Game")                    # Imposta il titolo della finestra
     
-    button_x = width // 2 - button_w // 2                 # Centra il pulsante GIOCA orizzontalmente
-    button_y = height // 2 + 100                          # Posiziona il pulsante GIOCA nella metà bassa dello schermo
+    button_x = width // 2 - button_w // 2                 # Posizionamento pulsante al centro della pagina
+    button_y = height // 2 + 100                          # Posizionamento pulsante leggermete piu in basso dello schermo
     
-    back_button_x = 20                                    # Posiziona il pulsante TORNA AL MENU a sinistra
-    back_button_y = 20                                    # Posiziona il pulsante TORNA AL MENU in alto
+    back_button_x = 20                                    # Posizionamento pulsante TORNA AL MENU a sinistra
+    back_button_y = 20                                    # Posizionamento pulsante TORNA AL MENU in alto
     
-    exit_button_x = width - exit_button_w - 20            # Posiziona il pulsante ESCI a destra
-    exit_button_y = 20                                    # Posiziona il pulsante ESCI in alto
+    exit_button_x = width - exit_button_w - 20            # Posizionamento pulsante ESCI a destra
+    exit_button_y = 20                                    # Posizionamento pulsante ESCI in alto
     
-    load_assets()                                         # Carica tutte le risorse (immagini e musica)
+    Carica_Elementi()                                         # Caricamento elementi dichiarati(immagini e musiche)
 
 
 def get_webcam_frame():
-    if Attivazione_Camera is not None:                    # Controlla se la webcam è attiva
+    if Attivazione_Camera is not None:                    # Controllo webcame attiva
         ret, frame = Attivazione_Camera.read()            # Legge un frame dalla webcam (ret=True se ok)
-        if ret:                                           # Se il frame è stato letto correttamente
+        if ret:                                           # dice se il frame è letto correttamente
             frame = cv2.flip(frame, 1)                    # Specchia il frame orizzontalmente (effetto specchio)
-            frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB) # Converte i colori da BGR (OpenCV) a RGB (pygame)
+            frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB) # Converte i colori da BGR a RGB 
             frame = np.transpose(frame, (1, 0, 2))        # Ruota gli assi per compatibilità con pygame
             return pygame.surfarray.make_surface(frame)   # Converte l'array numpy in una superficie pygame
     return None                                           # Restituisce None se la webcam non è attiva o c'è un errore
 
 
-def draw_background():
+def draw_background(): #funzione per fissare e mettere bene lo sfondo
     if Immagine_sfondo:                                                        # Controlla che l'immagine sia caricata
         img_w, img_h = Immagine_sfondo.get_size()                              # Ottiene le dimensioni originali dell'immagine
         scale_ratio = max(width / img_w, height / img_h)                      # Calcola il rapporto di scala per coprire tutto lo schermo
@@ -86,68 +86,68 @@ def draw_background():
         scaled_bg = pygame.transform.scale(Immagine_sfondo, (w, h))           # Ridimensiona l'immagine
         x = (width - w) // 2                                                  # Centra l'immagine orizzontalmente
         y = (height - h) // 2                                                  # Centra l'immagine verticalmente
-        screen.blit(scaled_bg, (x, y))                                        # Disegna l'immagine sullo schermo
+        schermo.blit(scaled_bg, (x, y))                                        # Disegna l'immagine sullo schermo
 
 
 def draw_logo():
-    logo_w = min(600, width * 0.8)                                             # Larghezza del logo: massimo 600px o 80% dello schermo
+    logo_w = min(700, width * 0.8)                                             # Larghezza del logo
     logo_h = logo_w * 0.75                                                     # Altezza proporzionale alla larghezza (rapporto 4:3)
     scaled_logo = pygame.transform.scale(Logo_Immagine, (int(logo_w), int(logo_h)))  # Ridimensiona il logo
     x = width // 2 - logo_w // 2                                              # Centra il logo orizzontalmente
     y = height // 2 - 150 - logo_h // 2                                       # Posiziona il logo nella metà alta dello schermo
-    screen.blit(scaled_logo, (x, y))                                          # Disegna il logo sullo schermo
+    schermo.blit(scaled_logo, (x, y))                                          # posiziona il logo sullo schermo
 
 
 def draw_button():
-    mouse_x, mouse_y = pygame.mouse.get_pos()                                  # Ottiene la posizione attuale del mouse
-    is_hover = (button_x < mouse_x < button_x + button_w and                  # Controlla se il mouse è sopra il pulsante
-                button_y < mouse_y < button_y + button_h)                     # (sia in orizzontale che in verticale)
+    mouse_x, mouse_y = pygame.mouse.get_pos()                                  # posizione del mouse
+    is_sopra = (button_x < mouse_x < button_x + button_w and                  # Controlla se il mouse è sopra il pulsante
+                button_y < mouse_y < button_y + button_h)            
     
-    color = (80, 255, 130) if is_hover else (50, 200, 100)                     # Verde chiaro se hover, verde scuro altrimenti
-    pygame.draw.rect(screen, color, (button_x, button_y, button_w, button_h), border_radius=20)   # Disegna il rettangolo del pulsante
-    if is_hover:                                                               # Se il mouse è sopra il pulsante
-        pygame.draw.rect(screen, (255, 255, 255), (button_x, button_y, button_w, button_h), width=3, border_radius=20)  # Aggiunge il bordo bianco
+    color = (80, 255, 130) if is_sopra else (50, 200, 100)                     # Verde chiaro se hover, verde scuro altrimenti
+    pygame.draw.rect(schermo, color, (button_x, button_y, button_w, button_h), border_radius=20)   # Disegna il rettangolo del pulsante
+    if is_sopra:                                                               # Se il mouse è sopra il pulsante
+        pygame.draw.rect(schermo, (255, 255, 255), (button_x, button_y, button_w, button_h), width=3, border_radius=20)  # Aggiunge il bordo bianco
     
-    font = pygame.font.Font(None, 36)                                          # Crea il font di dimensione 36
-    text = font.render("GIOCA", True, (255, 255, 255))                         # Renderizza il testo "GIOCA" in bianco
+    font = pygame.font.Font(None, 36)                                          # Crea il font
+    text = font.render("GIOCA", True, (255, 255, 255))                         # Mette la scritta GIOCA in bianco
     text_rect = text.get_rect(center=(button_x + button_w // 2, button_y + button_h // 2))  # Centra il testo nel pulsante
-    screen.blit(text, text_rect)                                               # Disegna il testo sullo schermo
+    schermo.blit(text, text_rect)                                               # Disegna il testo sullo schermo
 
 
 def draw_back_button():
-    mouse_x, mouse_y = pygame.mouse.get_pos()                                  # Ottiene la posizione attuale del mouse
-    is_hover = (back_button_x < mouse_x < back_button_x + back_button_w and   # Controlla se il mouse è sopra il pulsante
-                back_button_y < mouse_y < back_button_y + back_button_h)      # (sia in orizzontale che in verticale)
+    mouse_x, mouse_y = pygame.mouse.get_pos()                                  # Posizione mouse
+    is_sopra = (back_button_x < mouse_x < back_button_x + back_button_w and   # Controlla mouse sopra pulsante
+                back_button_y < mouse_y < back_button_y + back_button_h)     
     
-    color = (150, 150, 150) if is_hover else (100, 100, 100)                   # Grigio chiaro se hover, grigio scuro altrimenti
-    pygame.draw.rect(screen, color, (back_button_x, back_button_y, back_button_w, back_button_h), border_radius=15)  # Disegna il rettangolo del pulsante
-    if is_hover:                                                               # Se il mouse è sopra il pulsante
-        pygame.draw.rect(screen, (255, 255, 255), (back_button_x, back_button_y, back_button_w, back_button_h), width=3, border_radius=15)  # Aggiunge il bordo bianco
+    color = (150, 150, 150) if is_sopra else (100, 100, 100)                   # Grigio chiaro se hover, grigio scuro altrimenti
+    pygame.draw.rect(schermo, color, (back_button_x, back_button_y, back_button_w, back_button_h), border_radius=15)  # Disegna il rettangolo del pulsante
+    if is_sopra:                                                               # Se il mouse è sopra il pulsante
+        pygame.draw.rect(schermo, (255, 255, 255), (back_button_x, back_button_y, back_button_w, back_button_h), width=3, border_radius=15)  # Aggiunge il bordo bianco
     
     font = pygame.font.Font(None, 30)                                          # Crea il font di dimensione 30
     text = font.render("TORNA AL MENU", True, (255, 255, 255))                 # Renderizza il testo in bianco
     text_rect = text.get_rect(center=(back_button_x + back_button_w // 2, back_button_y + back_button_h // 2))  # Centra il testo nel pulsante
-    screen.blit(text, text_rect)                                               # Disegna il testo sullo schermo
+    schermo.blit(text, text_rect)                                               # Disegna il testo sullo schermo
 
 
 def draw_exit_button():
     mouse_x, mouse_y = pygame.mouse.get_pos()                                  # Ottiene la posizione attuale del mouse
-    is_hover = (exit_button_x < mouse_x < exit_button_x + exit_button_w and   # Controlla se il mouse è sopra il pulsante
+    is_sopra = (exit_button_x < mouse_x < exit_button_x + exit_button_w and   # Controlla se il mouse è sopra il pulsante
                 exit_button_y < mouse_y < exit_button_y + exit_button_h)      # (sia in orizzontale che in verticale)
     
-    color = (150, 150, 150) if is_hover else (100, 100, 100)                   # Grigio chiaro se hover, grigio scuro altrimenti
-    pygame.draw.rect(screen, color, (exit_button_x, exit_button_y, exit_button_w, exit_button_h), border_radius=15)  # Disegna il rettangolo del pulsante
-    if is_hover:                                                               # Se il mouse è sopra il pulsante
-        pygame.draw.rect(screen, (255, 255, 255), (exit_button_x, exit_button_y, exit_button_w, exit_button_h), width=3, border_radius=15)  # Aggiunge il bordo bianco
+    color = (150, 150, 150) if is_sopra else (100, 100, 100)                   # Grigio chiaro se hover, grigio scuro altrimenti
+    pygame.draw.rect(schermo, color, (exit_button_x, exit_button_y, exit_button_w, exit_button_h), border_radius=15)  # Disegna il rettangolo del pulsante
+    if is_sopra:                                                               # Se il mouse è sopra il pulsante
+        pygame.draw.rect(schermo, (255, 255, 255), (exit_button_x, exit_button_y, exit_button_w, exit_button_h), width=3, border_radius=15)  # Aggiunge il bordo bianco
     
     font = pygame.font.Font(None, 30)                                          # Crea il font di dimensione 30
     text = font.render("ESCI", True, (255, 255, 255))                          # Renderizza il testo "ESCI" in bianco
     text_rect = text.get_rect(center=(exit_button_x + exit_button_w // 2, exit_button_y + exit_button_h // 2))  # Centra il testo nel pulsante
-    screen.blit(text, text_rect)                                               # Disegna il testo sullo schermo
+    schermo.blit(text, text_rect)                                               # Disegna il testo sullo schermo
 
 
 def draw():
-    screen.fill((0, 0, 0))                                # Riempie lo schermo di nero (cancella il frame precedente)
+    schermo.fill((0, 0, 0))                                # Riempie lo schermo di nero (cancella il frame precedente)
     
     if Stato_schermo == "menu":                           # Se siamo nel menu
         if started:                                       # Se il gioco è già stato avviato con il primo click
@@ -159,7 +159,7 @@ def draw():
             font = pygame.font.Font(None, 36)             # Crea il font di dimensione 36
             text = font.render("Clicca per avviare il gioco", True, (255, 255, 255))  # Renderizza il testo iniziale
             text_rect = text.get_rect(center=(width // 2, height // 2))               # Centra il testo nello schermo
-            screen.blit(text, text_rect)                  # Disegna il testo sullo schermo
+            schermo.blit(text, text_rect)                  # Disegna il testo sullo schermo
             draw_exit_button()                            # Disegna il pulsante ESCI
     
     elif Stato_schermo == "game":                         # Se siamo nella schermata di gioco
@@ -172,7 +172,7 @@ def draw():
             scaled_frame = pygame.transform.scale(frame, (w, h))  # Ridimensiona il frame
             x = (width - w) // 2                         # Centra il frame orizzontalmente
             y = (height - h) // 2                        # Centra il frame verticalmente
-            screen.blit(scaled_frame, (x, y))            # Disegna il frame della webcam sullo schermo
+            schermo.blit(scaled_frame, (x, y))            # Disegna il frame della webcam sullo schermo
         
         draw_back_button()                                # Disegna il pulsante TORNA AL MENU
         draw_exit_button()                                # Disegna il pulsante ESCI
@@ -183,15 +183,22 @@ def draw():
 def handle_music():
     global current_song                                   # Dichiara la variabile globale da modificare
     
-    if not mixer.music.get_busy():                        # Se la musica ha smesso di suonare
-        if current_song == 1:                             # Se stava suonando la prima canzone
-            mixer.music.load(song2)                       # Carica la seconda canzone
-            mixer.music.play()                            # Avvia la riproduzione
-            current_song = 2                              # Aggiorna la canzone corrente
-        else:                                             # Se stava suonando la seconda canzone
-            mixer.music.load(song1)                       # Carica la prima canzone
-            mixer.music.play()                            # Avvia la riproduzione
-            current_song = 1                              # Aggiorna la canzone corrente
+    if not started:                                       # Se siamo sulla schermata nera, nessuna musica
+        return
+    
+    if Stato_schermo == "menu":                           # La musica suona solo nel menu principale
+        if not mixer.music.get_busy():                    # Se la musica non sta suonando
+            if current_song == 1:
+                mixer.music.load(song1)                   # Carica la prima canzone
+                mixer.music.play()                        # Avvia la riproduzione
+                current_song = 2                          # La prossima sarà la seconda
+            else:
+                mixer.music.load(song2)                   # Carica la seconda canzone
+                mixer.music.play()                        # Avvia la riproduzione
+                current_song = 1                          # La prossima sarà la prima
+    elif Stato_schermo == "game":                         # Nel gioco la musica viene fermata
+        if mixer.music.get_busy():                        # Se la musica sta suonando
+            mixer.music.stop()                            # Fermala
 
 
 def cleanup_and_exit():
@@ -215,9 +222,6 @@ def mouse_pressed(pos):
     
     if not started:                                       # Se è il primo click (gioco non ancora avviato)
         started = True                                    # Segna il gioco come avviato
-        mixer.music.load(song1)                           # Carica la prima canzone
-        mixer.music.play()                                # Avvia la riproduzione musicale
-        current_song = 1                                  # Imposta la canzone corrente a 1
         return                                            # Esce dalla funzione senza controllare altri pulsanti
     
     if Stato_schermo == "game":                           # Se siamo nella schermata di gioco
