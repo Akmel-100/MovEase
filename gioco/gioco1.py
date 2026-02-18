@@ -77,6 +77,19 @@ def is_hand_closed(landmarks, threshold=HAND_CLOSURE_THRESHOLD):
     return closure >= threshold
 
 # -------------------------------
+# Funzione per generare posizione bersaglio in base alla mano
+# I pallini BLU (mano sinistra) appaiono nella metà SINISTRA dello schermo
+# I pallini ROSSI (mano destra) appaiono nella metà DESTRA dello schermo
+# -------------------------------
+def new_target_position(hand_label, r):
+    if hand_label == "Left":
+        x = random.randint(r, WIDTH // 2 - r)
+    else:
+        x = random.randint(WIDTH // 2 + r, WIDTH - r)
+    y = random.randint(r, HEIGHT - r)
+    return x, y
+
+# -------------------------------
 # Funzione per inizializzare il gioco
 # -------------------------------
 def init_game():
@@ -87,9 +100,8 @@ def init_game():
     targets_hit_count = 0
     radius = 40
     
-    target_x = random.randint(radius, WIDTH - radius)
-    target_y = random.randint(radius, HEIGHT - radius)
     target_hand = random.choice(["Left", "Right"])
+    target_x, target_y = new_target_position(target_hand, radius)
     target_color = BLUE if target_hand == "Left" else RED
     hit_effect_timer = 0
     target_visible = True
@@ -123,7 +135,6 @@ print("=" * 50)
 
 cap = cv2.VideoCapture(0)
 
-# Verifica se la webcam si è aperta correttamente
 if not cap.isOpened():
     print("ERRORE: Impossibile aprire la webcam!")
     print("Possibili cause:")
@@ -138,17 +149,14 @@ if not cap.isOpened():
         pygame.quit()
         exit()
 
-# Mostra informazioni webcam
 print(f"✓ Webcam aperta correttamente")
 print(f"  Larghezza: {cap.get(cv2.CAP_PROP_FRAME_WIDTH)}")
 print(f"  Altezza: {cap.get(cv2.CAP_PROP_FRAME_HEIGHT)}")
 print(f"  FPS: {cap.get(cv2.CAP_PROP_FPS)}")
 
-# Test di lettura frame
 ret, test_frame = cap.read()
 if not ret:
     print("ERRORE: Impossibile leggere dalla webcam!")
-    print("La webcam è aperta ma non risponde.")
     cap.release()
     pygame.quit()
     exit()
@@ -167,7 +175,8 @@ while show_instructions:
     screen.blit(title, (WIDTH // 2 - title.get_width() // 2, 60))
     instructions = [
         "Chiudi la mano sopra il bersaglio per colpirlo.",
-        "Ogni mano colpisce solo i suoi cerchi.",
+        "Mano SINISTRA (BLU) → colpisci a SINISTRA dello schermo",
+        "Mano DESTRA (ROSSA) → colpisci a DESTRA dello schermo",
         "", 
         "Durata: 60 secondi.", 
         f"Punteggio minimo per superare: {MIN_SCORE_TO_PASS} punti",
@@ -207,28 +216,22 @@ while running:
     if show_fail_screen:
         draw_gradient(screen, (255, 200, 200), (255, 150, 150))
         
-        # Pannello centrale
         panel = pygame.Surface((700, 450), pygame.SRCALPHA)
         panel.fill((255, 255, 255, 230))
         screen.blit(panel, (WIDTH // 2 - 350, HEIGHT // 2 - 225))
         
-        # Titolo PROVA FALLITA
         fail_title = large_font.render("PROVA FALLITA!", True, RED)
         screen.blit(fail_title, (WIDTH // 2 - fail_title.get_width() // 2, HEIGHT // 2 - 150))
         
-        # Punteggio ottenuto
         score_text = font.render(f"Punteggio ottenuto: {score}", True, DARK_TEXT)
         screen.blit(score_text, (WIDTH // 2 - score_text.get_width() // 2, HEIGHT // 2 - 60))
         
-        # Punteggio richiesto
         required_text = font.render(f"Punteggio richiesto: {MIN_SCORE_TO_PASS}", True, DARK_TEXT)
         screen.blit(required_text, (WIDTH // 2 - required_text.get_width() // 2, HEIGHT // 2 - 20))
         
-        # Messaggio di riavvio
         retry_text = large_font.render("RIPROVA!", True, YELLOW)
         screen.blit(retry_text, (WIDTH // 2 - retry_text.get_width() // 2, HEIGHT // 2 + 50))
         
-        # Info countdown
         countdown_sec = max(0, 3 - (fail_screen_timer // 30))
         countdown_text = small_font.render(f"Riavvio tra {countdown_sec} secondi...", True, DARK_TEXT)
         screen.blit(countdown_text, (WIDTH // 2 - countdown_text.get_width() // 2, HEIGHT // 2 + 140))
@@ -236,13 +239,11 @@ while running:
         pygame.display.flip()
         fail_screen_timer += 1
         
-        # Dopo 3 secondi (90 frame a 30 fps), riavvia il gioco
         if fail_screen_timer >= 90:
             show_fail_screen = False
             fail_screen_timer = 0
             init_game()
             
-            # Countdown prima di ripartire
             for i in range(3, 0, -1):
                 draw_gradient(screen, (240, 245, 255), (200, 220, 255))
                 txt = large_font.render(str(i), True, RED)
@@ -272,7 +273,6 @@ while running:
         failed_frames += 1
         print(f"Frame non letto! (Totale errori: {failed_frames})")
         
-        # Se troppi frame falliti consecutivi, mostra errore
         if failed_frames > 30:
             print("ERRORE CRITICO: Troppi frame persi!")
             running = False
@@ -281,7 +281,6 @@ while running:
         pygame.time.wait(100)
         continue
     
-    # Reset contatore se il frame è stato letto correttamente
     failed_frames = 0
 
     frame = cv2.flip(frame, 1)
@@ -304,6 +303,7 @@ while running:
             hand_center_pygame = (int(x * WIDTH), int(y * HEIGHT))
             hand_positions[hand_label] = hand_center_pygame
 
+            # Aggiorna trail (mantenuto per eventuale uso futuro ma NON disegnato)
             hand_trails.setdefault(hand_label, []).append(hand_center_pygame)
             if len(hand_trails[hand_label]) > 20:
                 hand_trails[hand_label].pop(0)
@@ -328,25 +328,16 @@ while running:
                     if radius > 20:
                         radius -= 1
 
-    # Disegna scia mano
-    for label, trail in hand_trails.items():
-        if len(trail) > 1:
-            for i in range(len(trail)-1):
-                start = trail[i]
-                end = trail[i+1]
-                thickness = int(2 + 4 * (i / len(trail)))
-                trail_color = BLUE if label == "Left" else RED
-                pygame.draw.line(screen, trail_color, start, end, thickness)
+    # Scia RIMOSSA — il trail non viene più disegnato
 
-    # Bersaglio riappare mano-specifico
+    # Bersaglio riappare nella zona corretta per la mano scelta
     if not target_visible:
         disappear_timer -= 1
         if disappear_timer <= 0:
             target_visible = True
             target_hand = random.choice(["Left", "Right"])
             target_color = BLUE if target_hand == "Left" else RED
-            target_x = random.randint(radius, WIDTH - radius)
-            target_y = random.randint(radius, HEIGHT - radius)
+            target_x, target_y = new_target_position(target_hand, radius)
 
     # Controllo fine tempo
     if remaining_time == 0 and not game_over:
@@ -374,7 +365,6 @@ while running:
     hud.fill((255, 255, 255, 190))
     screen.blit(hud, (15, 15))
     
-    # Colore del punteggio: verde se >= soglia, giallo se vicino, rosso se lontano
     if score >= MIN_SCORE_TO_PASS:
         score_color = GREEN
     elif score >= MIN_SCORE_TO_PASS - 3:
@@ -387,12 +377,10 @@ while running:
 
     # Game over - SOLO SE SUPERATO
     if game_over and score >= MIN_SCORE_TO_PASS:
-        # Overlay scuro
         overlay = pygame.Surface((WIDTH, HEIGHT), pygame.SRCALPHA)
         overlay.fill((0, 0, 0, 150))
         screen.blit(overlay, (0, 0))
         
-        # Pannello più grande con bordi arrotondati
         panel_width = 700
         panel_height = 450
         panel = pygame.Surface((panel_width, panel_height), pygame.SRCALPHA)
@@ -400,17 +388,14 @@ while running:
         pygame.draw.rect(panel, (80, 200, 120, 200), (0, 0, panel_width, panel_height), 5, border_radius=25)
         screen.blit(panel, (WIDTH // 2 - panel_width // 2, HEIGHT // 2 - panel_height // 2))
         
-        # Icona di successo
         success_font = pygame.font.SysFont("Segoe UI", 100, bold=True)
         checkmark = success_font.render("✓", True, GREEN)
         screen.blit(checkmark, (WIDTH // 2 - checkmark.get_width() // 2, HEIGHT // 2 - 180))
         
-        # Titolo PROVA SUPERATA
         title_font = pygame.font.SysFont("Segoe UI", 60, bold=True)
         success_title = title_font.render("PROVA SUPERATA!", True, GREEN)
         screen.blit(success_title, (WIDTH // 2 - success_title.get_width() // 2, HEIGHT // 2 - 60))
         
-        # Punteggio finale
         score_font = pygame.font.SysFont("Segoe UI", 80, bold=True)
         score_text = score_font.render(f"{score}", True, (50, 150, 80))
         screen.blit(score_text, (WIDTH // 2 - score_text.get_width() // 2, HEIGHT // 2 + 30))
@@ -418,7 +403,6 @@ while running:
         points_label = font.render("PUNTI", True, (100, 100, 100))
         screen.blit(points_label, (WIDTH // 2 - points_label.get_width() // 2, HEIGHT // 2 + 120))
         
-        # Istruzioni chiusura
         close_info = small_font.render("Premi ESC per chiudere", True, DARK_TEXT)
         screen.blit(close_info, (WIDTH // 2 - close_info.get_width() // 2, HEIGHT // 2 + 180))
 
