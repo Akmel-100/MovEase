@@ -1,19 +1,18 @@
 """
-Gioco di Ragionamento Logico
-Progettato per persone con Sclerosi Multipla
+Logical Reasoning Game
+Designed for people with Multiple Sclerosis
 
-Caratteristiche:
-- Interfaccia semplice e chiara
-- Musica di sottofondo rilassante
-- Focus sul ragionamento, non sulla velocità o precisione fisica
-- Feedback positivo e incoraggiante
+Characteristics:
+- simple and clear interface
+- Focus on reasoning, not on physical speed or accuracy
+- Positive and encouraging feedback
 
-CONTROLLI:
-- Clicca per rispondere
-- ESC = Esci dal gioco
-- M = Metti in pausa/riprendi la musica
-- + = Aumenta volume
-- - = Diminuisci volume
+CONTROLS:
+- Click to reply
+- ESC = Exit the game
+- M = Pause/resume music
+- + = Increase volume
+- - = Decrease volume
 """
 
 import pygame                          # Libreria per la grafica e la gestione degli eventi
@@ -38,7 +37,7 @@ pygame.mixer.init()                                                  # Inizializ
 
 screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)          # Crea la finestra a schermo intero
 WIDTH, HEIGHT = screen.get_size()                                    # Ottiene la risoluzione attuale dello schermo
-pygame.display.set_caption("Gioco di Ragionamento Logico")           # Imposta il titolo della finestra
+pygame.display.set_caption("Logical Reasoning Game")           # Imposta il titolo della finestra
 
 try:
     nome_file_musica = "MI.mp3"                                      # Nome del file audio da caricare
@@ -47,14 +46,14 @@ try:
     pygame.mixer.music.play(-1)                                      # Avvia la musica in loop infinito (-1 = ripeti sempre)
     
     print("=" * 60)
-    print("✓ MUSICA CARICATA CON SUCCESSO!")
+    print("SUCCESSFULLY UPLOADED MUSIC!")
     print(f"  File: {nome_file_musica}")
-    print(f"  Volume iniziale: 30%")
+    print(f"  initial volume: 30%")
     print("=" * 60)
-    print("\nCONTROLLI MUSICA:")
-    print("  M = Pausa/Riprendi musica")
-    print("  + = Aumenta volume")
-    print("  - = Diminuisci volume")
+    print("\nMUSIC CONTROLS:")
+    print("  M = Break/Resume music")
+    print("  + = Increase volume")
+    print("  - = Decrease volume")
     print("=" * 60)
     
 except pygame.error as e:              # Se il file non esiste o non è leggibile
@@ -161,98 +160,98 @@ class GiocoRagionamento:
         return [
             # Sequenze numeriche
             Puzzle(
-                "Completa la sequenza: 2, 4, 8, 16, ?",
+                "Complete the sequence: 2, 4, 8, 16, ?",
                 ["24", "30", "32", "64"],
                 2,                                 # Risposta corretta: indice 2 = "32"
-                "Ogni numero è il doppio del precedente: 2×2=4, 4×2=8, 8×2=16, 16×2=32"
+                "Each number is double the previous one: 2×2=4, 4×2=8, 8×2=16, 16×2=32"
             ),
             Puzzle(
-                "Completa la sequenza: 3, 6, 9, 12, ?",
+                "Complete the sequence: 3, 6, 9, 12, ?",
                 ["14", "15", "16", "18"],
                 1,                                 # Risposta corretta: indice 1 = "15"
-                "Si aggiunge 3 ogni volta: 3+3=6, 6+3=9, 9+3=12, 12+3=15"
+                "Add 3 each time: 3+3=6, 6+3=9, 9+3=12, 12+3=15"
             ),
             Puzzle(
-                "Completa la sequenza: 100, 90, 80, 70, ?",
+                "Complete the sequence: 100, 90, 80, 70, ?",
                 ["65", "60", "55", "50"],
                 1,                                 # Risposta corretta: indice 1 = "60"
-                "Si sottrae 10 ogni volta: 100-10=90, 90-10=80, 80-10=70, 70-10=60"
+                "Subtract 10 each time: 100-10=90, 90-10=80, 80-10=70, 70-10=60"
             ),
             
             # Logica deduttiva
             Puzzle(
-                "Marco è più alto di Luca. Luca è più alto di Anna. Chi è il più basso?",
-                ["Marco", "Luca", "Anna", "Impossibile dirlo"],
+                "Mark is taller than Luke. Luke is taller than Anna. Who is the shortest?",
+                ["Marco", "Luca", "Anna", "impossible to say"],
                 2,                                 # Risposta corretta: indice 2 = "Anna"
-                "Se Marco > Luca e Luca > Anna, allora Anna è la più bassa."
+                "If Mark > Luke and Luke > Anna, then Anna is the lowest."
             ),
             Puzzle(
-                "Tutti i gatti hanno 4 zampe. Fuffi è un gatto. Quante zampe ha Fuffi?",
-                ["2", "3", "4", "Dipende"],
+                "All cats have 4 legs. Fuffi is a cat. How many legs does Fuffi have?",
+                ["2", "3", "4", "Depends"],
                 2,                                 # Risposta corretta: indice 2 = "4"
-                "Se tutti i gatti hanno 4 zampe e Fuffi è un gatto, allora Fuffi ha 4 zampe."
+                "If all cats have 4 legs and Fuffi is a cat, then Fuffi has 4 legs."
             ),
             Puzzle(
-                "Tutti i pesci vivono in acqua. Il salmone è un pesce. Dove vive il salmone?",
-                ["Sulla terra", "In acqua", "Sugli alberi", "Nel deserto"],
+                "All fish live in water. Salmon is a fish. Where does salmon live?",
+                ["On the earth", "In water", "On the trees", "In the desert"],
                 1,                                 # Risposta corretta: indice 1 = "In acqua"
-                "Se tutti i pesci vivono in acqua e il salmone è un pesce, allora il salmone vive in acqua."
+                "If all fish live in water and salmon is a fish, then salmon lives in water."
             ),
             
             # Categorizzazione
             Puzzle(
-                "Quale parola NON appartiene al gruppo? Mela, Banana, Carota, Arancia",
-                ["Mela", "Banana", "Carota", "Arancia"],
+                "Which word does NOT belong to the group? Apple, Banana, Carrot, Orange",
+                ["Apple", "Banana", "Carrot", "Orange"],
                 2,                                 # Risposta corretta: indice 2 = "Carota"
-                "Carota è una verdura, mentre gli altri sono frutti."
+                "Carrot is a vegetable, while the others are fruits."
             ),
             Puzzle(
-                "Quale numero NON appartiene al gruppo? 2, 4, 6, 9, 8",
+                "Which number does NOT belong to the group? 2, 4, 6, 9, 8",
                 ["2", "4", "9", "8"],
                 2,                                 # Risposta corretta: indice 2 = "9"
-                "Il 9 è dispari, mentre tutti gli altri sono numeri pari."
+                "9 is odd, while all others are even numbers."
             ),
             
             # Problemi logici
             Puzzle(
-                "Ho 5 mele. Ne regalo 2 a Maria e 1 a Paolo. Quante me ne rimangono?",
+                "I have 5 apples. I give 2 to Mary and 1 to Paul. How many do I have left?",
                 ["1", "2", "3", "4"],
                 1,                                 # Risposta corretta: indice 1 = "2"
-                "5 - 2 - 1 = 2 mele rimaste."
+                "5 - 2 - 1 = 2 apples left."
             ),
             Puzzle(
-                "Un treno parte alle 14:30 e arriva alle 16:00. Quanto dura il viaggio?",
-                ["1 ora", "1 ora e 30 minuti", "2 ore", "2 ore e 30 minuti"],
+                "A train leaves at 2:30 PM and arrives at 4:00 PM. How long is the trip?",
+                ["1 hour", "1.5 hours", "2 hours", "2.5 hours"],
                 1,                                 # Risposta corretta: indice 1 = "1 ora e 30 minuti"
-                "Dalle 14:30 alle 16:00 passano 1 ora e 30 minuti."
+                "From 2:30 PM to 4:00 PM, 1 hour and 30 minutes pass."
             ),
             
             # Analogie
             Puzzle(
-                "Caldo sta a Freddo come Alto sta a ?",
-                ["Grande", "Basso", "Lungo", "Forte"],
+                "Hot is to Cold as High is to?",
+                ["Big", "Low", "Long", "Strong"],
                 1,                                 # Risposta corretta: indice 1 = "Basso"
-                "Caldo e Freddo sono opposti, come Alto e Basso."
+                "Hot and Cold are opposites, like High and Low."
             ),
             Puzzle(
-                "Dottore sta a Ospedale come Insegnante sta a ?",
-                ["Casa", "Scuola", "Ufficio", "Negozio"],
+                "Doctor is in Hospital as Teacher is in?",
+                ["House", "School", "Office", "Shop"],
                 1,                                 # Risposta corretta: indice 1 = "Scuola"
-                "Il dottore lavora in ospedale, l'insegnante lavora a scuola."
+                "The doctor works in the hospital, the teacher works at school."
             ),
             
             # Pattern e relazioni
             Puzzle(
-                "Se A=1, B=2, C=3, quanto vale la parola 'CAB'?",
+                "If A=1, B=2, C=3, how much is the sequence'CAB'?",
                 ["4", "5", "6", "7"],
                 2,                                 # Risposta corretta: indice 2 = "6"
-                "C=3, A=1, B=2. Quindi 3+1+2=6"
+                "C=3, A=1, B=2. then 3+1+2=6"
             ),
             Puzzle(
-                "Qual è il prossimo giorno dopo Lunedì, Mercoledì, Venerdì?",
-                ["Sabato", "Domenica", "Giovedì", "Martedì"],
+                "What's next day after Monday, Wednesday, Friday?",
+                ["Saturday", "Sunday", "Thursday", "Tuesday"],
                 1,                                 # Risposta corretta: indice 1 = "Domenica"
-                "Il pattern salta un giorno ogni volta: Lun→Mer→Ven→Dom"
+                "The pattern skips one day each time: Mon→Wed→Fri→Sun"
             ),
         ]
     
@@ -288,13 +287,13 @@ class GiocoRagionamento:
             if self.musica_attiva:                                 # Se la musica è in riproduzione
                 pygame.mixer.music.pause()                         # Mette in pausa la musica
                 self.musica_attiva = False                         # Aggiorna il flag
-                print("🔇 Musica in pausa")
+                print("🔇 Music on pause")
             else:                                                  # Se la musica è in pausa
                 pygame.mixer.music.unpause()                       # Riprende la riproduzione
                 self.musica_attiva = True                          # Aggiorna il flag
-                print("🔊 Musica ripresa")
+                print("🔊 Music resumed")
         except:
-            print("⚠ Nessuna musica caricata")                    # Messaggio se non c'è musica
+            print("No music loaded")                    # Messaggio se non c'è musica
     
     def cambia_volume(self, delta):
         """Cambia il volume della musica (tasti + e -)"""
@@ -313,13 +312,13 @@ class GiocoRagionamento:
             
             print(f"{icona} Volume: {percentuale}%")
         except:
-            print("Nessuna musica caricata")
+            print("No music loaded")
     
     def draw_menu(self):
         """Disegna il menu iniziale"""
         draw_gradient(screen, LIGHT_BLUE, DARKER_BLUE)             # Sfondo sfumato blu
         
-        title = font_titolo.render("Gioco di Ragionamento Logico", True, DARK_TEXT)          # Renderizza il titolo
+        title = font_titolo.render("Logical Reasoning Game", True, DARK_TEXT)          # Renderizza il titolo
         screen.blit(title, (WIDTH // 2 - title.get_width() // 2, 80))                          # Disegna il titolo centrato
         
         panel_width = 900
@@ -329,27 +328,27 @@ class GiocoRagionamento:
         screen.blit(panel, (WIDTH // 2 - panel_width // 2, HEIGHT // 2 - panel_height // 2 - 50))  # Disegna il pannello centrato
         
         instructions = [
-            "Benvenuto al Gioco di Ragionamento!",
+            "Welcome to the Reasoning Game!",
             "",
-            "• Leggi attentamente ogni domanda",
-            "• Clicca sulla risposta che ritieni corretta",
-            "• Se rispondi bene, passi subito alla prossima domanda",
-            "• Se sbagli, vedrai la spiegazione prima di continuare",
+            "• Read each question carefully",
+            "• Click on the answer you think is correct",
+            "• If you answer well, move on to the next question right away",
+            "• If you are wrong, you will see the explanation before continuing",
             "",
-            f"Totale puzzle: {len(self.crea_puzzles())}",            # Mostra il numero totale di puzzle disponibili
+            f"Total puzzles: {len(self.crea_puzzles())}",            # Mostra il numero totale di puzzle disponibili
             "",
-            "Clicca per iniziare!"
+            "Click to get started!"
         ]
         
         y_offset = HEIGHT // 2 - panel_height // 2 - 20             # Posizione Y iniziale del testo
         for i, line in enumerate(instructions):                      # Per ogni riga di istruzioni
-            if line == "Benvenuto al Gioco di Ragionamento!":        # Il titolo delle istruzioni usa un font e colore diverso
+            if line == "Welcome to the Reasoning Game!":        # Il titolo delle istruzioni usa un font e colore diverso
                 text = font_domanda.render(line, True, BLUE)
             else:
                 text = font_punteggio.render(line, True, DARK_TEXT)
             screen.blit(text, (WIDTH // 2 - text.get_width() // 2, y_offset + i * 45))  # Disegna ogni riga centrata e spaziata
         
-        controls = small_font.render("M=Musica | +=Volume+ | -=Volume- | ESC=Esci", True, DARK_TEXT)  # Testo controlli
+        controls = small_font.render("M=Music | +=Volume+ | -=Volume- | ESC=Exit", True, DARK_TEXT)  # Testo controlli
         screen.blit(controls, (WIDTH // 2 - controls.get_width() // 2, HEIGHT - 50))                  # Disegna in fondo allo schermo
     
     def draw_gioco(self):
@@ -361,10 +360,10 @@ class GiocoRagionamento:
         hud.fill((255, 255, 255, 200))                              # Riempie di bianco semi-trasparente
         screen.blit(hud, (20, 20))                                  # Disegna l'HUD in alto a sinistra
         
-        score_text = font_punteggio.render(f"Punteggio: {self.punteggio}", True, GREEN)      # Testo punteggio in verde
+        score_text = font_punteggio.render(f"Score: {self.punteggio}", True, GREEN)      # Testo punteggio in verde
         screen.blit(score_text, (40, 40))                                                    # Disegna il punteggio
         
-        count_text = font_punteggio.render(f"Completati: {self.puzzle_completati}", True, DARK_TEXT)  # Testo contatore
+        count_text = font_punteggio.render(f"complete: {self.puzzle_completati}", True, DARK_TEXT)  # Testo contatore
         screen.blit(count_text, (40, 80))                                                             # Disegna il contatore
         
         music_icon = "🔊" if self.musica_attiva else "🔇"           # Icona musica: altoparlante o muto
@@ -418,7 +417,7 @@ class GiocoRagionamento:
             spieg_panel.fill((255, 200, 200, 230))                  # Rosato semi-trasparente per indicare errore
             screen.blit(spieg_panel, (WIDTH // 2 - panel_width // 2, spieg_y))  # Disegna il pannello centrato
             
-            wrong_text = font_opzioni.render("✗ Risposta Sbagliata", True, RED)  # Testo "risposta sbagliata" in rosso
+            wrong_text = font_opzioni.render("wrong answer", True, RED)  # Testo "risposta sbagliata" in rosso
             screen.blit(wrong_text, (WIDTH // 2 - wrong_text.get_width() // 2, spieg_y + 20))  # Disegna il testo centrato
             
             spieg_lines = wrap_text(self.puzzle_corrente.spiegazione, font_spiegazione, panel_width - 80)  # Divide la spiegazione in righe
@@ -444,20 +443,20 @@ class GiocoRagionamento:
         screen.blit(checkmark, (WIDTH // 2 - checkmark.get_width() // 2, HEIGHT // 2 - 180))  # Disegna il segno centrato
         
         title_font = pygame.font.SysFont("Segoe UI", 60, bold=True)
-        title = title_font.render("COMPLIMENTI!", True, GREEN)      # Titolo di completamento in verde
+        title = title_font.render("COMPLIMENTS!", True, GREEN)      # Titolo di completamento in verde
         screen.blit(title, (WIDTH // 2 - title.get_width() // 2, HEIGHT // 2 - 60))  # Disegna il titolo centrato
         
         score_font = pygame.font.SysFont("Segoe UI", 80, bold=True)
         score_text = score_font.render(f"{self.punteggio}", True, (50, 150, 80))  # Punteggio finale in grande
         screen.blit(score_text, (WIDTH // 2 - score_text.get_width() // 2, HEIGHT // 2 + 30))  # Disegna il punteggio centrato
         
-        points_label = font_punteggio.render("PUNTI", True, (100, 100, 100))       # Etichetta "PUNTI" sotto il numero
+        points_label = font_punteggio.render("POINT", True, (100, 100, 100))       # Etichetta "PUNTI" sotto il numero
         screen.blit(points_label, (WIDTH // 2 - points_label.get_width() // 2, HEIGHT // 2 + 120))
         
-        completed_text = font_opzioni.render(f"Puzzle completati: {self.puzzle_completati}", True, DARK_TEXT)  # Numero puzzle completati
+        completed_text = font_opzioni.render(f"Puzzles completed: {self.puzzle_completati}", True, DARK_TEXT)  # Numero puzzle completati
         screen.blit(completed_text, (WIDTH // 2 - completed_text.get_width() // 2, HEIGHT // 2 + 170))
         
-        esc_info = small_font.render("Premi ESC per chiudere", True, DARK_TEXT)    # Istruzione per uscire
+        esc_info = small_font.render("ESC Presses to Close", True, DARK_TEXT)    # Istruzione per uscire
         screen.blit(esc_info, (WIDTH // 2 - esc_info.get_width() // 2, HEIGHT - 80))  # Disegna in fondo allo schermo
     
     def update(self):
@@ -498,7 +497,7 @@ def main():
     running = True                                                 # Flag per il loop principale
     
     print("\n" + "=" * 60)
-    print("GIOCO AVVIATO!")
+    print("GAME STARTED!")
     print("=" * 60)
     
     while running:                                                 # Loop principale del gioco
@@ -535,7 +534,7 @@ def main():
     
     pygame.mixer.music.stop()                                      # Ferma la musica
     pygame.quit()                                                  # Chiude pygame
-    print("\nGioco chiuso. Grazie per aver giocato!")
+    print("\nGame closed. Thanks for playing!")
 
 if __name__ == "__main__":                                         # Esegue main() solo se il file viene avviato direttamente
     main()

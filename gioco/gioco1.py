@@ -11,7 +11,7 @@ import mediapipe as mp                 # Libreria Google per il riconoscimento d
 pygame.init()                                                        # Inizializza tutti i moduli di pygame
 screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)          # Crea la finestra a schermo intero
 WIDTH, HEIGHT = screen.get_size()                                    # Ottiene la risoluzione dello schermo
-pygame.display.set_caption("Gioco Riabilitativo - MediaPipe")        # Imposta il titolo della finestra
+pygame.display.set_caption("Rehabilitation Game - MediaPipe")        # Imposta il titolo della finestra
 font = pygame.font.SysFont("Segoe UI", 26)                           # Font standard per testi normali
 large_font = pygame.font.SysFont("Segoe UI", 64, bold=True)          # Font grande per titoli
 small_font = pygame.font.SysFont("Segoe UI", 20)                     # Font piccolo per testi secondari
@@ -130,7 +130,7 @@ hands = mp_hands.Hands(static_image_mode=False,           # Modalità video (non
 # CONTROLLO WEBCAM CON DIAGNOSTICA
 # -------------------------------
 print("=" * 50)
-print("DIAGNOSTICA WEBCAM")
+print("WEBCAM DIAGNOSTICS")
 print("=" * 50)
 
 cap = cv2.VideoCapture(0)              # Tenta di aprire la webcam predefinita (indice 0)
@@ -161,7 +161,7 @@ if not ret:                            # Se la lettura è fallita
     pygame.quit()                      # Chiude pygame
     exit()                             # Termina il programma
 
-print(f"✓ Frame di test letto correttamente: {test_frame.shape}")   # Stampa le dimensioni del frame (altezza, larghezza, canali)
+print(f"Frame di test letto correttamente: {test_frame.shape}")   # Stampa le dimensioni del frame (altezza, larghezza, canali)
 print("=" * 50)
 print()
 
@@ -171,18 +171,18 @@ print()
 show_instructions = True                                               # Flag per mostrare le istruzioni
 while show_instructions:                                               # Loop finché le istruzioni sono visibili
     draw_gradient(screen, (240, 245, 255), (200, 220, 255))            # Disegna lo sfondo sfumato
-    title = large_font.render("Istruzioni", True, DARK_TEXT)           # Renderizza il titolo
+    title = large_font.render("Instructions", True, DARK_TEXT)           # Renderizza il titolo
     screen.blit(title, (WIDTH // 2 - title.get_width() // 2, 60))     # Disegna il titolo centrato
     instructions = [
-        "Chiudi la mano sopra il bersaglio per colpirlo.",
-        "Mano SINISTRA (BLU) → colpisci a SINISTRA dello schermo",
-        "Mano DESTRA (ROSSA) → colpisci a DESTRA dello schermo",
+        "Close your hand over the target to hit it.",
+        "LEFT Hand (BLUE) → hit LEFT of screen",
+        "RIGHT Hand (RED) → hit to the RIGHT of the screen",
         "", 
-        "Durata: 60 secondi.", 
-        f"Punteggio minimo per superare: {MIN_SCORE_TO_PASS} punti",
-        "Se non raggiungi il punteggio minimo, riprovi!",
+        "Duration: 60 seconds.", 
+        f"Minimum score to exceed: {MIN_SCORE_TO_PASS} point",
+        "If you don't reach the minimum score, try again!",
         "",
-        "Premi un tasto per iniziare."
+        "Press a key to get started."
     ]
     for i, line in enumerate(instructions):                            # Per ogni riga di testo
         text = font.render(line, True, DARK_TEXT)                      # Renderizza la riga
@@ -195,6 +195,7 @@ while show_instructions:                                               # Loop fi
             exit()                                                     # Termina il programma
         if event.type == pygame.KEYDOWN:                               # Se si preme un tasto qualsiasi
             show_instructions = False                                  # Esce dal loop delle istruzioni
+            start_time = time.time()                                   # Il timer parte solo ora, quando l'utente è pronto
 
 # -------------------------------
 # Variabili per gestire il restart
@@ -208,7 +209,7 @@ fail_screen_timer = 0                  # Contatore di frame per il timer della s
 frame_count = 0                        # Contatore dei frame elaborati
 failed_frames = 0                      # Contatore dei frame webcam non letti correttamente
 
-print("Inizio gioco...")
+print("Start of game...")
 while running:                         # Loop principale (gira finché running è True)
     
     # -------------------------------
@@ -221,20 +222,20 @@ while running:                         # Loop principale (gira finché running �
         panel.fill((255, 255, 255, 230))                               # Riempie il pannello di bianco semi-trasparente
         screen.blit(panel, (WIDTH // 2 - 350, HEIGHT // 2 - 225))     # Disegna il pannello centrato
         
-        fail_title = large_font.render("PROVA FALLITA!", True, RED)    # Renderizza il titolo di fallimento
+        fail_title = large_font.render("FAILED TEST!", True, RED)    # Renderizza il titolo di fallimento
         screen.blit(fail_title, (WIDTH // 2 - fail_title.get_width() // 2, HEIGHT // 2 - 150))  # Disegna il titolo centrato
         
-        score_text = font.render(f"Punteggio ottenuto: {score}", True, DARK_TEXT)               # Mostra il punteggio ottenuto
+        score_text = font.render(f"Score obtained: {score}", True, DARK_TEXT)               # Mostra il punteggio ottenuto
         screen.blit(score_text, (WIDTH // 2 - score_text.get_width() // 2, HEIGHT // 2 - 60))
         
-        required_text = font.render(f"Punteggio richiesto: {MIN_SCORE_TO_PASS}", True, DARK_TEXT)  # Mostra il punteggio richiesto
+        required_text = font.render(f"Required score: {MIN_SCORE_TO_PASS}", True, DARK_TEXT)  # Mostra il punteggio richiesto
         screen.blit(required_text, (WIDTH // 2 - required_text.get_width() // 2, HEIGHT // 2 - 20))
         
-        retry_text = large_font.render("RIPROVA!", True, YELLOW)       # Messaggio di riprova in giallo
+        retry_text = large_font.render("TRY AGAIN!", True, YELLOW)       # Messaggio di riprova in giallo
         screen.blit(retry_text, (WIDTH // 2 - retry_text.get_width() // 2, HEIGHT // 2 + 50))
         
         countdown_sec = max(0, 3 - (fail_screen_timer // 30))          # Calcola i secondi rimanenti (30 frame = 1 secondo a 30 FPS)
-        countdown_text = small_font.render(f"Riavvio tra {countdown_sec} secondi...", True, DARK_TEXT)  # Testo countdown
+        countdown_text = small_font.render(f"Restart in {countdown_sec} second...", True, DARK_TEXT)  # Testo countdown
         screen.blit(countdown_text, (WIDTH // 2 - countdown_text.get_width() // 2, HEIGHT // 2 + 140))
         
         pygame.display.flip()                                          # Aggiorna lo schermo
@@ -251,6 +252,7 @@ while running:                         # Loop principale (gira finché running �
                 screen.blit(txt, (WIDTH // 2 - txt.get_width() // 2, HEIGHT // 2 - txt.get_height() // 2))  # Disegna centrato
                 pygame.display.flip()                                  # Aggiorna lo schermo
                 pygame.time.delay(1000)                                # Aspetta 1 secondo
+            start_time = time.time()                                   # Il timer riparte solo dopo il countdown
         
         for event in pygame.event.get():                               # Controlla gli eventi durante la schermata di fallimento
             if event.type == pygame.QUIT:                              # Se si chiude la finestra
@@ -272,10 +274,10 @@ while running:                         # Loop principale (gira finché running �
     ret, frame = cap.read()                                            # Legge un frame dalla webcam
     if not ret:                                                        # Se la lettura è fallita
         failed_frames += 1                                             # Incrementa il contatore degli errori
-        print(f"Frame non letto! (Totale errori: {failed_frames})")
+        print(f"Unread frame! (Total errors: {failed_frames})")
         
         if failed_frames > 30:                                         # Se ci sono troppi errori consecutivi
-            print("ERRORE CRITICO: Troppi frame persi!")
+            print("CRITICAL ERROR: Too many frames lost!")
             running = False                                            # Ferma il gioco
             break
         
@@ -341,10 +343,10 @@ while running:                         # Loop principale (gira finché running �
     if remaining_time == 0 and not game_over:                          # Se il tempo è scaduto e il gioco non è ancora terminato
         game_over = True                                               # Segna il gioco come terminato
         if score < MIN_SCORE_TO_PASS:                                  # Se il punteggio è insufficiente
-            print(f"\nProva fallita! Punteggio: {score}/{MIN_SCORE_TO_PASS}")
+            print(f"\nTrial failed! Score: {score}/{MIN_SCORE_TO_PASS}")
             show_fail_screen = True                                    # Mostra la schermata di fallimento
         else:                                                          # Se il punteggio è sufficiente
-            print(f"\nProva superata! Punteggio finale: {score}")
+            print(f"\nTest passed! Final score: {score}")
 
     if target_visible and not game_over:                               # Se il bersaglio è visibile e il gioco è in corso
         pulse = 4 * math.sin(pygame.time.get_ticks() * 0.005)         # Calcola una variazione sinusoidale per l'animazione pulsante
@@ -369,8 +371,8 @@ while running:                         # Loop principale (gira finché running �
     else:                                                              # Se il punteggio è basso
         score_color = RED                                              # Testo rosso
     
-    screen.blit(font.render(f"Punteggio: {score}/{MIN_SCORE_TO_PASS}", True, score_color), (30, 30))  # Mostra punteggio con colore dinamico
-    screen.blit(font.render(f"Tempo: {remaining_time}", True, DARK_TEXT), (30, 65))                   # Mostra il tempo rimanente
+    screen.blit(font.render(f"Score: {score}/{MIN_SCORE_TO_PASS}", True, score_color), (30, 30))  # Mostra punteggio con colore dinamico
+    screen.blit(font.render(f"Time: {remaining_time}", True, DARK_TEXT), (30, 65))                   # Mostra il tempo rimanente
 
     if game_over and score >= MIN_SCORE_TO_PASS:                       # Se il gioco è terminato con successo
         overlay = pygame.Surface((WIDTH, HEIGHT), pygame.SRCALPHA)     # Crea un overlay scuro su tutto lo schermo
@@ -389,17 +391,17 @@ while running:                         # Loop principale (gira finché running �
         screen.blit(checkmark, (WIDTH // 2 - checkmark.get_width() // 2, HEIGHT // 2 - 180))  # Disegna il segno di spunta
         
         title_font = pygame.font.SysFont("Segoe UI", 60, bold=True)
-        success_title = title_font.render("PROVA SUPERATA!", True, GREEN)  # Titolo di successo
+        success_title = title_font.render("TEST PASSED!", True, GREEN)  # Titolo di successo
         screen.blit(success_title, (WIDTH // 2 - success_title.get_width() // 2, HEIGHT // 2 - 60))
         
         score_font = pygame.font.SysFont("Segoe UI", 80, bold=True)
         score_text = score_font.render(f"{score}", True, (50, 150, 80))    # Punteggio finale in grande
         screen.blit(score_text, (WIDTH // 2 - score_text.get_width() // 2, HEIGHT // 2 + 30))
         
-        points_label = font.render("PUNTI", True, (100, 100, 100))         # Etichetta "PUNTI" sotto il numero
+        points_label = font.render("POINT", True, (100, 100, 100))         # Etichetta "PUNTI" sotto il numero
         screen.blit(points_label, (WIDTH // 2 - points_label.get_width() // 2, HEIGHT // 2 + 120))
         
-        close_info = small_font.render("Premi ESC per chiudere", True, DARK_TEXT)  # Istruzione per chiudere
+        close_info = small_font.render("ESC Presses to Close", True, DARK_TEXT)  # Istruzione per chiudere
         screen.blit(close_info, (WIDTH // 2 - close_info.get_width() // 2, HEIGHT // 2 + 180))
 
     for event in pygame.event.get():                                   # Controlla gli eventi pygame
@@ -411,7 +413,7 @@ while running:                         # Loop principale (gira finché running �
     pygame.display.flip()                                              # Aggiorna lo schermo
     clock.tick(30)                                                     # Limita il loop a 30 FPS
 
-print("\nChiusura programma...")
+print("\nProgram closure...")
 cap.release()                          # Rilascia la webcam liberando le risorse
 pygame.quit()                          # Chiude pygame
-print("Programma chiuso correttamente.")
+print("Program closed properly.")
