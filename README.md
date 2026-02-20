@@ -1,7 +1,7 @@
 # Telepresence and Interactive Game Project for People with Multiple Sclerosis
 
-🌐 Project website: [http://movease.local/](http://movease.local/)  
-📘 AlphaBot Official Wiki: [https://www.waveshare.com/wiki/AlphaBot](https://www.waveshare.com/wiki/AlphaBot?srsltid=AfmBOopyQaXk4Qw0JTTQqpKtam9ubId3bgOGKQarSCfpL1P6rLZsCVpH)
+ Project website: [http://movease.local/](http://movease.local/)  
+ AlphaBot Official Wiki: [https://www.waveshare.com/wiki/AlphaBot](https://www.waveshare.com/wiki/AlphaBot?srsltid=AfmBOopyQaXk4Qw0JTTQqpKtam9ubId3bgOGKQarSCfpL1P6rLZsCVpH)
 
 ## 1. Project Objective
 
