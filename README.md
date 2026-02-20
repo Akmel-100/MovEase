@@ -1,246 +1,188 @@
-1. Introduzione al progetto
+1. Obiettivo del progetto
 
-L’idea iniziale di questo progetto nasce con l’obiettivo di realizzare un sistema di telepresenza per il nostro istituto tecnico, pensato specificamente per persone affette da sclerosi multipla.
+Questo progetto ha come scopo la realizzazione di un sistema di telepresenza e di un gioco interattivo controllato tramite gesti, pensato per persone affette da sclerosi multipla — una condizione che può causare difficoltà motorie, riduzione della coordinazione e difficoltà negli spostamenti.
 
-La sclerosi multipla è una patologia che può causare:
+La telepresenza consente quindi a queste persone di “essere presenti” a distanza all’interno dell’istituto, muovendo un robot e osservando l’ambiente tramite video, senza necessità di spostarsi fisicamente.
 
-difficoltà motorie
+2. Tecnologie e componenti principali
+2.1 Linguaggio di programmazione
 
-ridotta coordinazione
+Il sistema è stato sviluppato in Python, un linguaggio di programmazione molto usato per robotica e visione artificiale grazie alla sua semplicità e alla disponibilità di molte librerie utili.
 
-affaticamento
+2.2 Robot AlphaBot
 
-impossibilità a muoversi autonomamente
+Il robot AlphaBot è una piattaforma mobile compatibile con:
 
-Per questo motivo il progetto è stato sviluppato per consentire a una persona affetta da sclerosi multipla di muoversi e osservare un ambiente reale a distanza, senza dover compiere spostamenti fisici.
+Raspberry Pi
 
-2. Obiettivo della telepresenza
+Arduino
 
-L’obiettivo principale del sistema di telepresenza è permettere all’utente di:
+Questo significa che può essere programmato e controllato tramite una board Raspberry Pi oppure una scheda Arduino, oppure entrambe in modalità integrata.
 
-essere “presente” all’interno dell’istituto
+2.3 Funzionalità dell’AlphaBot
 
-esplorare ambienti reali tramite un robot
+L’AlphaBot è progettato per essere facilmente estendibile con moduli aggiuntivi e offre:
 
-interagire in modo semplice e intuitivo
+Interfacce per Raspberry Pi e Arduino
 
-Il controllo del sistema è stato progettato per essere:
+Motori per movimento
 
-accessibile
+Porta per sensori aggiuntivi (es. sensori di ostacolo o tracking)
 
-poco faticoso
+Possibilità di controllo remoto via Wi-Fi, Bluetooth o Infrared
 
-basato su movimenti naturali come:
+2.4 Moduli hardware integrati
 
-gesti delle mani
+La wiki ufficiale descrive le principali risorse hardware dell’AlphaBot:
 
-movimenti della testa
+Interfacce GPIO per Raspberry Pi/Arduino
 
-3. Tecnologie utilizzate
-3.1 Linguaggio di programmazione
+Driver motori basato su chip L298P
 
-Il progetto è stato sviluppato utilizzando il linguaggio di programmazione Python, scelto per:
+Batteria e regolatore di tensione
 
-la sua semplicità sintattica
+Moduli per sensori (infrarossi, ultrasuoni, line tracking)
 
-l’ampia disponibilità di librerie
+3. Descrizione del sistema di controllo e del gioco
+3.1 Telepresenza tramite gesti
 
-il largo utilizzo in ambito di robotica e visione artificiale
+L’interazione tra l’utente e il robot avviene attraverso:
 
-3.2 Robot AlphaBot
+una telecamera collegata al sistema
 
-Per la realizzazione della telepresenza è stato utilizzato un robot AlphaBot, dotato di:
+il riconoscimento dei gesti delle mani tramite librerie software
 
-motori per il movimento
+Il robot si muove e interagisce in base ai movimenti riconosciuti, rendendo l’esperienza accessibile anche a chi non può utilizzare strumenti tradizionali come tastiere o joystick.
 
-interfaccia di controllo via codice
+3.2 Gioco interattivo
 
-telecamera collegata al sistema
+Il gioco proposto nel progetto consiste nel raccogliere palline visualizzate a schermo:
 
-Il robot permette di:
+La mano destra è evidenziata in rosso
 
-muoversi nello spazio reale
+La mano sinistra è evidenziata in blu
 
-trasmettere immagini in tempo reale
+Il giocatore deve chiudere la mano sulla pallina corrispondente al colore
 
-eseguire comandi ricevuti dal programma Python
+Questo sistema sfrutta tecniche di rilevamento delle mani e di gestione grafica con pygame, offrendo un’interazione naturale e intuitiva.
 
-4. Codici e librerie di base
+4. Ambiente di sviluppo e librerie richieste
 
-Per lo sviluppo del progetto:
+Per far funzionare il progetto è necessario configurare l’ambiente Python e installare alcune librerie specifiche.
 
-sono stati utilizzati codici già esistenti, forniti da studenti di quinta dell’anno precedente
+4.1 Installazione di Python
 
-sono state scaricate e installate tutte le librerie presenti nella wiki ufficiale dell’AlphaBot
+Scaricare Python da https://www.python.org
 
-Questo ha permesso di:
+Durante l’installazione spuntare “Add Python to PATH”
 
-partire da una base funzionante
-
-ridurre il tempo di sviluppo
-
-concentrarsi sull’interazione uomo–macchina
-
-5. Controllo tramite gesti
-
-Il controllo dell’AlphaBot e del gioco avviene tramite una telecamera, che rileva:
-
-i movimenti delle mani
-
-i gesti dell’utente
-
-eventuali movimenti della testa
-
-Questa modalità di controllo è particolarmente adatta a persone affette da sclerosi multipla, poiché:
-
-non richiede l’uso di tastiera o joystick
-
-riduce lo sforzo fisico
-
-sfrutta movimenti naturali e intuitivi
-
-6. Descrizione del gioco interattivo
-
-Oltre al sistema di telepresenza è stato sviluppato un gioco interattivo, utilizzato sia come dimostrazione tecnica sia come attività ludica.
-
-6.1 Obiettivo del gioco
-
-Lo scopo del gioco è raccogliere delle palline che appaiono sullo schermo utilizzando esclusivamente i movimenti delle mani.
-
-Non vengono utilizzati:
-
-mouse
-
-tastiera
-
-controller tradizionali
-
-6.2 Riconoscimento delle mani
-
-Il sistema è in grado di distinguere:
-
-mano destra, evidenziata in rosso
-
-mano sinistra, evidenziata in blu
-
-Sul display:
-
-se appare una pallina rossa → deve essere presa con la mano destra
-
-se appare una pallina blu → deve essere presa con la mano sinistra
-
-Per prendere una pallina:
-
-l’utente deve chiudere la mano sopra di essa
-
-7. Librerie necessarie al funzionamento
-
-Per il corretto funzionamento del progetto è necessario installare alcune librerie Python specifiche.
-
-8. Installazione dell’ambiente di sviluppo
-8.1 Installazione di Python
-
-Scaricare Python dal sito ufficiale:
-https://www.python.org
-
-Durante l’installazione:
-
-selezionare l’opzione “Add Python to PATH”
-
-procedere con l’installazione standard
-
-Verificare l’installazione aprendo il Prompt dei comandi e digitando:
+Verificare l’installazione nel Prompt dei comandi con:
 
 python --version
 
 Se viene visualizzata la versione di Python, l’installazione è corretta.
 
-9. Installazione delle librerie tramite pip
+4.2 Installazione delle librerie Python
 
-Le librerie vengono installate utilizzando pip, il gestore di pacchetti di Python.
+Tutte le librerie possono essere installate tramite pip (strumento di gestione pacchetti di Python).
 
-9.1 Installazione di MediaPipe
+4.2.1 MediaPipe
 
-Il progetto richiede obbligatoriamente la versione 0.10.30 di MediaPipe, poiché altre versioni potrebbero non essere compatibili.
-
-Comando da eseguire:
+MediaPipe è utilizzata per il riconoscimento delle mani e dei gesti. La versione richiesta è 0.10.30:
 
 pip install mediapipe==0.10.30
+4.2.2 Pygame
 
-MediaPipe viene utilizzata per:
-
-il riconoscimento delle mani
-
-il tracciamento dei movimenti
-
-l’interpretazione dei gesti tramite telecamera
-
-9.2 Installazione di Pygame
-
-Pygame è la libreria utilizzata per la parte grafica del gioco.
-
-Comando da eseguire:
+Pygame è la libreria grafica utilizzata per creare il gioco:
 
 pip install pygame
+4.2.3 Librerie per Raspberry Pi e AlphaBot
 
-Pygame permette di:
+Se si utilizza Raspberry Pi come controller del robot, la documentazione ufficiale suggerisce di installare una serie di dipendenze di sistema che permettono di gestire:
 
-creare la finestra di gioco
+GPIO (pin di input/output)
 
-visualizzare palline e colori
+bus SPI / I2C per dispositivi esterni
 
-gestire la grafica in tempo reale
+comunicazioni seriali
 
-9.3 Librerie dell’AlphaBot
+Esempi di comandi da terminale (su Raspberry Pi):
 
-Per l’AlphaBot è necessario:
+sudo apt-get update
+sudo apt-get install python-pip
+sudo pip install RPi.GPIO
+sudo pip install spidev
+sudo apt-get install python-smbus
+sudo apt-get install python-serial
 
-scaricare le librerie dalla wiki ufficiale
+⚠️ Su sistemi più recenti potrebbe essere necessario usare pip3 invece di pip se si utilizza Python3.
 
-copiare i file all’interno della cartella del progetto
+4.3 Download dei demo ufficiali AlphaBot
 
-verificare che siano correttamente importabili nel codice Python
+La wiki ufficiale fornisce anche esempi pronti all’uso. Per scaricarli, si possono utilizzare questi comandi nel terminale di Raspberry Pi:
 
-Esempio di importazione:
+sudo apt-get install p7zip
+wget https://files.waveshare.com/upload/2/20/AlphaBot_Demo.7z
+7zr x AlphaBot_Demo.7z -r -o./AlphaBot_Demo
+sudo chmod 777 -R AlphaBot_Demo
+cd AlphaBot_Demo/AlphaBot_Demo/RaspberryPi/AlphaBot/
 
-import AlphaBot
-10. Verifica del funzionamento
+Questi esempi consentono di testare direttamente funzioni come:
 
-Dopo l’installazione delle librerie:
+movimento dei motori
 
-Collegare la telecamera
+sensori di ostacolo
+
+controllo infrarosso
+
+controllo remoto via web
+
+5. Configurazioni hardware aggiuntive (Raspberry Pi)
+
+Se si utilizza Raspberry Pi, la wiki suggerisce di abilitare alcuni moduli di interfaccia tramite il tool raspi-config:
+
+SPI interface
+
+I2C interface
+
+UART serial interface
+Queste configurazioni permettono l’uso di periferiche esterne come moduli di comunicazione o sensori.
+
+6. Verifica del sistema
+
+Dopo l’installazione delle librerie e la configurazione, è consigliato eseguire una serie di test:
 
 Avviare il programma Python
 
-Controllare che:
+Controllare che la telecamera sia riconosciuta
 
-la telecamera venga rilevata
+Verificare che le mani vengano tracciate correttamente
 
-le mani siano riconosciute
+Testare il movimento del robot (comandi base)
 
-i colori rosso e blu siano visibili
+Eseguire il gioco grafico per controllare la raccolta delle palline
 
-il robot risponda ai comandi
+7. Possibili problemi comuni e soluzioni
+7.1 Problema: MediaPipe non installata
 
-11. Problemi comuni
+– Assicurarsi di aver installato la versione 0.10.30.
 
-Errore su MediaPipe
-→ verificare che la versione installata sia la 0.10.30
+7.2 Telecamera non rilevata
 
-ModuleNotFoundError
-→ la libreria non è installata correttamente
+– Verificare permessi e connessione
+– Controllare che non sia in uso da altri programmi
 
-Telecamera non rilevata
-→ controllare connessione e permessi
+7.3 Errori su Raspberry Pi
 
-12. Conclusione
+– Alcune distribuzioni recenti non supportano librerie di sistema più vecchie
+– In questi casi usare pip3 e verificare compatibilità delle dipendenze
 
-Questo progetto dimostra come la tecnologia possa essere utilizzata per:
+8. Conclusione
 
-migliorare l’accessibilità
+Questo progetto combina robotica, visione artificiale e programmazione Python per creare un sistema utile e accessibile, in particolare per persone affette da sclerosi multipla. Il risultato è un ambiente sperimentale completo:
 
-supportare persone affette da sclerosi multipla
+telepresenza robotica
 
-creare sistemi di telepresenza inclusivi
+gioco controllato tramite gesti
 
-Unendo robotica, programmazione Python e controllo tramite gesti, è stato realizzato un sistema funzionale, intuitivo e adatto a utenti con difficoltà motorie.
+possibilità di espansione con sensori e moduli hardware
