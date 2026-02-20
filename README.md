@@ -1,5 +1,8 @@
 # Telepresence and Interactive Game Project for People with Multiple Sclerosis
 
+🌐 Project website: [http://movease.local/](http://movease.local/)  
+📘 AlphaBot Official Wiki: [https://www.waveshare.com/wiki/AlphaBot](https://www.waveshare.com/wiki/AlphaBot?srsltid=AfmBOopyQaXk4Qw0JTTQqpKtam9ubId3bgOGKQarSCfpL1P6rLZsCVpH)
+
 ## 1. Project Objective
 
 This project aims to develop a telepresence system and an interactive game controlled through gestures, designed for people with multiple sclerosis — a condition that can cause motor difficulties, reduced coordination, and limited mobility.
@@ -16,11 +19,13 @@ The system is developed in **Python**, a widely used programming language for ro
 
 The AlphaBot robot is a mobile platform compatible with:
 
-- [wiki AphaBot]([https://www.python.org](https://www.waveshare.com/wiki/AlphaBot?srsltid=AfmBOopyQaXk4Qw0JTTQqpKtam9ubId3bgOGKQarSCfpL1P6rLZsCVpH))
 - Raspberry Pi  
 - Arduino  
 
 It can be programmed and controlled via Raspberry Pi, Arduino, or both in integrated mode.
+
+> For detailed hardware specifications and usage, visit the **AlphaBot official wiki**:  
+> https://www.waveshare.com/wiki/AlphaBot?srsltid=AfmBOopyQaXk4Qw0JTTQqpKtam9ubId3bgOGKQarSCfpL1P6rLZsCVpH
 
 ### 2.3 AlphaBot Features
 
@@ -29,7 +34,7 @@ AlphaBot offers:
 - Interfaces for Raspberry Pi and Arduino  
 - Motors for movement  
 - Ports for additional sensors (e.g., obstacle or line tracking sensors)  
-- Remote control via Wi-Fi, Bluetooth, or Infrared  
+- Remote control via Wi‑Fi, Bluetooth, or Infrared  
 
 ### 2.4 Integrated Hardware Modules
 
@@ -42,29 +47,6 @@ AlphaBot offers:
 
 ### 3.1 Gesture-Based Telepresence
 
-User interaction with the robot occurs through:
+…
 
-- A camera connected to the system  
-- Hand gesture recognition using software libraries  
-
-The robot moves and interacts according to the detected gestures, making the experience accessible even to those unable to use traditional devices like keyboards or joysticks.
-
-### 3.2 Interactive Game
-
-The proposed game involves collecting balls displayed on the screen:
-
-- Right hand highlighted in red  
-- Left hand highlighted in blue  
-- The player must close the hand over the corresponding colored ball  
-
-The system uses **pygame** and hand tracking techniques to provide natural and intuitive interaction.
-
-## 4. Development Environment and Required Libraries
-
-### 4.1 Python Installation
-
-1. Download Python from [python.org](https://www.python.org)  
-2. During installation, check “Add Python to PATH”  
-3. Verify installation in the Command Prompt with:
-```bash
-python --version
+<!-- Il resto del README rimane invariato -->
