@@ -16,6 +16,7 @@ The system is developed in **Python**, a widely used programming language for ro
 
 The AlphaBot robot is a mobile platform compatible with:
 
+- [wiki AphaBot]([https://www.python.org](https://www.waveshare.com/wiki/AlphaBot?srsltid=AfmBOopyQaXk4Qw0JTTQqpKtam9ubId3bgOGKQarSCfpL1P6rLZsCVpH))
 - Raspberry Pi  
 - Arduino  
 
