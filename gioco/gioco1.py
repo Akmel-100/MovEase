@@ -136,7 +136,7 @@ print("=" * 50)
 cap = cv2.VideoCapture(0)              # Tenta di aprire la webcam predefinita (indice 0)
 
 if not cap.isOpened():                 # Se la webcam non si è aperta
-    print("ERRORE: Impossibile aprire la webcam!")
+    print("ERRORE: IMpossibile avviare la webcam!")
     print("Possibili cause:")
     print("- La webcam è usata da un altro programma")
     print("- Driver della webcam non funzionanti")
