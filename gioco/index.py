@@ -60,20 +60,20 @@ def Carica_Elementi():
     global Logo_Immagine, Immagine_sfondo, song1, song2          # Dichiara le variabili globali da modificare
     global img_avanti, img_indietro, img_destra, img_sinistra, img_fermo
 
-    Logo_Immagine   = pygame.image.load('gioco/logo.png')        # Carica immagine logo
-    Immagine_sfondo = pygame.image.load('gioco/itis.png')        # Carica immagine sfondo
+    Logo_Immagine   = pygame.image.load('gioco/img/logo.png')        # Carica immagine logo
+    Immagine_sfondo = pygame.image.load('gioco/img/itis.png')        # Carica immagine sfondo
 
-    song1 = 'gioco/Down_under.mp3'                               # Canzone 1
-    song2 = 'gioco/wind.mp3'                                     # Canzone 2
+    song1 = 'gioco/canzoni/Down_under.mp3'                               # Canzone 1
+    song2 = 'gioco/canzoni/wind.mp3'                                     # Canzone 2
 
     # Carica le immagini delle direzioni dalla cartella gioco/
     # Se un file non esiste viene lasciato a None e al suo posto apparirà un riquadro grigio
     for nome_var, percorso in [
-        ('img_avanti',   'gioco/avanti.png'),                    # Percorso immagine AVANTI
-        ('img_indietro', 'gioco/indietro.png'),                  # Percorso immagine INDIETRO
-        ('img_destra',   'gioco/destra.png'),                    # Percorso immagine DESTRA
-        ('img_sinistra', 'gioco/sinistra.png'),                  # Percorso immagine SINISTRA
-        ('img_fermo',    'gioco/fermo.png'),                     # Percorso immagine FERMO
+        ('img_avanti',   'gioco/img/avanti.png'),                    # Percorso immagine AVANTI
+        ('img_indietro', 'gioco/img/indietro.png'),                  # Percorso immagine INDIETRO
+        ('img_destra',   'gioco/img/destra.png'),                    # Percorso immagine DESTRA
+        ('img_sinistra', 'gioco/img/sinistra.png'),                  # Percorso immagine SINISTRA
+        ('img_fermo',    'gioco/img/stop.png'),                     # Percorso immagine FERMO
     ]:
         try:
             globals()[nome_var] = pygame.image.load(percorso)   # Carica l'immagine se il file esiste
