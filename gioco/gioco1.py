@@ -155,7 +155,7 @@ print(f"  Altezza: {cap.get(cv2.CAP_PROP_FRAME_HEIGHT)}")    # Stampa l'altezza 
 print(f"  FPS: {cap.get(cv2.CAP_PROP_FPS)}")                 # Stampa gli FPS della webcam
 
 ret, test_frame = cap.read()           # Legge un frame di test dalla webcam
-if not ret:                            # Se la lettura è fallita
+if not ret:                            # Se la lettura è fallita 
     print("ERRORE: Impossibile leggere dalla webcam!")
     cap.release()                      # Rilascia la webcam
     pygame.quit()                      # Chiude pygame
