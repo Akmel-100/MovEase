@@ -76,7 +76,7 @@ def Carica_Elementi():
         ('img_fermo',    'gioco/img/stop.png'),                     # Percorso immagine FERMO
     ]:
         try:
-            globals()[nome_var] = pygame.image.load(percorso)   # Carica l'immagine se il file esiste
+            globals()[nome_var] = pygame.image.load(percorso)   # Carica l'immagine se il file esiste 
         except Exception:
             globals()[nome_var] = None                           # Se il file manca, lascia None
 
