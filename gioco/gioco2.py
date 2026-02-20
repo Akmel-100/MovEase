@@ -40,7 +40,7 @@ WIDTH, HEIGHT = screen.get_size()                                    # Ottiene l
 pygame.display.set_caption("Logical Reasoning Game")           # Imposta il titolo della finestra
 
 try:
-    nome_file_musica = "img/MI.mp3"                                      # Nome del file audio da caricare
+    nome_file_musica = "img/MI.mp3"                                     # Nome del file audio da caricare
     pygame.mixer.music.load(nome_file_musica)                        # Carica il file musicale nel mixer
     pygame.mixer.music.set_volume(0.3)                               # Imposta il volume al 30% (0.0 = muto, 1.0 = massimo)
     pygame.mixer.music.play(-1)                                      # Avvia la musica in loop infinito (-1 = ripeti sempre)
